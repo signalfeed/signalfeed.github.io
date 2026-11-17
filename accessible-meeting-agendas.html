@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Make Meeting Agendas and Minutes Accessible (ADA Title II)</title>
+<meta name="description" content="A practical guide for clerks and board secretaries: structure, numbering, attachments and posting, so agendas, packets and minutes work with screen readers and meet WCAG 2.1 AA.">
+<link rel="canonical" href="https://arabinowe.github.io/pdf-accessibility/accessible-meeting-agendas.html">
+<style>
+:root{--bg:#fff;--fg:#14213d;--muted:#475569;--line:#cbd5e1;--accent:#1e3a8a;--card:#f8fafc}
+@media (prefers-color-scheme:dark){:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--line:#334155;--accent:#93c5fd;--card:#1e293b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 4rem}a{color:var(--accent)}
+h1{font-size:1.9rem;line-height:1.25}h2{font-size:1.3rem;margin-top:2.2rem}h3{font-size:1.1rem}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:var(--card)}
+.note{color:var(--muted);font-size:.95rem}.cta{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;background:var(--card);margin-top:2rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.5rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+<p class="note"><a href="./">Free PDF accessibility quick check</a> · <a href="title-ii-pdf-guide.html">ADA Title II guide</a> · <a href="section-504-patient-pdfs.html">Section 504 guide</a></p>
+<h1>How to make meeting agendas and minutes accessible</h1>
+<p>Agendas, packets and minutes are the documents public bodies post most often, so they are where most accessibility problems pile up. Under the ADA Title II web rule, new agendas posted after your compliance date need to meet WCAG 2.1 AA (<a href="title-ii-pdf-guide.html">which date applies to you</a>). The good news: agendas follow the same pattern every time, so one good template fixes most of the problem.</p>
+<h2>Build the agenda as a structured document</h2>
+<ul>
+<li><strong>One Heading 1</strong> with the body, meeting type and date: &ldquo;Board of Trustees Regular Meeting, January 12, 2027&rdquo;.</li>
+<li><strong>Heading 2 for each section</strong>: Call to Order, Public Comment, Consent Agenda, New Business, Adjournment.</li>
+<li><strong>Numbered lists for items</strong>, using Word&#39;s numbering rather than typed numbers, so &ldquo;Item 7.2&rdquo; is announced correctly.</li>
+<li><strong>No layout tables.</strong> Two-column agendas built with tables or text boxes read in the wrong order. Put time, presenter and action on one line instead, e.g. &ldquo;7.2 Water rate study (Finance Director, 15 minutes). Action: discussion and possible vote.&rdquo;</li>
+<li><strong>Meeting details as plain text</strong>: place, address, how to join online, and how to request an accommodation, with a contact name and number.</li>
+</ul>
+<h2>Attachments and packets</h2>
+<p>A packet is usually dozens of documents merged into one PDF. Each attachment needs to be accessible on its own, and a merged packet needs bookmarks for each item. Scanned signed contracts or letters need OCR and tagging; better, post the original digital file alongside the signed scan.</p>
+<p>Link to attachments with descriptive text: &ldquo;Item 7.2 attachment: Water rate study (PDF, 24 pages)&rdquo;.</p>
+<h2>Minutes</h2>
+<p>Use the same headings as the agenda so readers can jump to the item they care about. Record votes as text (&ldquo;Motion carried 4&ndash;1. Yes: Smith, Lee, Patel, Ruiz. No: Chen.&rdquo;) rather than in a grid of checkmarks.</p>
+<h2>Consider posting the agenda as a web page</h2>
+<p>An agenda posted as an HTML page on your website is usually easier to make accessible than a PDF, reads better on phones, and is easier to search. Many agenda-management platforms can publish HTML; check yours before converting by hand.</p>
+<h2>Checklist before you post</h2>
+<ul>
+<li>Title set in File &gt; Info &gt; Properties; language set.</li>
+<li>Headings and numbered lists used; no layout tables or text boxes.</li>
+<li>Alt text on any maps, site plans or charts.</li>
+<li>Exported with tags on (see <a href="accessible-word-to-pdf.html">Word to accessible PDF</a>); not &ldquo;Print to PDF&rdquo;.</li>
+<li>Run through the <a href="./">free quick check</a>.</li>
+</ul>
+<div class="cta">
+<h2 style="margin-top:0">Rather have it done?</h2>
+<p>I rebuild documents and templates as tagged PDFs plus accessible web pages, checked against WCAG 2.1 AA, with a free 2-page sample first. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
+</div>
+<p class="note">Last reviewed November 2026. General information, not legal advice.</p>
+</main>
+</body>
+</html>

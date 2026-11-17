@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make a Word Document Accessible Before Saving as PDF (Step by Step)</title>
+<meta name="description" content="Most inaccessible PDFs start as Word files. Ten minutes of fixes in Word gives you a tagged, accessible PDF: headings, alt text, table headers, title, language and the right export setting.">
+<link rel="canonical" href="https://arabinowe.github.io/pdf-accessibility/accessible-word-to-pdf.html">
+<style>
+:root{--bg:#fff;--fg:#14213d;--muted:#475569;--line:#cbd5e1;--accent:#1e3a8a;--card:#f8fafc}
+@media (prefers-color-scheme:dark){:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--line:#334155;--accent:#93c5fd;--card:#1e293b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 4rem}a{color:var(--accent)}
+h1{font-size:1.9rem;line-height:1.25}h2{font-size:1.3rem;margin-top:2.2rem}h3{font-size:1.1rem}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:var(--card)}
+.note{color:var(--muted);font-size:.95rem}.cta{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;background:var(--card);margin-top:2rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.5rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+<p class="note"><a href="./">Free PDF accessibility quick check</a> · <a href="title-ii-pdf-guide.html">ADA Title II guide</a> · <a href="section-504-patient-pdfs.html">Section 504 guide</a></p>
+<h1>Make a Word document accessible before you save it as a PDF</h1>
+<p>Most PDFs that fail accessibility checks started life as Word documents. Fixing the Word file first is far cheaper than repairing the PDF afterwards, and every future export comes out right. These steps cover Microsoft Word for Windows and Mac.</p>
+<h2>1. Use real heading styles</h2>
+<p>Select each section title and apply <strong>Heading 1</strong>, <strong>Heading 2</strong> and so on from the Styles gallery on the Home tab, instead of making text bold and bigger. Use one Heading 1 for the document title and don&#39;t skip levels. Screen reader users jump between headings the way sighted readers skim.</p>
+<h2>2. Use real lists</h2>
+<p>Use the Bullets and Numbering buttons, not typed dashes or numbers. Word then tags them as lists in the PDF.</p>
+<h2>3. Add alt text to images and charts</h2>
+<p>Right-click the image, choose <strong>View Alt Text</strong> (or Edit Alt Text) and describe what the image tells the reader: &ldquo;Map showing the closed section of Main Street between 3rd and 5th Avenue&rdquo;, not &ldquo;map&rdquo;. For a chart, give the key numbers or put the data in a table. Mark purely decorative images (borders, repeated logos) as decorative.</p>
+<h2>4. Give tables a header row</h2>
+<p>Click in the table&#39;s first row, then on the Table Design tab tick <strong>Header Row</strong>. In Table Properties &gt; Row, tick <strong>Repeat as header row at the top of each page</strong>. Avoid merged and split cells, and never use a table just to line things up on the page.</p>
+<h2>5. Write link text that makes sense alone</h2>
+<p>&ldquo;Download the 2027 budget (PDF)&rdquo; works; &ldquo;click here&rdquo; doesn&#39;t, because screen reader users often hear links out of context.</p>
+<h2>6. Set the title and language</h2>
+<p>Go to <strong>File &gt; Info &gt; Properties</strong> and fill in <strong>Title</strong>. That title, not the file name, is what readers announce. Check the language under <strong>Review &gt; Language</strong>.</p>
+<h2>7. Run the Accessibility Checker</h2>
+<p>On the Review tab choose <strong>Check Accessibility</strong> and fix everything in the Errors and Warnings lists. It catches missing alt text, missing table headers and hard-to-read color contrast.</p>
+<h2>8. Export with tags turned on</h2>
+<ul>
+<li><strong>Word for Windows:</strong> File &gt; Save As &gt; PDF &gt; <strong>Options</strong>, and make sure <strong>Document structure tags for accessibility</strong> is ticked.</li>
+<li><strong>Word for Mac:</strong> File &gt; Save As &gt; PDF, and choose <strong>Best for electronic distribution and accessibility</strong>.</li>
+</ul>
+<p>Don&#39;t use &ldquo;Print to PDF&rdquo;: it throws the tags away.</p>
+<h2>9. Check the result</h2>
+<p>Drop the PDF into the <a href="./">free quick check</a> to confirm it is tagged and has a title, language, headings and alt text. Then read it with a screen reader or Acrobat&#39;s Read Out Loud to confirm the order makes sense.</p>
+<h2>Fix the template once</h2>
+<p>If your office produces the same kind of document every week (agendas, notices, newsletters), build these fixes into one Word template. Every future PDF then starts accessible. See <a href="accessible-meeting-agendas.html">how to make meeting agendas accessible</a>.</p>
+<div class="cta">
+<h2 style="margin-top:0">Rather have it done?</h2>
+<p>I rebuild documents and templates as tagged PDFs plus accessible web pages, checked against WCAG 2.1 AA, with a free 2-page sample first. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
+</div>
+<p class="note">Last reviewed November 2026. General information, not legal advice.</p>
+</main>
+</body>
+</html>
