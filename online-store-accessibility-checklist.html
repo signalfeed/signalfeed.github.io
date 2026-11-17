@@ -22,24 +22,24 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);pad
 <main id="main">
 <p class="note"><a href="./">Free PDF accessibility quick check</a> · <a href="accessible-word-to-pdf.html">Word to accessible PDF</a></p>
 <h1>Online store accessibility checklist: test your shop in an hour</h1>
-<p>Accessibility complaints and demand letters aimed at online stores usually cite the same handful of problems: shoppers using a keyboard or a screen reader can't get through the menu, product options, cart or checkout. The fixes are mostly ordinary theme and content changes. This checklist covers what to test first, using only your keyboard and your browser.</p>
-<p class="note">General information, not legal advice. The usual reference standard is WCAG 2.2 Level AA.</p>
+<p>Start by checking whether a shopper can navigate, choose options, add a product and complete checkout using a keyboard and assistive technology. This checklist covers what to test first, using only your keyboard and your browser. It is a preliminary review, not a complete conformance assessment.</p>
+<p class="note">General information, not legal advice. This checklist uses WCAG 2.2 Level AA as a technical reference; it does not determine which laws or contractual requirements apply to your store.</p>
 
 <h2>1. Keyboard only (15 minutes)</h2>
 <p>Put the mouse away. Press Tab to move forward, Shift+Tab to go back, Enter and Space to activate. Try to buy a product.</p>
 <ul>
 <li>Can you open the main menu and reach every link in it?</li>
 <li>Can you pick size and color, change quantity, and add to cart?</li>
-<li>Can you open and close the cart drawer, pop-ups and the cookie banner, and does Escape close them?</li>
-<li>Can you always see where you are? A visible focus outline is required (WCAG 2.4.7). Many themes remove it.</li>
+<li>Can you open and close the cart drawer, pop-ups and the cookie banner with the keyboard? (A reachable close button matters most; Escape closing dialogs is a helpful convention.)</li>
+<li>Can you always see where you are? WCAG 2.4.7 requires a visible keyboard focus indicator (it doesn&#39;t have to be an outline).</li>
 <li>Do you ever get stuck inside something (a carousel, a chat widget, a video)?</li>
 </ul>
 
 <h2>2. Images and product media (10 minutes)</h2>
 <ul>
-<li>Every product image has alt text that says what a shopper needs to know: &ldquo;Navy wool beanie, folded cuff, front view&rdquo;, not the file name or &ldquo;image&rdquo;.</li>
+<li>Informative images have useful text alternatives that say what a shopper needs to know: &ldquo;Navy wool beanie, folded cuff, front view&rdquo;, not the file name or &ldquo;image&rdquo;. Decorative or redundant images should be ignored by assistive technology, and linked images need a name that describes the link.</li>
 <li>Text inside images (sale banners, size charts) is also available as real text.</li>
-<li>Videos have captions; nothing autoplays with sound.</li>
+<li>Videos have captions. Recommended: nothing autoplays with sound. (WCAG 1.4.2 specifically requires a way to pause, stop or control audio that plays automatically for more than three seconds.)</li>
 </ul>
 
 <h2>3. Forms and checkout (10 minutes)</h2>
@@ -54,32 +54,34 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);pad
 <ul>
 <li>Text contrast is at least 4.5:1 (3:1 for large text). Light gray on white and text on photos are the usual failures.</li>
 <li>Prices, sale badges and stock status don't rely on color alone.</li>
-<li>Zoom the browser to 200%: nothing gets cut off or overlaps, and you don&#39;t have to scroll sideways.</li>
-<li>Buttons and links are big enough to tap (WCAG 2.2 asks for at least 24 by 24 CSS pixels).</li>
+<li>At 200% text size, nothing is lost or stops working. Separately, test reflow at a 320 CSS-pixel-wide window (about 400% zoom on a 1280-pixel screen): content shouldn&#39;t need sideways scrolling, except things that genuinely need two dimensions, like large tables or maps.</li>
+<li>Buttons and controls are big enough to tap: WCAG 2.2 generally asks for 24 by 24 CSS pixels, or enough spacing, with exceptions such as links inside a sentence.</li>
 </ul>
 
 <h2>5. Structure (10 minutes)</h2>
 <ul>
-<li>Each page has one main heading (the product or collection name) and sensible subheadings.</li>
+<li>Recommended: each page has one main heading (the product or collection name) and sensible subheadings.</li>
 <li>Link and button names make sense on their own: &ldquo;Add Navy Beanie to cart&rdquo;, not a bare icon.</li>
 <li>The page title in the browser tab is specific to the page.</li>
 <li>PDF size charts, care guides and policies are tagged PDFs. Check one with the <a href="./">free PDF quick check</a>.</li>
 </ul>
 
 <h2>About overlay widgets</h2>
-<p>One-line &ldquo;accessibility widgets&rdquo; that add a toolbar to your site don&#39;t change the underlying theme code, so they don&#39;t fix missing labels, keyboard traps or missing alt text. Disability advocates widely criticize them, and they don&#39;t stop complaints. Fix the theme and content instead; most fixes are one-time.</p>
+<p>Don&#39;t treat installing a widget as proof of accessibility. Test the actual shopping journey and fix the barriers you find.</p>
 
 <h2>What an audit adds</h2>
-<p>A professional audit runs automated WCAG rules on every page type (home, collection, product, cart, checkout, account), adds the manual checks above, and gives your developer one list: each issue, the exact element, the WCAG criterion and the fix, ordered by impact.</p>
+<p>An audit covers an agreed sample of page types and complete user journeys (for example home, collection, product, cart and checkout), with automated checks plus manual evaluation and the scope and limitations stated. Your developer gets one list: each issue, the element, the WCAG criterion and a suggested fix, ordered by impact.</p>
 
 <div class="cta">
 <h2 style="margin-top:0">Want your store audited?</h2>
-<p>I audit Shopify, WooCommerce, Squarespace, Wix and custom stores against WCAG 2.2 AA (automated axe-core scan plus manual keyboard, focus, zoom, form and screen reader checks) and deliver a prioritized fix list. No overlays and no fake certificates. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
+<p>I audit Shopify, WooCommerce, Squarespace, Wix and custom stores against WCAG 2.2 AA (automated axe-core scan plus manual keyboard, focus, zoom, form and screen reader checks) and deliver a prioritized fix list. No overlays and no compliance certificates. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
 </div>
 <h2>Sources</h2>
 <ul class="note">
 <li><a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2 (W3C)</a></li>
 <li><a href="https://www.w3.org/WAI/test-evaluate/preliminary/">Easy checks: a first review of web accessibility (W3C WAI)</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG22/Understanding/reflow.html">Understanding Reflow (W3C)</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">Understanding Target Size (Minimum) (W3C)</a></li>
 <li><a href="https://www.ada.gov/resources/web-guidance/">Guidance on web accessibility and the ADA (ADA.gov)</a></li>
 </ul>
 <p class="note">Last reviewed November 2026.</p>

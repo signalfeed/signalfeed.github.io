@@ -22,7 +22,7 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);pad
 <main id="main">
 <p class="note"><a href="./">Free PDF accessibility quick check</a> · <a href="title-ii-pdf-guide.html">ADA Title II guide</a> · <a href="section-504-patient-pdfs.html">Section 504 guide</a></p>
 <h1>Make a Word document accessible before you save it as a PDF</h1>
-<p>Most PDFs that fail accessibility checks started life as Word documents. Fixing the Word file first is far cheaper than repairing the PDF afterwards, and every future export comes out right. These steps cover Microsoft Word for Windows and Mac.</p>
+<p>Start with the editable source file when you have it. Repair its structure, export with tags, then check the resulting PDF. These steps follow Microsoft&#39;s documented menus for Word on Windows and Mac; exact wording can differ between versions.</p>
 <h2>1. Use real heading styles</h2>
 <p>Select each section title and apply <strong>Heading 1</strong>, <strong>Heading 2</strong> and so on from the Styles gallery on the Home tab, instead of making text bold and bigger. Use one Heading 1 for the document title and don&#39;t skip levels. Screen reader users jump between headings the way sighted readers skim.</p>
 <h2>2. Use real lists</h2>
@@ -34,24 +34,30 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);pad
 <h2>5. Write link text that makes sense alone</h2>
 <p>&ldquo;Download the 2027 budget (PDF)&rdquo; works; &ldquo;click here&rdquo; doesn&#39;t, because screen reader users often hear links out of context.</p>
 <h2>6. Set the title and language</h2>
-<p>Go to <strong>File &gt; Info &gt; Properties</strong> and fill in <strong>Title</strong>. That title, not the file name, is what readers announce. Check the language under <strong>Review &gt; Language</strong>.</p>
+<p><strong>Windows:</strong> File &gt; Info &gt; Properties, then fill in <strong>Title</strong>. <strong>Mac:</strong> File &gt; Properties &gt; Summary &gt; Title. That title, not the file name, is what readers announce. Set the language under Review &gt; Language on Windows, or Tools &gt; Language on Mac.</p>
 <h2>7. Run the Accessibility Checker</h2>
 <p>On the Review tab choose <strong>Check Accessibility</strong> and fix everything in the Errors and Warnings lists. It catches missing alt text, missing table headers and hard-to-read color contrast.</p>
 <h2>8. Export with tags turned on</h2>
 <ul>
 <li><strong>Word for Windows:</strong> File &gt; Save As &gt; PDF &gt; <strong>Options</strong>, and make sure <strong>Document structure tags for accessibility</strong> is ticked.</li>
-<li><strong>Word for Mac:</strong> File &gt; Save As &gt; PDF, and choose <strong>Best for electronic distribution and accessibility</strong>.</li>
+<li><strong>Word for Mac:</strong> Command+Shift+S, set File Format to PDF, choose <strong>Best for electronic distribution and accessibility (uses Microsoft online service)</strong>, then Export. Note that this option sends the document to Microsoft&#39;s online conversion service; it is not a local-only export.</li>
 </ul>
 <p>Don&#39;t use &ldquo;Print to PDF&rdquo;: it throws the tags away.</p>
 <h2>9. Check the result</h2>
-<p>Drop the PDF into the <a href="./">free quick check</a> to confirm it is tagged and has a title, language, headings and alt text. Then read it with a screen reader or Acrobat&#39;s Read Out Loud to confirm the order makes sense.</p>
+<p>Drop the PDF into the <a href="./">free quick check</a> to look for basic structural warning signs. Then inspect heading levels, reading order, table relationships and whether image descriptions convey the right information, and test navigation with a screen reader. Acrobat&#39;s Read Out Loud can be an extra listening check, but it isn&#39;t a screen reader.</p>
 <h2>Fix the template once</h2>
-<p>If your office produces the same kind of document every week (agendas, notices, newsletters), build these fixes into one Word template. Every future PDF then starts accessible. See <a href="accessible-meeting-agendas.html">how to make meeting agendas accessible</a>.</p>
+<p>If your office produces the same kind of document every week (agendas, notices, newsletters), build these fixes into one Word template. A well-structured template gives each new document a better starting point; still check the content and the exported PDF each time. See <a href="accessible-meeting-agendas.html">how to make meeting agendas accessible</a>.</p>
 <div class="cta">
 <h2 style="margin-top:0">Rather have it done?</h2>
 <p>I rebuild documents and templates as tagged PDFs plus accessible web pages, checked against WCAG 2.1 AA, with a free 2-page sample first. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
 </div>
 <p class="note">Last reviewed November 2026. General information, not legal advice.</p>
+<h2>Sources</h2>
+<ul class="note">
+<li><a href="https://support.microsoft.com/en-us/accessibility/office-accessibility/create-accessible-pdfs">Create accessible PDFs (Microsoft)</a></li>
+<li><a href="https://support.microsoft.com/en-gb/accessibility/word/make-your-word-documents-accessible-to-people-with-disabilities">Make your Word documents accessible (Microsoft)</a></li>
+<li><a href="https://helpx.adobe.com/acrobat/using/accessibility-features-pdfs.html">Accessibility features in PDFs (Adobe)</a></li>
+</ul>
 </main>
 </body>
 </html>
