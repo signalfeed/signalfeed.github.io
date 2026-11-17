@@ -184,3 +184,34 @@ thead th { background: rgba(255,255,255,.04); }
   a.card:hover { transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- HUD / spacecraft layer ---------- */
+.mono { font-family: var(--mono); letter-spacing: .08em; text-transform: uppercase; font-size: 12px; color: var(--muted); }
+.hud { position: absolute; inset: 88px 24px 24px; pointer-events: none; z-index: 0; }
+.hud::before, .hud::after, .hud > i::before, .hud > i::after { content: ""; position: absolute; width: 22px; height: 22px; border: 1px solid rgba(143,176,255,.55); }
+.hud::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.hud::after { top: 0; right: 0; border-left: 0; border-bottom: 0; }
+.hud > i::before { bottom: 0; left: 0; border-right: 0; border-top: 0; }
+.hud > i::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.hud .tl, .hud .tr, .hud .bl, .hud .br { position: absolute; }
+.hud .tl { top: 6px; left: 34px; } .hud .tr { top: 6px; right: 34px; text-align: right; }
+.hud .bl { bottom: 6px; left: 34px; } .hud .br { bottom: 6px; right: 34px; text-align: right; }
+.hud .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); margin-right: 8px; vertical-align: 1px; animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+@media (max-width: 700px) { .hud .tr, .hud .br { display: none; } }
+.scan { position: absolute; left: 0; right: 0; height: 120px; top: -120px; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(111,240,210,.06) 70%, rgba(111,240,210,.18) 99%, transparent);
+  animation: scan 9s linear infinite; }
+@keyframes scan { to { transform: translateY(1100px); } }
+section.block::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image: linear-gradient(rgba(143,176,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(143,176,255,.045) 1px, transparent 1px);
+  background-size: 56px 56px; mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%); }
+.card { position: relative; }
+.card::before, .card::after { content: ""; position: absolute; width: 14px; height: 14px; border: 1px solid transparent; transition: border-color .25s; }
+.card::before { top: -1px; left: -1px; border-top-color: var(--accent-2); border-left-color: var(--accent-2); border-top-left-radius: var(--radius); }
+.card::after { bottom: -1px; right: -1px; border-bottom-color: var(--accent); border-right-color: var(--accent); border-bottom-right-radius: var(--radius); }
+.section-head .eyebrow::before, .eyebrow::before { width: 18px; }
+.statbar b { font-family: var(--font); }
+.statbar span { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; }
+.btn-primary { box-shadow: 0 0 0 1px rgba(255,255,255,.2), 0 0 24px rgba(143,176,255,.35); }
+@media (prefers-reduced-motion: reduce) { .scan, .hud .dot { animation: none; } .scan { display: none; } }

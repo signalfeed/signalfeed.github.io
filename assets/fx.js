@@ -11,6 +11,7 @@
     const ctx = canvas.getContext("2d");
     let w = 0, h = 0, dpr = 1, px = 0.5, py = 0.5, running = true, t0 = performance.now();
     const ROWS = 46, COLS = 120;
+    const stars = Array.from({ length: 220 }, () => ({ x: Math.random(), y: Math.random(), r: Math.random() * 1.1 + 0.2, d: Math.random() * 0.8 + 0.2, p: Math.random() * 6.28 }));
     const size = () => {
       dpr = Math.min(devicePixelRatio || 1, 2);
       w = canvas.clientWidth; h = canvas.clientHeight;
@@ -27,6 +28,13 @@
       const t = reduce ? 4 : (now - t0) / 1000;
       const s = Math.min(scrollY / Math.max(h, 1), 1.5);
       ctx.clearRect(0, 0, w, h);
+      for (const st of stars) {                                   // deep-space parallax
+        const sx = ((st.x + t * 0.004 * st.d) % 1) * w, sy = (st.y * h - scrollY * 0.15 * st.d + h) % h;
+        ctx.globalAlpha = (0.25 + 0.55 * st.d) * (0.6 + 0.4 * Math.sin(t * 1.3 + st.p));
+        ctx.fillStyle = st.d > 0.75 ? "#cfe0ff" : "#8fb0ff";
+        ctx.beginPath(); ctx.arc(sx, sy, st.r, 0, 6.283); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
       const horizon = h * (0.18 - s * 0.10), fov = Math.min(w, 1500) * 0.95;
       for (let r = ROWS - 1; r >= 0; r--) {
         const z = 0.35 + (r / ROWS) * 3.2;                       // depth
@@ -58,6 +66,10 @@
     });
     requestAnimationFrame(draw);
   }
+
+  // ---- Live UTC readout (real time, not decoration) ----
+  const utc = document.getElementById("utc");
+  if (utc) { const tick = () => { utc.textContent = "UTC " + new Date().toISOString().slice(11, 19); }; tick(); setInterval(tick, 1000); }
 
   // ---- Ribbons that bend with scroll ----
   const ribbons = [...document.querySelectorAll(".ribbon path")];
