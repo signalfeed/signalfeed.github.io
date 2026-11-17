@@ -97,6 +97,24 @@
   addEventListener("scroll", () => { if (!stageQueued) { stageQueued = true; requestAnimationFrame(paintStage); } }, { passive: true });
   addEventListener("resize", paintStage); paintStage();
 
+  // ---- Scrollytelling: laptop opens, tags appear, checks verify ----
+  const story = document.querySelector(".story");
+  if (story) {
+    const caps = [...story.querySelectorAll(".captions li")];
+    const clamp01 = v => Math.min(Math.max(v, 0), 1);
+    const run = () => {
+      let p = 1;
+      if (!reduce) { const r = story.getBoundingClientRect(); p = clamp01(-r.top / Math.max(r.height - innerHeight, 1)); }
+      const lid = clamp01(p / 0.3), tags = clamp01((p - 0.3) / 0.35), verify = clamp01((p - 0.62) / 0.3);
+      story.style.setProperty("--lid", lid.toFixed(3));
+      story.style.setProperty("--tags", tags.toFixed(3));
+      story.style.setProperty("--verify", verify.toFixed(3));
+      const step = p < 0.3 ? 0 : p < 0.62 ? 1 : 2;
+      caps.forEach((c, i) => c.classList.toggle("on", reduce ? true : i === step));
+    };
+    addEventListener("scroll", () => requestAnimationFrame(run), { passive: true }); addEventListener("resize", run); run();
+  }
+
   // ---- Live UTC readout (real time, not decoration) ----
   const utc = document.getElementById("utc");
   if (utc) { const tick = () => { utc.textContent = "UTC " + new Date().toISOString().slice(11, 19); }; tick(); setInterval(tick, 1000); }
