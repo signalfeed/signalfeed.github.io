@@ -67,6 +67,36 @@
     requestAnimationFrame(draw);
   }
 
+  // ---- Scroll-driven background stage ----
+  // Tones chosen so every text color on the site keeps WCAG AA contrast at every point of the blend.
+  const STOPS = [
+    { bg: [5, 7, 13],   glow: [37, 65, 178, .24],  glow2: [20, 150, 130, .10] },  // midnight blue
+    { bg: [9, 6, 22],   glow: [96, 58, 196, .22],  glow2: [37, 65, 178, .12] },   // deep violet
+    { bg: [3, 14, 17],  glow: [18, 140, 122, .20], glow2: [96, 58, 196, .10] },   // abyssal teal
+    { bg: [7, 8, 24],   glow: [90, 120, 230, .22], glow2: [18, 140, 122, .10] },  // indigo
+  ];
+  const stage = document.createElement("div"); stage.className = "bg-stage"; stage.setAttribute("aria-hidden", "true");
+  document.body.prepend(stage);
+  const mix = (a, b, k) => a.map((v, i) => v + (b[i] - v) * k);
+  const rgba = c => `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${c.length > 3 ? c[3].toFixed(3) : 1})`;
+  let stageQueued = false;
+  const paintStage = () => {
+    stageQueued = false;
+    const max = Math.max(document.documentElement.scrollHeight - innerHeight, 1);
+    const p = Math.min(Math.max(scrollY / max, 0), 1) * (STOPS.length - 1);
+    const i = Math.min(Math.floor(p), STOPS.length - 2), k = p - i;
+    const e = k * k * (3 - 2 * k);                                   // smoothstep between tones
+    const A = STOPS[i], B = STOPS[i + 1];
+    const st = stage.style;
+    st.setProperty("--stage", rgba(mix(A.bg, B.bg, e)));
+    st.setProperty("--glow", rgba(mix(A.glow, B.glow, e)));
+    st.setProperty("--glow2", rgba(mix(A.glow2, B.glow2, e)));
+    st.setProperty("--gx", (18 + 64 * (p / (STOPS.length - 1))).toFixed(1) + "%");
+    st.setProperty("--gy", (15 + 50 * Math.abs(Math.sin(p * 1.3))).toFixed(1) + "%");
+  };
+  addEventListener("scroll", () => { if (!stageQueued) { stageQueued = true; requestAnimationFrame(paintStage); } }, { passive: true });
+  addEventListener("resize", paintStage); paintStage();
+
   // ---- Live UTC readout (real time, not decoration) ----
   const utc = document.getElementById("utc");
   if (utc) { const tick = () => { utc.textContent = "UTC " + new Date().toISOString().slice(11, 19); }; tick(); setInterval(tick, 1000); }
