@@ -1,0 +1,89 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function walk(node, out) {
+  if (!node) return;
+  if (node.role) { out.roles[node.role] = (out.roles[node.role] || 0) + 1;
+    if (node.role === "Figure") { out.figures++; if (node.alt && node.alt.trim()) out.alts++; }
+    if (node.role === "Table") { out.tables++; if (hasRole(node, "TH")) out.tablesWithTH++; } }
+  if (node.lang) out.langs.add(node.lang);
+  (node.children || []).forEach(c => walk(c, out));
+}
+function hasRole(node, role) { return (node.children || []).some(c => c.role === role || hasRole(c, role)); }
+
+function findLang(bytes) {
+  // The catalog's /Lang is often uncompressed; when it is inside a compressed object stream we can't see it here.
+  const head = new TextDecoder("latin1").decode(bytes.subarray(0, Math.min(bytes.length, 4000000)));
+  const m = head.match(/\/Lang\s*\(([^)]{2,20})\)/) || head.match(/\/Lang\s*<([0-9A-Fa-f]{4,80})>/);
+  if (!m) return null;
+  if (/^[0-9A-Fa-f]+$/.test(m[1]) && m[0].includes("<")) {
+    let s = ""; const h = m[1].replace(/^FEFF/i, "");
+    for (let i = 0; i < h.length; i += 4) s += String.fromCharCode(parseInt(h.substr(i, 4), 16));
+    return s;
+  }
+  return m[1];
+}
+
+async function check(file) {
+  $("status").textContent = "Reading " + file.name + "...";
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  const lang = findLang(bytes);
+  let doc;
+  try { doc = await pdfjsLib.getDocument({data: bytes.slice()}).promise; }
+  catch (e) { $("status").textContent = "This file could not be opened as a PDF (" + e.name + ")."; return; }
+  const meta = await doc.getMetadata().catch(() => ({}));
+  const mark = await doc.getMarkInfo().catch(() => null);
+  const prefs = await (doc.getViewerPreferences ? doc.getViewerPreferences() : Promise.resolve(null)).catch(() => null);
+  const out = {roles: {}, figures: 0, alts: 0, tables: 0, tablesWithTH: 0, langs: new Set()};
+  let taggedPages = 0, lowTextImage = [], noTextPages = [], images = 0;
+  const pages = Math.min(doc.numPages, 300);
+  for (let i = 1; i <= pages; i++) {
+    $("status").textContent = "Checking page " + i + " of " + pages + "...";
+    const page = await doc.getPage(i);
+    const tree = await page.getStructTree().catch(() => null);
+    if (tree && tree.children && tree.children.length) { taggedPages++; walk(tree, out); }
+    const text = await page.getTextContent();
+    const words = text.items.map(t => t.str).join(" ").trim().split(/\s+/).filter(Boolean).length;
+    const ops = await page.getOperatorList();
+    const hasImg = ops.fnArray.some(f => f === pdfjsLib.OPS.paintImageXObject || f === pdfjsLib.OPS.paintJpegXObject || f === pdfjsLib.OPS.paintInlineImageXObject);
+    if (hasImg) images++;
+    if (hasImg && words <= 20) lowTextImage.push(i);
+    else if (words === 0) noTextPages.push(i);
+  }
+  const list = a => (a.length > 1 ? "Pages " : "Page ") + a.slice(0, 20).join(", ") + (a.length > 20 ? "..." : "");
+  const title = (meta.info && meta.info.Title || "").trim();
+  const headings = Object.keys(out.roles).filter(r => /^H\d?$|^Heading/.test(r)).reduce((a, r) => a + out.roles[r], 0);
+  const rows = [];
+  const add = (label, state, detail) => rows.push([label, state, detail]);
+  add("Structure tags", taggedPages === pages ? "ok" : "bad",
+      taggedPages === 0 ? "No structure tags detected on any checked page. A screen reader gets an unstructured stream of text; this usually needs remediation."
+      : "Structure tags detected on " + taggedPages + " of " + pages + " checked page(s)." + (taggedPages < pages ? " Untagged pages need remediation." : "") + " Tag correctness and reading order need manual review.");
+  add("Marked as tagged", mark && mark.Marked ? "ok" : (taggedPages ? "warn" : "bad"), mark && mark.Marked ? "MarkInfo flag found." : "The MarkInfo flag is missing.");
+  add("Document language", lang || out.langs.size ? "ok" : "warn", lang ? "Found: " + esc(lang) + "." : (out.langs.size ? "Found on content: " + esc([...out.langs].join(", ")) + "." : "Not found. It may be missing, or stored compressed where this tool can't see it; confirm in Acrobat or PAC."));
+  add("Document title", title ? "ok" : "bad", title ? "Found: “" + esc(title) + "”. Check that it describes the document." : "No title in the metadata, so readers announce the file name.");
+  add("Title shown instead of file name", prefs && prefs.DisplayDocTitle ? "ok" : "warn", prefs && prefs.DisplayDocTitle ? "DisplayDocTitle is set." : "DisplayDocTitle is not set (PDF/UA expects it).");
+  add("Possible scanned pages", lowTextImage.length ? "bad" : "ok",
+      lowTextImage.length ? list(lowTextImage) + ": images with little or no extractable text. They may be scans that need OCR and tagging."
+      : "No image-heavy, low-text pages detected by this heuristic. It doesn't test whether OCR text is complete or accurate.");
+  if (noTextPages.length) add("Pages with no text", "warn", list(noTextPages) + ": no extractable text. Fine if blank or decorative; otherwise review them.");
+  add("Heading tags", headings ? "ok" : (taggedPages ? "warn" : "bad"), headings ? headings + " heading tag(s) detected. Check that levels and wording match the document's outline." : "No heading tags detected, so readers can't navigate by section.");
+  add("Figure alt text", out.figures ? (out.alts === out.figures ? "ok" : "bad") : (images ? "warn" : "ok"),
+      out.figures ? out.alts + " of " + out.figures + " figure tag(s) have alt text. Check that each description conveys the right information."
+      : (images ? "Images are present but none are tagged as figures; check whether they are decorative." : "No images found."));
+  add("Table header tags", out.tables ? (out.tablesWithTH === out.tables ? "warn" : "bad") : "ok",
+      out.tables ? out.tablesWithTH + " of " + out.tables + " table(s) contain header cell tags." + (out.tablesWithTH < out.tables ? " Tables without headers need fixing." : "") + " Header-to-cell relationships need manual review."
+      : "No table tags detected.");
+  const icon = {ok: "Found", bad: "Problem", warn: "Review"};
+  const fails = rows.filter(r => r[1] === "bad").length, reviews = rows.filter(r => r[1] === "warn").length;
+  $("results").innerHTML = "<h2>Results for " + esc(file.name) + "</h2><p>" + doc.numPages + " page(s)" + (doc.numPages > pages ? ", first " + pages + " checked" : "") + ". " +
+    "<span class='" + (fails ? "bad" : "ok") + "'>" + fails + " potential problem(s) flagged.</span> " + reviews + " item(s) need review. " +
+    "These basic signals do not establish that the PDF is accessible; reading order, tag correctness and descriptions need a person and a screen reader." +
+    "</p><table><caption class='note' style='text-align:left'>Basic structural signals</caption><thead><tr><th scope='col'>Signal</th><th scope='col'>Result</th><th scope='col'>Details</th></tr></thead><tbody>" +
+    rows.map(r => "<tr><th scope='row'>" + r[0] + "</th><td class='" + r[1] + "'>" + icon[r[1]] + "</td><td>" + r[2] + "</td></tr>").join("") + "</tbody></table>";
+  $("status").textContent = "Done: " + file.name + ".";
+}
+$("file").addEventListener("change", e => { const f = e.target.files[0]; if (f) check(f).catch(err => { $("status").textContent = "Something went wrong: " + err.message; }); });
+</script>

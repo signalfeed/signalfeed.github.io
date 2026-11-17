@@ -6,22 +6,32 @@
 <title>How to make budget tables accessible in PDF and HTML</title>
 <meta name="description" content="A checklist for readable budget tables, meaningful headers and matching PDF and web versions.">
 <link rel="canonical" href="https://arabinowe.github.io/pdf-accessibility/accessible-budget-tables.html">
-<style>
-:root{--bg:#fff;--fg:#14213d;--muted:#475569;--line:#cbd5e1;--accent:#1e3a8a;--card:#f8fafc}
-@media (prefers-color-scheme:dark){:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--line:#334155;--accent:#93c5fd;--card:#1e293b}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 4rem}a{color:var(--accent)}
-h1{font-size:1.9rem;line-height:1.25}h2{font-size:1.3rem;margin-top:2.2rem}h3{font-size:1.1rem}
-table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:var(--card)}
-.note{color:var(--muted);font-size:.95rem}.cta{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;background:var(--card);margin-top:2rem}
-.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.5rem}
-</style>
+<meta property="og:title" content="How to make budget tables accessible in PDF and HTML">
+<meta property="og:description" content="A checklist for readable budget tables, meaningful headers and matching PDF and web versions.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#05070d">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="./" aria-label="SignalFeed home"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg><span>SignalFeed</span></a>
+<nav class="nav" aria-label="Main">
+<a class="hide-sm" href="./#services">Services</a>
+<a class="hide-sm" href="./#checker">Free checker</a>
+<a class="hide-sm" href="./#guides">Guides</a>
+<a class="btn btn-primary" href="mailto:aaron.signalfeed@gmail.com?subject=Free%202-page%20sample">Get a free sample</a>
+</nav></div></header>
 <main id="main">
-<p class="note"><a href="./">Free PDF accessibility quick check</a> · <a href="accessible-meeting-agendas.html">Accessible meeting agendas</a> · <a href="title-ii-pdf-guide.html">ADA Title II guide</a></p>
+<div class="article-head"><div class="wrap">
+<p class="crumbs"><a href="./">SignalFeed</a> / <a href="./#guides">Guides</a> / How-to</p>
 <h1>How to make budget tables accessible in PDF and HTML</h1>
+<p class="article-meta">How-to · Last reviewed November 2026 · Sources linked inline</p>
+</div></div>
+<div class="wrap article">
+<article class="prose">
 <p>A reader needs to know what each budget number represents. A table should identify its row and column headers so assistive technology can associate each value with the right labels. W3C recommends captions to identify tables and explicit header relationships where needed. <a href="https://www.w3.org/WAI/tutorials/tables/">W3C tables tutorial</a></p>
 <h2>Make the table easier to follow</h2>
 <p>Begin with the approved spreadsheet or report. For a simple budget comparison, use columns such as “Department,” “2026 adopted budget” and “2027 proposed budget.” State the units clearly: dollars, thousands of dollars or another unit.</p>
@@ -46,7 +56,22 @@ table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);pad
 <h2 style="margin-top:0">Rather have it done?</h2>
 <p>I rebuild documents as tagged PDFs plus accessible web pages, checked against WCAG 2.1 AA, with a free 2-page sample first. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
 </div>
-<p class="note">Last reviewed November 2026. General information, not legal advice.</p>
+
+</article>
+<aside class="aside" aria-label="Related">
+<div class="card"><h2>Free tool</h2><p>Check any PDF for basic structural warning signs. It runs in your browser; nothing is uploaded.</p><a class="btn btn-ghost" href="./#checker">Open the checker</a></div>
+<div class="card"><h2>More guides</h2><ul><li><a href="title-ii-pdf-guide.html">ADA Title II and your PDFs</a></li><li><a href="section-504-patient-pdfs.html">HHS Section 504 and patient PDFs</a></li><li><a href="accessible-word-to-pdf.html">Word to accessible PDF, step by step</a></li><li><a href="accessible-meeting-agendas.html">Accessible meeting agendas and minutes</a></li><li><a href="scanned-minutes-accessible.html">Making scanned minutes accessible</a></li><li><a href="online-store-accessibility-checklist.html">Online store accessibility checklist</a></li></ul></div>
+</aside>
+</div>
 </main>
+<footer class="site-footer"><div class="wrap">
+<div><a class="brand" href="./"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg><span>SignalFeed</span></a><p>Document accessibility and clean data. Careful human review, honest reports.</p></div>
+<nav aria-label="Footer">
+<a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a>
+<a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire on Upwork</a><a href="mailto:aaron.signalfeed@gmail.com">Email</a>
+</nav>
+<p style="flex-basis:100%;margin:0">General information, not legal advice. We don&#39;t issue compliance certificates; we report exactly what was checked.</p>
+</div></footer>
+<script src="assets/fx.js" defer></script>
 </body>
 </html>

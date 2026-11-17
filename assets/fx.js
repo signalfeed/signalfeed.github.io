@@ -1,0 +1,86 @@
+// SignalFeed motion layer: a perspective "signal field" that bends with time, pointer and scroll,
+// SVG ribbons that warp as you scroll, and reveal-on-scroll. Honors prefers-reduced-motion.
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let scrollY = window.scrollY;
+  addEventListener("scroll", () => { scrollY = window.scrollY; }, { passive: true });
+
+  // ---- Signal field ----
+  const canvas = document.getElementById("field");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    let w = 0, h = 0, dpr = 1, px = 0.5, py = 0.5, running = true, t0 = performance.now();
+    const ROWS = 46, COLS = 120;
+    const size = () => {
+      dpr = Math.min(devicePixelRatio || 1, 2);
+      w = canvas.clientWidth; h = canvas.clientHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    size(); addEventListener("resize", size);
+    addEventListener("pointermove", e => { px = e.clientX / innerWidth; py = e.clientY / innerHeight; }, { passive: true });
+    const height = (x, z, t, s) =>
+      Math.sin(x * 2.1 + t * 0.55 + z * 0.9) * 0.42 +
+      Math.sin(x * 4.3 - t * 0.35 + z * 2.2) * 0.18 +
+      Math.cos(z * 3.1 + t * 0.4 + s * 3.0) * 0.30 +
+      Math.exp(-((x - (px - 0.5) * 3) ** 2 + (z - 1.2) ** 2) * 1.6) * (0.9 - py * 0.6);
+    const draw = now => {
+      const t = reduce ? 4 : (now - t0) / 1000;
+      const s = Math.min(scrollY / Math.max(h, 1), 1.5);
+      ctx.clearRect(0, 0, w, h);
+      const horizon = h * (0.18 - s * 0.10), fov = Math.min(w, 1500) * 0.95;
+      for (let r = ROWS - 1; r >= 0; r--) {
+        const z = 0.35 + (r / ROWS) * 3.2;                       // depth
+        const depth = 1 - r / ROWS;
+        ctx.beginPath();
+        for (let c = 0; c <= COLS; c++) {
+          const x = (c / COLS - 0.5) * 6;
+          const y = height(x, z, t, s) * (1 + s * 1.6);          // the field bends harder as you scroll
+          const sx = w * 0.62 + (x * fov) / (z + 1.2);
+          const sy = horizon + ((1.6 - y * 0.55) * fov * 0.32) / (z + 0.4);
+          c ? ctx.lineTo(sx, sy) : ctx.moveTo(sx, sy);
+        }
+        const g = ctx.createLinearGradient(0, 0, w, 0);
+        const a = 0.16 + depth * 0.7;
+        g.addColorStop(0, `rgba(143,176,255,0)`);
+        g.addColorStop(0.25, `rgba(143,176,255,${a})`);
+        g.addColorStop(0.7, `rgba(111,240,210,${a * 0.9})`);
+        g.addColorStop(1, `rgba(111,240,210,0)`);
+        ctx.strokeStyle = g; ctx.lineWidth = 0.7 + depth * 1.3; ctx.stroke();
+      }
+      if (!reduce && running) requestAnimationFrame(draw);
+    };
+    new IntersectionObserver(([e]) => {
+      const was = running; running = e.isIntersecting;
+      if (running && !was && !reduce) requestAnimationFrame(draw);
+    }).observe(canvas);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) running = false; else if (!reduce) { running = true; requestAnimationFrame(draw); }
+    });
+    requestAnimationFrame(draw);
+  }
+
+  // ---- Ribbons that bend with scroll ----
+  const ribbons = [...document.querySelectorAll(".ribbon path")];
+  const bend = () => {
+    for (const [i, p] of ribbons.entries()) {
+      const box = p.ownerSVGElement.getBoundingClientRect();
+      const k = reduce ? 0 : (box.top + box.height / 2 - innerHeight / 2) / innerHeight;  // -1..1 across the viewport
+      const amp = 70 * k * (i % 2 ? -1 : 1), off = i * 14;
+      p.setAttribute("d", `M0 ${100 + off} C 300 ${100 + off + amp} 500 ${100 + off - amp * 1.4} 800 ${100 + off} S 1300 ${100 + off + amp} 1600 ${100 + off}`);
+    }
+    if (!reduce) requestAnimationFrame(bend);
+  };
+  if (ribbons.length) bend();
+
+  // ---- Reveal on scroll (position check; content stays visible if this script never runs) ----
+  const pending = new Set(document.querySelectorAll(".reveal"));
+  const reveal = () => {
+    for (const el of pending) {
+      const r = el.getBoundingClientRect();
+      if (r.top < innerHeight * 0.92 && r.bottom > 0) { el.classList.add("in"); pending.delete(el); }
+    }
+  };
+  document.documentElement.classList.add("fx");
+  addEventListener("scroll", reveal, { passive: true }); addEventListener("resize", reveal);
+  reveal(); setTimeout(reveal, 300);
+})();
