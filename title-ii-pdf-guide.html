@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADA Title II and Your PDFs: Deadlines, Exceptions and a Checklist</title>
+<meta name="description" content="A plain-English guide for towns, counties, school districts, libraries and special districts: which PDFs the ADA Title II web rule covers, the 2027 and 2028 deadlines, the exceptions, and how to fix a backlog.">
+<link rel="canonical" href="https://arabinowe.github.io/pdf-accessibility/title-ii-pdf-guide.html">
+<style>
+:root{--bg:#fff;--fg:#14213d;--muted:#475569;--line:#cbd5e1;--accent:#1e3a8a;--card:#f8fafc}
+@media (prefers-color-scheme:dark){:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--line:#334155;--accent:#93c5fd;--card:#1e293b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 4rem}a{color:var(--accent)}
+h1{font-size:1.9rem;line-height:1.25}h2{font-size:1.3rem;margin-top:2.2rem}h3{font-size:1.1rem}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:var(--card)}
+.note{color:var(--muted);font-size:.95rem}.cta{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;background:var(--card);margin-top:2rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.5rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+<p class="note"><a href="./">Free PDF accessibility quick check</a></p>
+<h1>ADA Title II and your PDFs: deadlines, exceptions and a checklist</h1>
+<p>The Department of Justice's 2024 rule under Title II of the ADA (28 CFR part 35, subpart H) requires state and local governments to make their web content and mobile apps meet <strong>WCAG 2.1 Level AA</strong>. That includes the PDFs, Word files and spreadsheets they post. This page explains what that means for a small public body's document library, in plain English.</p>
+<p class="note">This is general information, not legal advice. Check the current rule text and talk to your attorney or ADA coordinator about your situation.</p>
+
+<h2>Who is covered and when</h2>
+<p>Every state and local government entity is covered: cities, towns, villages, counties, public school districts, public colleges, libraries, transit agencies, courts, and special districts such as water, sewer, fire, park and hospital districts. In April 2026 the DOJ issued an interim final rule pushing the compliance dates back one year:</p>
+<table>
+<caption class="note" style="text-align:left">Compliance dates after the April 2026 extension</caption>
+<thead><tr><th scope="col">Entity</th><th scope="col">Compliance date</th></tr></thead>
+<tbody>
+<tr><th scope="row">Population of 50,000 or more</th><td>April 26, 2027</td></tr>
+<tr><th scope="row">Population under 50,000, and all special district governments</th><td>April 26, 2028</td></tr>
+</tbody>
+</table>
+<p>The extension changed the dates, not the standard. The general duty to make services accessible to people with disabilities applies already, regardless of the dates.</p>
+
+<h2>Which documents are covered</h2>
+<p>Anything you post on your website or apps going forward, including meeting agendas, minutes, packets, public notices, budgets, annual reports, newsletters, maps, applications and forms. There are exceptions in 28 CFR 35.201, and two of them matter most for document libraries:</p>
+<h3>Preexisting conventional electronic documents</h3>
+<p>Word, PDF, presentation and spreadsheet files posted <em>before</em> your compliance date generally don't have to be fixed, <strong>unless they are currently used to apply for, access or take part in your services</strong>. A 2019 permit application that people still download is covered; last decade's minutes usually are not.</p>
+<h3>Archived web content</h3>
+<p>Old content kept only for reference, research or recordkeeping, not changed since it was archived, and kept in a clearly marked archive area. All four parts of the definition must hold.</p>
+<p>Exceptions don't apply if someone with a disability asks for a document; you still owe them an accessible version in a timely way. And anything you post or update after the compliance date has to conform.</p>
+
+<h2>A practical plan for a document backlog</h2>
+<ol>
+<li><strong>Inventory.</strong> List every document on the site with its posting date and whether people use it to get a service (forms, applications, current fees, schedules, notices).</li>
+<li><strong>Triage.</strong> Fix documents people use to access services first, then everything new. Move true archive material to a clearly labeled archive section.</li>
+<li><strong>Fix the template, not just the files.</strong> Most new PDFs come from Word. A Word template with real heading styles, alt text habits and a set document title makes future exports nearly accessible by default.</li>
+<li><strong>Consider HTML instead of PDF.</strong> Agendas, notices and short reports are often easier to make accessible, and easier to read on a phone, as a web page.</li>
+<li><strong>Check, then check by hand.</strong> Automated checkers catch missing tags, titles and alt text; a person has to confirm the reading order, table headers and that alt text says something useful.</li>
+</ol>
+
+<h2>The checklist a PDF has to pass</h2>
+<ul>
+<li>It is a <strong>tagged PDF</strong> with a structure tree, not just an image or untagged text.</li>
+<li>The <strong>document language</strong> is set, and the <strong>title</strong> is set and shown instead of the file name.</li>
+<li><strong>Headings</strong> are tagged in order (one top-level heading, no skipped levels).</li>
+<li><strong>Lists</strong> are tagged as lists; <strong>tables</strong> have header cells, and simple layouts don't use tables.</li>
+<li>Every informative <strong>image, chart and map has alt text</strong> that gives its information; decorative images are marked as artifacts.</li>
+<li>The <strong>reading order</strong> matches the visual order, including multi-column pages.</li>
+<li>Text has enough <strong>contrast</strong>, and color is never the only way information is shown.</li>
+<li><strong>Scanned pages</strong> are OCR'd into real text and tagged.</li>
+<li><strong>Forms</strong> have labeled, keyboard-reachable fields.</li>
+<li><strong>Links</strong> describe where they go.</li>
+</ul>
+<p>Try the <a href="./">free quick check</a> on one of your PDFs to see which of the basics it already has. It runs in your browser and doesn't upload the file.</p>
+
+<div class="cta">
+<h2 style="margin-top:0">Want the backlog done for you?</h2>
+<p>I rebuild documents as tagged PDFs plus accessible web pages, checked against WCAG 2.1 AA by automated pre-checks and a manual checklist. A free 2-page sample comes first, so you can verify the result in your own checker. Typical pricing is a few dollars a page. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
+</div>
+
+<h2>Sources</h2>
+<ul class="note">
+<li><a href="https://www.ecfr.gov/current/title-28/chapter-I/part-35/subpart-H">28 CFR part 35, subpart H (eCFR)</a>, including the exceptions in <a href="https://www.ecfr.gov/current/title-28/chapter-I/part-35/subpart-H/section-35.201">35.201</a></li>
+<li><a href="https://www.ada.gov/resources/2024-03-08-web-rule/">ADA.gov fact sheet on the web rule</a></li>
+<li><a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 (W3C)</a></li>
+</ul>
+<p class="note">Last reviewed November 2026.</p>
+</main>
+</body>
+</html>
