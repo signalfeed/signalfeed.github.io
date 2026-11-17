@@ -25,7 +25,7 @@ th{background:var(--card)}.ok{color:var(--ok);font-weight:700}.bad{color:var(--b
 <a class="skip" href="#main">Skip to content</a>
 <main id="main">
 <h1>Free PDF accessibility quick check</h1>
-<p>Pick a PDF to see whether it has the basics a screen reader needs: tags, a document language, a real title, a text layer, headings and alt text on images. These are the first things checked under <a href="title-ii-pdf-guide.html">ADA Title II and WCAG 2.1 AA</a>.</p>
+<p>Pick a PDF to look for basic structural warning signs: missing tags, language, title, headings, alt text and table headers, and pages that may be scans. These are the first things checked under <a href="title-ii-pdf-guide.html">ADA Title II and WCAG 2.1 AA</a>.</p>
 <p><strong>Private by design:</strong> the file is read by your own browser. Nothing is uploaded.</p>
 
 <div class="drop">
@@ -56,10 +56,12 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":
 function walk(node, out) {
   if (!node) return;
   if (node.role) { out.roles[node.role] = (out.roles[node.role] || 0) + 1;
-    if (node.role === "Figure") { out.figures++; if (node.alt && node.alt.trim()) out.alts++; } }
+    if (node.role === "Figure") { out.figures++; if (node.alt && node.alt.trim()) out.alts++; }
+    if (node.role === "Table") { out.tables++; if (hasRole(node, "TH")) out.tablesWithTH++; } }
   if (node.lang) out.langs.add(node.lang);
   (node.children || []).forEach(c => walk(c, out));
 }
+function hasRole(node, role) { return (node.children || []).some(c => c.role === role || hasRole(c, role)); }
 
 function findLang(bytes) {
   // The catalog's /Lang is often uncompressed; when it is inside a compressed object stream we can't see it here.
@@ -84,41 +86,51 @@ async function check(file) {
   const meta = await doc.getMetadata().catch(() => ({}));
   const mark = await doc.getMarkInfo().catch(() => null);
   const prefs = await (doc.getViewerPreferences ? doc.getViewerPreferences() : Promise.resolve(null)).catch(() => null);
-  const out = {roles: {}, figures: 0, alts: 0, langs: new Set()};
-  let tagged = false, noText = [], images = 0;
+  const out = {roles: {}, figures: 0, alts: 0, tables: 0, tablesWithTH: 0, langs: new Set()};
+  let taggedPages = 0, lowTextImage = [], noTextPages = [], images = 0;
   const pages = Math.min(doc.numPages, 300);
   for (let i = 1; i <= pages; i++) {
     $("status").textContent = "Checking page " + i + " of " + pages + "...";
     const page = await doc.getPage(i);
     const tree = await page.getStructTree().catch(() => null);
-    if (tree && tree.children && tree.children.length) { tagged = true; walk(tree, out); }
+    if (tree && tree.children && tree.children.length) { taggedPages++; walk(tree, out); }
     const text = await page.getTextContent();
     const words = text.items.map(t => t.str).join(" ").trim().split(/\s+/).filter(Boolean).length;
     const ops = await page.getOperatorList();
     const hasImg = ops.fnArray.some(f => f === pdfjsLib.OPS.paintImageXObject || f === pdfjsLib.OPS.paintJpegXObject || f === pdfjsLib.OPS.paintInlineImageXObject);
     if (hasImg) images++;
-    if (words < 5 && hasImg) noText.push(i);
+    if (hasImg && words <= 20) lowTextImage.push(i);
+    else if (words === 0) noTextPages.push(i);
   }
+  const list = a => (a.length > 1 ? "Pages " : "Page ") + a.slice(0, 20).join(", ") + (a.length > 20 ? "..." : "");
   const title = (meta.info && meta.info.Title || "").trim();
   const headings = Object.keys(out.roles).filter(r => /^H\d?$|^Heading/.test(r)).reduce((a, r) => a + out.roles[r], 0);
-  const tables = out.roles.Table || 0, ths = out.roles.TH || 0;
   const rows = [];
   const add = (label, state, detail) => rows.push([label, state, detail]);
-  add("Tagged PDF (has a structure tree)", tagged ? "ok" : "bad", tagged ? "Yes. Screen readers have a structure to follow." : "No tags. A screen reader gets an unstructured stream of text. This usually needs remediation.");
-  add("Marked as tagged", mark && mark.Marked ? "ok" : (tagged ? "warn" : "bad"), mark && mark.Marked ? "Yes." : "The MarkInfo flag is missing.");
-  add("Document language", lang || out.langs.size ? "ok" : "warn", lang ? "Set to " + esc(lang) + "." : (out.langs.size ? "Set on content: " + esc([...out.langs].join(", ")) + "." : "Not found. It may be missing, or stored compressed where this tool can't see it; confirm in Acrobat or PAC."));
-  add("Document title", title ? "ok" : "bad", title ? "“" + esc(title) + "”" : "No title in the metadata, so readers announce the file name.");
-  add("Title shown instead of file name", prefs && prefs.DisplayDocTitle ? "ok" : "warn", prefs && prefs.DisplayDocTitle ? "Yes." : "DisplayDocTitle is not set (a WCAG/PDF-UA requirement).");
-  add("Scanned pages without text", noText.length ? "bad" : "ok", noText.length ? "Pages " + noText.slice(0, 20).join(", ") + (noText.length > 20 ? "..." : "") + " look like images with no text layer. They need OCR and tagging." : "Every page has a text layer.");
-  add("Headings", headings ? "ok" : (tagged ? "warn" : "bad"), headings ? headings + " heading tag(s)." : "No heading tags, so readers can't navigate by section.");
-  add("Images with alt text", out.figures ? (out.alts === out.figures ? "ok" : "bad") : (images ? "warn" : "ok"),
-      out.figures ? out.alts + " of " + out.figures + " figure tag(s) have alt text." : (images ? "Images are present but none are tagged as figures; check whether they are decorative." : "No images found."));
-  add("Tables with header cells", tables ? (ths ? "ok" : "bad") : "ok", tables ? (ths ? ths + " header cell(s) across " + tables + " table tag(s)." : "Tables have no header cells.") : "No table tags found.");
-  const icon = {ok: "Pass", bad: "Fail", warn: "Check"};
-  const fails = rows.filter(r => r[1] === "bad").length;
+  add("Structure tags", taggedPages === pages ? "ok" : "bad",
+      taggedPages === 0 ? "No structure tags detected on any checked page. A screen reader gets an unstructured stream of text; this usually needs remediation."
+      : "Structure tags detected on " + taggedPages + " of " + pages + " checked page(s)." + (taggedPages < pages ? " Untagged pages need remediation." : "") + " Tag correctness and reading order need manual review.");
+  add("Marked as tagged", mark && mark.Marked ? "ok" : (taggedPages ? "warn" : "bad"), mark && mark.Marked ? "MarkInfo flag found." : "The MarkInfo flag is missing.");
+  add("Document language", lang || out.langs.size ? "ok" : "warn", lang ? "Found: " + esc(lang) + "." : (out.langs.size ? "Found on content: " + esc([...out.langs].join(", ")) + "." : "Not found. It may be missing, or stored compressed where this tool can't see it; confirm in Acrobat or PAC."));
+  add("Document title", title ? "ok" : "bad", title ? "Found: “" + esc(title) + "”. Check that it describes the document." : "No title in the metadata, so readers announce the file name.");
+  add("Title shown instead of file name", prefs && prefs.DisplayDocTitle ? "ok" : "warn", prefs && prefs.DisplayDocTitle ? "DisplayDocTitle is set." : "DisplayDocTitle is not set (PDF/UA expects it).");
+  add("Possible scanned pages", lowTextImage.length ? "bad" : "ok",
+      lowTextImage.length ? list(lowTextImage) + ": images with little or no extractable text. They may be scans that need OCR and tagging."
+      : "No image-heavy, low-text pages detected by this heuristic. It doesn't test whether OCR text is complete or accurate.");
+  if (noTextPages.length) add("Pages with no text", "warn", list(noTextPages) + ": no extractable text. Fine if blank or decorative; otherwise review them.");
+  add("Heading tags", headings ? "ok" : (taggedPages ? "warn" : "bad"), headings ? headings + " heading tag(s) detected. Check that levels and wording match the document's outline." : "No heading tags detected, so readers can't navigate by section.");
+  add("Figure alt text", out.figures ? (out.alts === out.figures ? "ok" : "bad") : (images ? "warn" : "ok"),
+      out.figures ? out.alts + " of " + out.figures + " figure tag(s) have alt text. Check that each description conveys the right information."
+      : (images ? "Images are present but none are tagged as figures; check whether they are decorative." : "No images found."));
+  add("Table header tags", out.tables ? (out.tablesWithTH === out.tables ? "warn" : "bad") : "ok",
+      out.tables ? out.tablesWithTH + " of " + out.tables + " table(s) contain header cell tags." + (out.tablesWithTH < out.tables ? " Tables without headers need fixing." : "") + " Header-to-cell relationships need manual review."
+      : "No table tags detected.");
+  const icon = {ok: "Found", bad: "Problem", warn: "Review"};
+  const fails = rows.filter(r => r[1] === "bad").length, reviews = rows.filter(r => r[1] === "warn").length;
   $("results").innerHTML = "<h2>Results for " + esc(file.name) + "</h2><p>" + doc.numPages + " page(s)" + (doc.numPages > pages ? ", first " + pages + " checked" : "") + ". " +
-    (fails ? "<span class='bad'>" + fails + " problem(s) found.</span>" : "<span class='ok'>No basic problems found.</span> A manual review is still needed.") +
-    "</p><table><caption class='note' style='text-align:left'>Basic accessibility checks</caption><thead><tr><th scope='col'>Check</th><th scope='col'>Result</th><th scope='col'>Details</th></tr></thead><tbody>" +
+    "<span class='" + (fails ? "bad" : "ok") + "'>" + fails + " potential problem(s) flagged.</span> " + reviews + " item(s) need review. " +
+    "These basic signals do not establish that the PDF is accessible; reading order, tag correctness and descriptions need a person and a screen reader." +
+    "</p><table><caption class='note' style='text-align:left'>Basic structural signals</caption><thead><tr><th scope='col'>Signal</th><th scope='col'>Result</th><th scope='col'>Details</th></tr></thead><tbody>" +
     rows.map(r => "<tr><th scope='row'>" + r[0] + "</th><td class='" + r[1] + "'>" + icon[r[1]] + "</td><td>" + r[2] + "</td></tr>").join("") + "</tbody></table>";
   $("status").textContent = "Done: " + file.name + ".";
 }
