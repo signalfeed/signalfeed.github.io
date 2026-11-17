@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to make scanned meeting minutes accessible</title>
+<meta name="description" content="Turn scanned minutes into usable text, preserve the approved record and check the resulting PDF.">
+<link rel="canonical" href="https://arabinowe.github.io/pdf-accessibility/scanned-minutes-accessible.html">
+<style>
+:root{--bg:#fff;--fg:#14213d;--muted:#475569;--line:#cbd5e1;--accent:#1e3a8a;--card:#f8fafc}
+@media (prefers-color-scheme:dark){:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--line:#334155;--accent:#93c5fd;--card:#1e293b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 4rem}a{color:var(--accent)}
+h1{font-size:1.9rem;line-height:1.25}h2{font-size:1.3rem;margin-top:2.2rem}h3{font-size:1.1rem}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:var(--card)}
+.note{color:var(--muted);font-size:.95rem}.cta{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;background:var(--card);margin-top:2rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.5rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+<p class="note"><a href="./">Free PDF accessibility quick check</a> · <a href="accessible-meeting-agendas.html">Accessible meeting agendas</a> · <a href="title-ii-pdf-guide.html">ADA Title II guide</a></p>
+<h1>How to make scanned meeting minutes accessible</h1>
+<p>A scan can look perfectly readable while containing only pictures of words. Optical character recognition, or OCR, creates a text layer. That is a starting point: the resulting text still needs verification and accessible structure. <a href="https://www.ssa.gov/accessibility/checklists/PDF_508_Compliance_Checklist.pdf">Social Security Administration PDF testing guide</a></p>
+<h2>Find the best source</h2>
+<p>First ask whether an approved Word file or other editable source exists. Rebuilding from that source can avoid cleaning up recognition errors introduced by scanning. If only the scan remains, keep an unchanged original and work on a copy. Section508.gov describes OCR as the step needed when a PDF lacks readable text. <a href="https://www.section508.gov/training/pdfs/aed-cop-pdf02/">PDF testing guidance</a></p>
+<p>Run OCR with the correct document language. Then compare the recognized text with the visible pages. Pay particular attention to names, motion numbers, votes, dates, dollar amounts and words such as “not.” Do not let an AI system guess an illegible vote or silently rewrite the approved minutes; flag uncertainty for the records owner.</p>
+<h2>Add structure after correcting the text</h2>
+<p>Organize the document with headings for meeting sections, real lists where appropriate and correct tags for tables. Set its title and language, and check reading order. A screen reader should encounter the content in an order that preserves its meaning. <a href="https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140408/pdf.html">W3C PDF techniques, including OCR, headings and reading order</a></p>
+<p>A selectable sentence does not prove the whole file is accessible. You can use the <a href="https://arabinowe.github.io/pdf-accessibility/">free SignalFeed PDF quick check</a> for initial flags, then examine the file with a validator and assistive technology. The quick check cannot judge the accuracy of your minutes or whether reading order makes sense. <a href="https://arabinowe.github.io/pdf-accessibility/">Quick-check scope</a></p>
+<h2>Review checklist</h2>
+<ul>
+<li>Preserve the original and identify the approved source.</li>
+<li>Compare OCR text with every page, including handwritten additions.</li>
+<li>Verify names, numbers, vote outcomes and negations separately.</li>
+<li>Flag illegible passages for the records owner.</li>
+<li>Check headings, lists, tables, title, language and reading order.</li>
+<li>Listen to the final PDF with a screen reader and inspect any missing or repeated content.</li>
+<li>Have the records owner approve the rebuilt version before publication.</li>
+</ul>
+<p>This workflow recommends how to prepare and review a usable document. It does not decide whether an original record may be replaced or whether a particular file qualifies for a legal exception.</p>
+<div class="cta">
+<h2 style="margin-top:0">Rather have it done?</h2>
+<p>I rebuild documents as tagged PDFs plus accessible web pages, checked against WCAG 2.1 AA, with a free 2-page sample first. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
+</div>
+<p class="note">Last reviewed November 2026. General information, not legal advice.</p>
+</main>
+</body>
+</html>

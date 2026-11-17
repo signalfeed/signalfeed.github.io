@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to make budget tables accessible in PDF and HTML</title>
+<meta name="description" content="A checklist for readable budget tables, meaningful headers and matching PDF and web versions.">
+<link rel="canonical" href="https://arabinowe.github.io/pdf-accessibility/accessible-budget-tables.html">
+<style>
+:root{--bg:#fff;--fg:#14213d;--muted:#475569;--line:#cbd5e1;--accent:#1e3a8a;--card:#f8fafc}
+@media (prefers-color-scheme:dark){:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--line:#334155;--accent:#93c5fd;--card:#1e293b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 4rem}a{color:var(--accent)}
+h1{font-size:1.9rem;line-height:1.25}h2{font-size:1.3rem;margin-top:2.2rem}h3{font-size:1.1rem}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:var(--card)}
+.note{color:var(--muted);font-size:.95rem}.cta{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;background:var(--card);margin-top:2rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);padding:.5rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+<p class="note"><a href="./">Free PDF accessibility quick check</a> · <a href="accessible-meeting-agendas.html">Accessible meeting agendas</a> · <a href="title-ii-pdf-guide.html">ADA Title II guide</a></p>
+<h1>How to make budget tables accessible in PDF and HTML</h1>
+<p>A reader needs to know what each budget number represents. A table should identify its row and column headers so assistive technology can associate each value with the right labels. W3C recommends captions to identify tables and explicit header relationships where needed. <a href="https://www.w3.org/WAI/tutorials/tables/">W3C tables tutorial</a></p>
+<h2>Make the table easier to follow</h2>
+<p>Begin with the approved spreadsheet or report. For a simple budget comparison, use columns such as “Department,” “2026 adopted budget” and “2027 proposed budget.” State the units clearly: dollars, thousands of dollars or another unit.</p>
+<p>Avoid using a table just to arrange unrelated text on a page. If one table contains several independent sections, consider splitting it into smaller tables with clear captions. Complex headers need careful associations; changing the visual layout alone does not create them. <a href="https://www.w3.org/WAI/tutorials/tables/">W3C tables tutorial</a></p>
+<p>For an HTML version, use actual table markup and mark header cells as headers. Your website editor may offer these controls without requiring code. For a PDF version, inspect the exported table tags and their header associations. Export can lose structure, so check the output rather than assuming the source’s settings survived. <a href="https://www.w3.org/WAI/tutorials/tables/">W3C tables tutorial</a> · <a href="https://www.section508.gov/training/pdfs/aed-cop-pdf03/">Section508.gov remediation guidance</a></p>
+<h2>Check meaning as well as formatting</h2>
+<p>Do not rely on red text alone to indicate a deficit. Preserve the minus sign, parentheses or an explicit text label, and explain the convention. Information should remain understandable without relying only on color or other sensory characteristics. <a href="https://www.section508.gov/training/pdfs/aed-cop-pdf03/">Section508.gov remediation guidance</a></p>
+<p>If you publish PDF and HTML versions, compare both with the approved figures. Accessibility work should not change the budget.</p>
+<h2>Budget-table checklist</h2>
+<ul>
+<li>Name the report, fiscal year and table clearly.</li>
+<li>Identify units and explain dashes, blanks and negative values.</li>
+<li>Mark column headers and row headers where applicable.</li>
+<li>Check that each value is associated with the correct headers.</li>
+<li>Verify totals, decimal points and signs against the approved source.</li>
+<li>Read the table with a screen reader, including across page breaks.</li>
+<li>Compare PDF and HTML versions after any revision.</li>
+</ul>
+<p>The <a href="https://arabinowe.github.io/pdf-accessibility/">free SignalFeed PDF quick check</a> can flag basic structural signals. Its table-header check does not establish that every table has correct header relationships. A person must examine those relationships. For further technical and visual checks, see <a href="https://pac.pdf-accessibility.org/en/check">PAC’s checking workflow</a>.</p>
+<p>This is a publishing checklist, not a finding that a budget document meets every accessibility requirement.</p>
+<div class="cta">
+<h2 style="margin-top:0">Rather have it done?</h2>
+<p>I rebuild documents as tagged PDFs plus accessible web pages, checked against WCAG 2.1 AA, with a free 2-page sample first. <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire me on Upwork</a> or email <a href="mailto:aaron.signalfeed@gmail.com">aaron.signalfeed@gmail.com</a>.</p>
+</div>
+<p class="note">Last reviewed November 2026. General information, not legal advice.</p>
+</main>
+</body>
+</html>
