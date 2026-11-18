@@ -307,3 +307,6 @@ section.block.alt { background: rgba(255,255,255,.025); }
   linear-gradient(180deg, rgba(5,7,13,.2) 0%, transparent 40%, rgba(5,7,13,.92) 100%); }
 .article-head.cine .wrap { width: 100%; }
 .article-head.cine h1 { font-size: clamp(34px, 5vw, 60px); line-height: 1.04; letter-spacing: -.03em; }
+
+.email-alt { margin: 12px 0 0; font-size: 14px; color: var(--muted, #9aa4b8); }
+.email-alt .email-copy { color: var(--text, #e8ecf4); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; user-select: all; -webkit-user-select: all; padding: 2px 6px; border-radius: 6px; background: rgba(255,255,255,.06); }

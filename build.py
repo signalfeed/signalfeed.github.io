@@ -121,7 +121,7 @@ def index():
 <p class="eyebrow reveal">Document accessibility · WCAG 2.1 / 2.2 AA</p>
 <h1 id="hero-title" class="reveal">Every document, <span class="grad">readable by everyone.</span></h1>
 <p class="lede reveal">We rebuild agendas, notices, budgets, reports and patient handouts as tagged PDFs and accessible web pages, audit websites against WCAG, and clean the data behind them. Built for public bodies, healthcare providers and online stores facing real deadlines.</p>
-<div class="cta-row reveal"><a class="btn btn-primary" href="mailto:{EMAIL}?subject=Free%202-page%20sample">Request a free 2-page sample</a><a class="btn btn-ghost" href="#checker">Check a PDF now</a></div>
+<div class="cta-row reveal"><a class="btn btn-primary" href="mailto:{EMAIL}?subject=Free%202-page%20sample">Request a free 2-page sample</a><a class="btn btn-ghost" href="#checker">Check a PDF now</a></div><p class="email-alt">or email <span class="email-copy">{EMAIL}</span></p>
 </div>
 
 </section>
@@ -227,7 +227,7 @@ def index():
 <div class="wrap"><div class="cta-card reveal" style="padding:44px">
 <h2 id="cta-title" style="font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em">Have a backlog of PDFs?</h2>
 <p style="font-size:18px;margin:10px 0 22px">Send one document and get two pages back, rebuilt and checked, free. Then decide.</p>
-<div class="cta-row"><a class="btn btn-primary" href="mailto:{EMAIL}?subject=Free%202-page%20sample">Email us a document</a><a class="btn btn-ghost" href="{UPWORK}">Hire us on Upwork</a></div>
+<div class="cta-row"><a class="btn btn-primary" href="mailto:{EMAIL}?subject=Free%202-page%20sample">Email us a document</a><a class="btn btn-ghost" href="{UPWORK}">Hire us on Upwork</a></div><p class="email-alt">or email <span class="email-copy">{EMAIL}</span></p>
 </div></div>
 </section>
 </main>
