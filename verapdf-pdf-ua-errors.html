@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>veraPDF PDF/UA-1 Errors Explained: What Failed on Our PDFs and How We Fixed Them</title>
+<meta name="description" content="How to run the free veraPDF validator against PDF/UA-1, read its report, and fix the failures we actually hit: headings role-mapped to paragraphs (7.4.2), form fields without a tooltip (7.18.1) and unembedded fonts (7.21.4.1).">
+<link rel="canonical" href="https://signalfeed.github.io/verapdf-pdf-ua-errors.html">
+<meta property="og:site_name" content="SignalFeed">
+<meta property="og:title" content="veraPDF PDF/UA-1 Errors Explained: What Failed on Our PDFs and How We Fixed Them">
+<meta property="og:description" content="How to run the free veraPDF validator against PDF/UA-1, read its report, and fix the failures we actually hit: headings role-mapped to paragraphs (7.4.2), form fields without a tooltip (7.18.1) and unembedded fonts (7.21.4.1).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://signalfeed.github.io/verapdf-pdf-ua-errors.html">
+<meta property="og:image" content="https://signalfeed.github.io/assets/og/verapdf-pdf-ua-errors.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="veraPDF PDF/UA-1 Errors Explained: What Failed on Our PDFs and How We Fixed Them: SignalFeed card over a printing press">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="veraPDF PDF/UA-1 Errors Explained: What Failed on Our PDFs and How We Fixed Them">
+<meta name="twitter:description" content="How to run the free veraPDF validator against PDF/UA-1, read its report, and fix the failures we actually hit: headings role-mapped to paragraphs (7.4.2), form fields without a tooltip (7.18.1) and unembedded fonts (7.21.4.1).">
+<meta name="twitter:image" content="https://signalfeed.github.io/assets/og/verapdf-pdf-ua-errors.jpg">
+<meta name="theme-color" content="#05070d">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=e7162ecd">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="./" aria-label="SignalFeed home"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg><span>SignalFeed</span></a>
+<nav class="nav" aria-label="Main">
+<a class="hide-sm" href="./#services">Services</a>
+<a class="hide-sm" href="./#checker">Free checker</a>
+<a class="hide-sm" href="./#guides">Guides</a>
+<a class="hide-sm" href="jobs/">Job data</a>
+<a class="btn btn-primary" href="mailto:aaron.signalfeed@gmail.com?subject=Free%202-page%20sample">Get a free sample</a>
+</nav></div></header>
+<main id="main">
+<div class="article-head cine">
+<video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="https://images.unsplash.com/photo-1461958508236-9a742665a0d5?w=1600&q=70&auto=format"><source src="https://videos.pexels.com/video-files/29906414/12837346_960_540_24fps.mp4" type="video/mp4"></video>
+<canvas id="field" aria-hidden="true"></canvas>
+<button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4c0 .6.7 1 1.2.6l8-5.2a.7.7 0 0 0 0-1.2l-8-5.2c-.5-.4-1.2 0-1.2.6z"/></svg></button>
+<div class="wrap">
+<p class="crumbs"><a href="./">SignalFeed</a> / <a href="./#guides">Guides</a> / How-to</p>
+<h1>veraPDF PDF/UA-1 errors: what failed on our PDFs and how we fixed them</h1>
+<p class="article-meta">How-to · Last reviewed November 2026 · Sources linked inline</p>
+</div></div>
+<div class="wrap article">
+<article class="prose">
+<p>veraPDF is the free, open-source validator for PDF/A and PDF/UA. It checks the machine-testable parts of PDF/UA-1 (ISO 14289-1) and tells you which clause each failure belongs to. This page covers how to run it and the three failures we hit while building <a href="accessible-meeting-agendas.html#free-accessible-agenda-template">our accessible meeting templates</a>, with the fix for each. Every example PDF in that pack now passes.</p>
+<h2>Run veraPDF against PDF/UA-1</h2>
+<ul>
+<li><strong>Desktop app:</strong> install veraPDF from verapdf.org, open your PDF, choose the PDF/UA-1 profile and click Validate. It runs on Windows, macOS and Linux.</li>
+<li><strong>Command line:</strong> <code>verapdf --flavour ua1 --format html yourfile.pdf &gt; report.html</code>. Use <code>--format text</code> for a one-line PASS or FAIL per file, handy for checking a whole folder.</li>
+</ul>
+<p>The report lists each failed rule as a clause number (for example 7.18.1), a short description and how many objects failed it. Fix by clause, not by count: one wrong setting can fail hundreds of objects.</p>
+<h2>7.4.2: headings that are really paragraphs</h2>
+<p><strong>Symptom:</strong> the document looks fine and its tags panel shows headings, but veraPDF fails clause 7.4.2.</p>
+<p><strong>Cause:</strong> the exporter wrote custom tag names (here "Heading 1") and then role-mapped them to <code>/P</code>, a plain paragraph, in the document's RoleMap. Assistive technology follows the role map, so screen-reader users get no headings to jump between. We saw this with LibreOffice's tagged PDF export.</p>
+<p><strong>Fix:</strong> correct the role map so each custom heading tag maps to <code>/H1</code>, <code>/H2</code> and so on, or export from a tool that writes standard heading tags (Microsoft Word with "Document structure tags for accessibility" turned on). We patch the RoleMap entry directly and save incrementally, then re-validate.</p>
+<h2>7.18.1: form fields without a description</h2>
+<p><strong>Symptom:</strong> fillable fields fail clause 7.18.1.</p>
+<p><strong>Cause:</strong> PDF/UA requires each form field to have an accessible name, stored as the field's tooltip (the <code>/TU</code> entry). Many exporters leave it empty, so a screen reader announces only "edit text".</p>
+<p><strong>Fix:</strong> give every field a tooltip that says what to enter ("Applicant's full name"). In Acrobat that is the field's Properties, General tab, Tooltip. In HTML-to-PDF workflows, a <code>title</code> attribute on each input can be carried into the tooltip.</p>
+<h2>7.21.4.1: fonts that aren't embedded</h2>
+<p><strong>Symptom:</strong> a PDF that passed starts failing clause 7.21.4.1 after you edit form fields.</p>
+<p><strong>Cause:</strong> PDF/UA requires every font to be embedded. When a tool regenerates a field's appearance it may use a standard font such as ZapfDingbats or Helvetica without embedding it. In our case the regeneration step itself introduced the failure.</p>
+<p><strong>Fix:</strong> turn on the exporter's option to embed standard fonts, and change field properties without regenerating appearances where possible. Re-run veraPDF after every edit, not only at the end.</p>
+<h2>Other common PDF/UA-1 failures</h2>
+<ul>
+<li><strong>7.1 (document):</strong> missing PDF/UA identifier in the metadata, no document title, or the viewer set to show the file name instead of the title (DisplayDocTitle).</li>
+<li><strong>7.2 (text):</strong> no document language, or content outside the tag tree that isn't marked as an artifact.</li>
+<li><strong>7.3 (graphics):</strong> Figure tags without alternate text.</li>
+<li><strong>7.5 (tables):</strong> table header cells that aren't tagged TH, or have no scope.</li>
+</ul>
+<h2>What a pass does and doesn't prove</h2>
+<p>veraPDF checks structure that a machine can test. It cannot judge whether alt text is accurate, whether the reading order makes sense, or whether link text is meaningful. The Matterhorn Protocol lists the PDF/UA failure conditions, and many of them need human review. Use veraPDF as the gate, then check reading order and alt text by hand. For a quick first look without installing anything, try our <a href="index.html#checker">in-browser PDF check</a>.</p>
+<div class="cta">
+<h2 style="margin-top:0">Want a veraPDF report on your PDF?</h2>
+<p>Email one PDF and get the veraPDF PDF/UA-1 report back free, with a plain-English list of what to fix. Remediation is available on <a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Upwork</a>, or email <a href="mailto:aaron.signalfeed@gmail.com?subject=Free%20veraPDF%20report">aaron.signalfeed@gmail.com</a>.</p>
+</div>
+<h2>Sources</h2>
+<ul class="note">
+<li><a href="https://verapdf.org/">veraPDF</a></li>
+<li><a href="https://docs.verapdf.org/cli/">veraPDF command-line documentation</a></li>
+<li><a href="https://pdfa.org/resource/the-matterhorn-protocol/">The Matterhorn Protocol (PDF Association)</a></li>
+</ul>
+</article>
+<aside class="aside" aria-label="Related">
+<div class="card"><h2>Free tool</h2><p>Check any PDF for basic structural warning signs. It runs in your browser; nothing is uploaded.</p><a class="btn btn-ghost" href="./#checker">Open the checker</a></div>
+<div class="card"><h2>More guides</h2><ul><li><a href="title-ii-pdf-guide.html">ADA Title II and your PDFs</a></li><li><a href="section-504-patient-pdfs.html">HHS Section 504 and patient PDFs</a></li><li><a href="accessible-word-to-pdf.html">Word to accessible PDF, step by step</a></li><li><a href="accessible-meeting-agendas.html">Accessible meeting agendas and minutes</a></li><li><a href="accessible-budget-tables.html">Accessible budget tables</a></li><li><a href="scanned-minutes-accessible.html">Making scanned minutes accessible</a></li><li><a href="online-store-accessibility-checklist.html">Online store accessibility checklist</a></li></ul></div>
+</aside>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div><a class="brand" href="./"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg><span>SignalFeed</span></a><p>Document accessibility and clean data. Careful human review, honest reports.</p></div>
+<nav aria-label="Footer">
+<a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a><a href="jobs/">Job data</a>
+<a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire on Upwork</a><a href="mailto:aaron.signalfeed@gmail.com">Email</a><span>Hero footage: Everett Bumstead via Pexels</span>
+</nav>
+<p style="flex-basis:100%;margin:0">General information, not legal advice. We don&#39;t issue compliance certificates; we report exactly what was checked.</p>
+</div></footer>
+<script src="assets/fx.js?v=37c7bca7" defer></script>
+</body>
+</html>
