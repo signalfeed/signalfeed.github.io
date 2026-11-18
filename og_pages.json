@@ -54,5 +54,12 @@
   "title": "Online store accessibility checklist",
   "sub": "Test your shop in an hour against WCAG 2.2 AA.",
   "t": 36
+ },
+ {
+  "slug": "pdf-remediation-before-after",
+  "eyebrow": "Samples \u00b7 PDF/UA-1",
+  "title": "Before and after: <span>three city PDFs</span>",
+  "sub": "Originals, remediated files and veraPDF reports to download.",
+  "t": 10
  }
 ]
