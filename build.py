@@ -3,6 +3,8 @@ import json, html
 from pathlib import Path
 
 ROOT = Path(__file__).parent
+import hashlib
+def ver(f): return hashlib.sha1((ROOT / f).read_bytes()).hexdigest()[:8]
 BASE = "https://arabinowe.github.io/pdf-accessibility/"
 UPWORK = "https://www.upwork.com/freelancers/~019a97d6c06c1b0e74"
 EMAIL = "aaron.signalfeed@gmail.com"
@@ -32,7 +34,7 @@ def head(title, desc, slug, extra=""):
 <meta name="theme-color" content="#05070d">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v={ver('assets/site.css')}">
 {extra}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -54,7 +56,7 @@ FOOT = f'''<footer class="site-footer"><div class="wrap">
 </nav>
 <p style="flex-basis:100%;margin:0">General information, not legal advice. We don&#39;t issue compliance certificates; we report exactly what was checked.</p>
 </div></footer>
-<script src="assets/fx.js" defer></script>
+<script src="assets/fx.js?v={ver('assets/fx.js')}" defer></script>
 </body>
 </html>
 '''
