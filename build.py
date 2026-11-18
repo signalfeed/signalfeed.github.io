@@ -28,9 +28,18 @@ def head(title, desc, slug, extra=""):
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{BASE}{'' if slug == 'index.html' else slug}">
+<meta property="og:site_name" content="SignalFeed">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{'website' if slug == 'index.html' else 'article'}">
+<meta property="og:url" content="{BASE}{'' if slug == 'index.html' else slug}">
+<meta property="og:image" content="{BASE}assets/og/{slug.replace('.html','')}.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{html.escape(title)}: SignalFeed card over a printing press">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(title)}">
+<meta name="twitter:description" content="{html.escape(desc)}">
+<meta name="twitter:image" content="{BASE}assets/og/{slug.replace('.html','')}.jpg">
 <meta name="theme-color" content="#05070d">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">

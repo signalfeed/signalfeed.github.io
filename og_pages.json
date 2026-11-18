@@ -1,0 +1,58 @@
+[
+ {
+  "slug": "index",
+  "eyebrow": "Document accessibility \u00b7 WCAG 2.1 / 2.2 AA",
+  "title": "Every document, <span>readable by everyone.</span>",
+  "sub": "Tagged PDFs, accessible web pages and WCAG audits. Free PDF checker.",
+  "t": 8
+ },
+ {
+  "slug": "title-ii-pdf-guide",
+  "eyebrow": "Guide \u00b7 ADA Title II",
+  "title": "ADA Title II and your PDFs",
+  "sub": "Deadlines, exceptions and a checklist for public bodies.",
+  "t": 12
+ },
+ {
+  "slug": "section-504-patient-pdfs",
+  "eyebrow": "Guide \u00b7 HHS Section 504",
+  "title": "Section 504 and your patient PDFs",
+  "sub": "The 2027 deadline and a checklist for healthcare providers.",
+  "t": 16
+ },
+ {
+  "slug": "accessible-word-to-pdf",
+  "eyebrow": "How-to \u00b7 Word to PDF",
+  "title": "Make a Word document accessible",
+  "sub": "Step by step, before you save it as a PDF.",
+  "t": 20
+ },
+ {
+  "slug": "accessible-meeting-agendas",
+  "eyebrow": "How-to \u00b7 Agendas & minutes",
+  "title": "Accessible meeting agendas",
+  "sub": "Structure, packets, votes and a pre-posting checklist.",
+  "t": 24
+ },
+ {
+  "slug": "accessible-budget-tables",
+  "eyebrow": "How-to \u00b7 Tables",
+  "title": "Accessible budget tables",
+  "sub": "Readable headers and matching PDF and web versions.",
+  "t": 28
+ },
+ {
+  "slug": "scanned-minutes-accessible",
+  "eyebrow": "How-to \u00b7 Scanned documents",
+  "title": "Making scanned minutes accessible",
+  "sub": "OCR, structure and review without changing the record.",
+  "t": 32
+ },
+ {
+  "slug": "online-store-accessibility-checklist",
+  "eyebrow": "Checklist \u00b7 Online stores",
+  "title": "Online store accessibility checklist",
+  "sub": "Test your shop in an hour against WCAG 2.2 AA.",
+  "t": 36
+ }
+]
