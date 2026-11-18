@@ -115,6 +115,16 @@
     addEventListener("scroll", () => requestAnimationFrame(run), { passive: true }); addEventListener("resize", run); run();
   }
 
+  // ---- Hero video: pause control (WCAG 2.2.2), reduced motion, scroll push-in ----
+  const vid = document.getElementById("heroVideo"), tog = document.getElementById("vidToggle"), hero = document.querySelector(".hero-x");
+  if (vid && tog) {
+    const setState = paused => { tog.textContent = paused ? "Play background video" : "Pause background video"; tog.setAttribute("aria-pressed", String(paused)); };
+    if (reduce) { vid.removeAttribute("autoplay"); vid.pause(); setState(true); }
+    tog.addEventListener("click", () => { if (vid.paused) { vid.play(); setState(false); } else { vid.pause(); setState(true); } });
+    const push = () => { const r = hero.getBoundingClientRect(); hero.style.setProperty("--hs", Math.min(Math.max(-r.top / r.height, 0), 1).toFixed(3)); };
+    if (!reduce) { addEventListener("scroll", () => requestAnimationFrame(push), { passive: true }); push(); }
+  }
+
   // ---- Live UTC readout (real time, not decoration) ----
   const utc = document.getElementById("utc");
   if (utc) { const tick = () => { utc.textContent = "UTC " + new Date().toISOString().slice(11, 19); }; tick(); setInterval(tick, 1000); }

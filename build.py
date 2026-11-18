@@ -50,7 +50,7 @@ FOOT = f'''<footer class="site-footer"><div class="wrap">
 <div><a class="brand" href="./">{LOGO}<span>SignalFeed</span></a><p>Document accessibility and clean data. Careful human review, honest reports.</p></div>
 <nav aria-label="Footer">
 <a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a>
-<a href="{UPWORK}">Hire on Upwork</a><a href="mailto:{EMAIL}">Email</a>
+<a href="{UPWORK}">Hire on Upwork</a><a href="mailto:{EMAIL}">Email</a><span>Hero footage: Everett Bumstead via Pexels</span>
 </nav>
 <p style="flex-basis:100%;margin:0">General information, not legal advice. We don&#39;t issue compliance certificates; we report exactly what was checked.</p>
 </div></footer>
@@ -88,7 +88,12 @@ def index():
                 "SignalFeed rebuilds public documents as accessible, tagged PDFs and web pages, audits websites against WCAG 2.2 AA, and cleans messy data. Free in-browser PDF checker and plain-English guides.",
                 "index.html") + f'''<main id="main">
 <section class="hero-x" aria-labelledby="hero-title">
+<video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true"
+  poster="https://images.unsplash.com/photo-1461958508236-9a742665a0d5?w=1600&q=70&auto=format">
+  <source src="https://videos.pexels.com/video-files/29906414/12837347_1280_720_24fps.mp4" type="video/mp4">
+</video>
 <canvas id="field" aria-hidden="true"></canvas>
+<button class="vid-toggle" id="vidToggle" type="button" aria-pressed="false">Pause background video</button>
 <div class="scan" aria-hidden="true"></div>
 <div class="hud" aria-hidden="true"><i></i>
 <span class="tl mono"><span class="dot"></span>SignalFeed // Document systems</span>
