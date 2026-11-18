@@ -210,7 +210,7 @@ def index():
 <ol class="steps reveal">
 <li><strong>Free 2-page sample</strong>Send your hardest document. Check our result in your own checker before you pay.</li>
 <li><strong>Fixed quote</strong>Priced by pages and complexity, agreed up front.</li>
-<li><strong>Rebuild and check</strong>Automated pre-checks, then a manual WCAG checklist on every file.</li>
+<li><strong>Rebuild and validate</strong>Every PDF is validated against PDF/UA-1 with veraPDF (you get the report), then checked by hand against a WCAG checklist.</li>
 <li><strong>Clear report</strong>What passed, what needs your input, and anything we couldn&#39;t fix.</li>
 </ol>
 </div>
