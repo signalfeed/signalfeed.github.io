@@ -75,7 +75,11 @@ def article(a):
     kind = next((k for s, _, k in GUIDES if s == a["slug"]), "Guide")
     others = "".join(f'<li><a href="{s}">{html.escape(t)}</a></li>' for s, t, _ in GUIDES if s != a["slug"])
     return head(a["title"], a["description"], a["slug"]) + f'''<main id="main">
-<div class="article-head"><div class="wrap">
+<div class="article-head cine">
+<video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="https://images.unsplash.com/photo-1461958508236-9a742665a0d5?w=1600&q=70&auto=format"><source src="https://videos.pexels.com/video-files/29906414/12837346_960_540_24fps.mp4" type="video/mp4"></video>
+<canvas id="field" aria-hidden="true"></canvas>
+<button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4c0 .6.7 1 1.2.6l8-5.2a.7.7 0 0 0 0-1.2l-8-5.2c-.5-.4-1.2 0-1.2.6z"/></svg></button>
+<div class="wrap">
 <p class="crumbs"><a href="./">SignalFeed</a> / <a href="./#guides">Guides</a> / {kind}</p>
 <h1>{a["h1"]}</h1>
 <p class="article-meta">{kind} · Last reviewed November 2026 · Sources linked inline</p>

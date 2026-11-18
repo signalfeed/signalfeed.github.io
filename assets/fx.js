@@ -116,7 +116,7 @@
   }
 
   // ---- Hero video: pause control (WCAG 2.2.2), reduced motion, scroll push-in ----
-  const vid = document.getElementById("heroVideo"), tog = document.getElementById("vidToggle"), hero = document.querySelector(".hero-x");
+  const vid = document.getElementById("heroVideo"), tog = document.getElementById("vidToggle"), hero = vid ? vid.closest(".hero-x, .article-head") : null;
   if (vid && tog) {
     const setState = paused => { tog.setAttribute("aria-label", paused ? "Play background video" : "Pause background video"); tog.classList.toggle("paused", paused); };
     if (reduce) { vid.removeAttribute("autoplay"); vid.pause(); setState(true); }
