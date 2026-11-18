@@ -95,7 +95,7 @@ def index():
   <source src="https://videos.pexels.com/video-files/29906414/12837347_1280_720_24fps.mp4" type="video/mp4">
 </video>
 <canvas id="field" aria-hidden="true"></canvas>
-<button class="vid-toggle" id="vidToggle" type="button" aria-pressed="false">Pause background video</button>
+<button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4c0 .6.7 1 1.2.6l8-5.2a.7.7 0 0 0 0-1.2l-8-5.2c-.5-.4-1.2 0-1.2.6z"/></svg></button>
 <div class="scan" aria-hidden="true"></div>
 <div class="hud" aria-hidden="true"><i></i>
 <span class="tl mono"><span class="dot"></span>SignalFeed // Document systems</span>
