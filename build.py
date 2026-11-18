@@ -16,6 +16,7 @@ GUIDES = [  # slug, short title, kind
     ("accessible-budget-tables.html", "Accessible budget tables", "How-to"),
     ("scanned-minutes-accessible.html", "Making scanned minutes accessible", "How-to"),
     ("verapdf-pdf-ua-errors.html", "veraPDF PDF/UA errors, explained", "How-to"),
+    ("title-ii-accessibility-training.html", "ADA Title II training for staff", "Training"),
     ("pdf-remediation-before-after.html", "PDF remediation before and after", "Samples"),
     ("online-store-accessibility-checklist.html", "Online store accessibility checklist", "Checklist"),
 ]
