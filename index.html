@@ -247,7 +247,8 @@ async function check(file) {
     "<span class='" + (fails ? "bad" : "ok") + "'>" + fails + " potential problem(s) flagged.</span> " + reviews + " item(s) need review. " +
     "These basic signals do not establish that the PDF is accessible; reading order, tag correctness and descriptions need a person and a screen reader." +
     "</p><table class='result-table'><caption class='note' style='text-align:left'>Basic structural signals</caption><thead><tr><th scope='col'>Signal</th><th scope='col'>Result</th><th scope='col'>Details</th></tr></thead><tbody>" +
-    rows.map(r => "<tr><th scope='row'>" + r[0] + "</th><td class='" + r[1] + "'>" + icon[r[1]] + "</td><td>" + r[2] + "</td></tr>").join("") + "</tbody></table>";
+    rows.map(r => "<tr><th scope='row'>" + r[0] + "</th><td class='" + r[1] + "'>" + icon[r[1]] + "</td><td>" + r[2] + "</td></tr>").join("") + "</tbody></table>" +
+    "<p class='note'>These are first-pass signals, not a full PDF/UA conformance test. Want the full check? <a href='mailto:aaron.signalfeed@gmail.com?subject=Free%20veraPDF%20report'>Email us the file</a> and we will run veraPDF (PDF/UA-1) and send you the report free, with a plain-English list of what to fix.</p>";
   $("status").textContent = "Done: " + file.name + ".";
 }
 $("file").addEventListener("change", e => { const f = e.target.files[0]; if (f) check(f).catch(err => { $("status").textContent = "Something went wrong: " + err.message; }); });
