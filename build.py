@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 import hashlib
 def ver(f): return hashlib.sha1((ROOT / f).read_bytes()).hexdigest()[:8]
-BASE = "https://arabinowe.github.io/pdf-accessibility/"
+BASE = "https://signalfeed.github.io/"
 UPWORK = "https://www.upwork.com/freelancers/~019a97d6c06c1b0e74"
 EMAIL = "aaron.signalfeed@gmail.com"
 GUIDES = [  # slug, short title, kind
@@ -53,6 +53,7 @@ def head(title, desc, slug, extra=""):
 <a class="hide-sm" href="./#services">Services</a>
 <a class="hide-sm" href="./#checker">Free checker</a>
 <a class="hide-sm" href="./#guides">Guides</a>
+<a class="hide-sm" href="jobs/">Job data</a>
 <a class="btn btn-primary" href="mailto:{EMAIL}?subject=Free%202-page%20sample">Get a free sample</a>
 </nav></div></header>
 '''
@@ -60,7 +61,7 @@ def head(title, desc, slug, extra=""):
 FOOT = f'''<footer class="site-footer"><div class="wrap">
 <div><a class="brand" href="./">{LOGO}<span>SignalFeed</span></a><p>Document accessibility and clean data. Careful human review, honest reports.</p></div>
 <nav aria-label="Footer">
-<a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a>
+<a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a><a href="jobs/">Job data</a>
 <a href="{UPWORK}">Hire on Upwork</a><a href="mailto:{EMAIL}">Email</a><span>Hero footage: Everett Bumstead via Pexels</span>
 </nav>
 <p style="flex-basis:100%;margin:0">General information, not legal advice. We don&#39;t issue compliance certificates; we report exactly what was checked.</p>
