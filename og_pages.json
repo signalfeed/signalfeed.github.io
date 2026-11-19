@@ -75,5 +75,12 @@
   "title": "White-label PDF remediation",
   "sub": "Unbranded files and veraPDF reports for agencies that serve local government.",
   "t": 12
+ },
+ {
+  "slug": "book-formatting-sample",
+  "eyebrow": "Sample \u00b7 EPUB 3 + KDP paperback",
+  "title": "Book formatting sample",
+  "sub": "A validated EPUB and a 5x8 print interior.",
+  "t": 10
  }
 ]
