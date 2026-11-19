@@ -1,0 +1,1957 @@
+[
+ {
+  "city": "Rochester",
+  "slug": "rochester",
+  "population": 121395,
+  "deadline": "2027-04-26",
+  "status": "ok",
+  "start_url": "https://www.rochestermn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 852,
+  "pdfs_analyzed": 387,
+  "pdfs_estimated": 824,
+  "pages_analyzed": 19301,
+  "pct_tagged": 30.2,
+  "pct_lang": 24.5,
+  "pct_title": 59.4,
+  "pct_scanned": 15.0,
+  "pdfs_failing_basic": 311,
+  "pages_failing_basic": 16137,
+  "est_pages_to_remediate": 34359,
+  "pct_modified_2024_plus": 30.7,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "7.1-3",
+   "5-1",
+   "6.2-1"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://media-002-us.cdn.govstack.com/rochestermn-us/media/ethpam4i/ap_detailrpt_20251103.pdf",
+    "pages": 235,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "A/P Payment History Detail Report"
+   },
+   {
+    "url": "https://media-002-us.cdn.govstack.com/rochestermn-us/media/2vievfkt/ap_detailrpt_20230724.pdf",
+    "pages": 218,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "A/P Payment History Detail Report"
+   },
+   {
+    "url": "https://media-002-us.cdn.govstack.com/rochestermn-us/media/hm3htucx/ap_detailrpt_20220718.pdf",
+    "pages": 218,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "A/P Payment History Detail Report"
+   },
+   {
+    "url": "https://media-002-us.cdn.govstack.com/rochestermn-us/media/lypnmikg/ap_detailrpt_20260105.pdf",
+    "pages": 212,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "A/P Payment History Detail Report"
+   },
+   {
+    "url": "https://media-002-us.cdn.govstack.com/rochestermn-us/media/fhhdr0gc/ap_detailrpt_20240715.pdf",
+    "pages": 205,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "A/P Payment History Detail Report"
+   },
+   {
+    "url": "https://media-002-us.cdn.govstack.com/rochestermn-us/media/2sjgyjfx/ap_detailrpt_20191007.pdf",
+    "pages": 203,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "A/P Payment History Detail Report"
+   },
+   {
+    "url": "https://media-002-us.cdn.govstack.com/rochestermn-us/media/vzadb1f5/ap_detailrpt_20190506.pdf",
+    "pages": 195,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "A/P Payment History Detail Report"
+   },
+   {
+    "url": "https://media-002-us.cdn.govstack.com/rochestermn-us/media/lculnf00/2017-dmc-design-guidelines-book-final.pdf",
+    "pages": 193,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "852 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "Bloomington",
+  "slug": "bloomington",
+  "population": 89987,
+  "deadline": "2027-04-26",
+  "status": "partial",
+  "start_url": "https://www.bloomingtonmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 113,
+  "pdf_links_found": 166,
+  "pdfs_analyzed": 157,
+  "pdfs_estimated": 157,
+  "pages_analyzed": 4718,
+  "pct_tagged": 71.3,
+  "pct_lang": 68.8,
+  "pct_title": 58.6,
+  "pct_scanned": 0.0,
+  "pdfs_failing_basic": 51,
+  "pages_failing_basic": 3003,
+  "est_pages_to_remediate": 3003,
+  "pct_modified_2024_plus": 53.5,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "5-1",
+   "7.1-3",
+   "7.1-10",
+   "7.21.4.2-2"
+  ],
+  "main_issue": "lang",
+  "examples": [
+   {
+    "url": "https://www.bloomingtonmn.gov/sites/default/files/2026-08/2026-Administrative-Plan-Final.pdf",
+    "pages": 896,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.bloomingtonmn.gov/sites/default/files/2026-01/2025%20Administrative%20Plan-HOTMA%20Revisions-Final.pdf",
+    "pages": 879,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.bloomingtonmn.gov/sites/default/files/2025-03/2025_Budget_Book_Final-web.pdf",
+    "pages": 342,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.bloomingtonmn.gov/sites/default/files/2024-03/24_Budget-Book_Final-Web.pdf",
+    "pages": 342,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.bloomingtonmn.gov/sites/default/files/2023-03/2023BudgetBookWebFinal.pdf",
+    "pages": 337,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.bloomingtonmn.gov/sites/default/files/cable-franchise-agreement-2015.pdf",
+    "pages": 51,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Cable Franchise Agreement"
+   },
+   {
+    "url": "https://www.bloomingtonmn.gov/sites/default/files/2025-07/Section%208-%20Waiting%20List%20Registration.pdf",
+    "pages": 25,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Section 8- Waiting List Registration"
+   },
+   {
+    "url": "https://www.bloomingtonmn.gov/sites/default/files/2025-07/Section8-%20Exisiting%20account%20Link.pdf",
+    "pages": 17,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Section8- Exisiting account Link"
+   }
+  ],
+  "notes": [
+   "HTTP 403 challenge/block at https://www.bloomingtonmn.gov/ap/creekside-community-center"
+  ]
+ },
+ {
+  "city": "Duluth",
+  "slug": "duluth",
+  "population": 86697,
+  "deadline": "2027-04-26",
+  "status": "ok",
+  "start_url": "https://duluthmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 2646,
+  "pdfs_analyzed": 370,
+  "pdfs_estimated": 2448,
+  "pages_analyzed": 7313,
+  "pct_tagged": 72.4,
+  "pct_lang": 55.9,
+  "pct_title": 44.1,
+  "pct_scanned": 5.4,
+  "pdfs_failing_basic": 165,
+  "pages_failing_basic": 3973,
+  "est_pages_to_remediate": 26286,
+  "pct_modified_2024_plus": 40.0,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "5-1",
+   "7.1-3",
+   "7.18.1-2"
+  ],
+  "main_issue": "lang",
+  "examples": [
+   {
+    "url": "https://duluthmn.gov/media/sngh4flu/exhibit-4-13700022-101_2019-permit.pdf",
+    "pages": 409,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "13700022-101-AQPERMIT.PDF"
+   },
+   {
+    "url": "https://duluthmn.gov/media/12745/appendix-d-spirit-mtn-task-force-recommendations.pdf",
+    "pages": 243,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "Spirit      Mountain    Task Force"
+   },
+   {
+    "url": "https://duluthmn.gov/media/5gcldksy/2023-city-of-duluth-annual-comprehensive-financial-report.pdf",
+    "pages": 201,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://duluthmn.gov/media/15638/2022-city-of-duluth-acfr.pdf",
+    "pages": 201,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://duluthmn.gov/media/10069/2019-city-of-duluth-cafr.pdf",
+    "pages": 196,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://duluthmn.gov/media/10551/2004-cafr.pdf",
+    "pages": 168,
+    "tagged": false,
+    "lang": null,
+    "scanned": true,
+    "title": ""
+   },
+   {
+    "url": "https://duluthmn.gov/media/10550/cafr-2005.pdf",
+    "pages": 163,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Full CAFR.doc"
+   },
+   {
+    "url": "https://duluthmn.gov/media/8962/hartleynaturalareamanagementplan_11-25-19.pdf",
+    "pages": 132,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "2646 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "Maple Grove",
+  "slug": "maple-grove",
+  "population": 70253,
+  "deadline": "2027-04-26",
+  "status": "ok",
+  "start_url": "https://www.maplegrovemn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 959,
+  "pdfs_analyzed": 241,
+  "pdfs_estimated": 578,
+  "pages_analyzed": 3274,
+  "pct_tagged": 35.3,
+  "pct_lang": 31.5,
+  "pct_title": 24.1,
+  "pct_scanned": 22.4,
+  "pdfs_failing_basic": 178,
+  "pages_failing_basic": 1928,
+  "est_pages_to_remediate": 4624,
+  "pct_modified_2024_plus": 46.1,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-3",
+   "6.2-1",
+   "7.1-10",
+   "7.1-11"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.maplegrovemn.gov/AgendaCenter/ViewFile/Agenda/_05042026-876?packet=true",
+    "pages": 253,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.maplegrovemn.gov/AgendaCenter/ViewFile/Agenda/_11022026-931?packet=true",
+    "pages": 175,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.maplegrovemn.gov/AgendaCenter/ViewFile/Agenda/_04162026-872?packet=true",
+    "pages": 125,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.maplegrovemn.gov/DocumentCenter/View/12545",
+    "pages": 97,
+    "tagged": false,
+    "lang": null,
+    "scanned": true,
+    "title": ""
+   },
+   {
+    "url": "https://www.maplegrovemn.gov/AgendaCenter/ViewFile/Agenda/_03182026-863?packet=true",
+    "pages": 95,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.maplegrovemn.gov/AgendaCenter/ViewFile/Agenda/_09082026-912?packet=true",
+    "pages": 60,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.maplegrovemn.gov/AgendaCenter/ViewFile/Agenda/_11172026-935?packet=true",
+    "pages": 51,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.maplegrovemn.gov/AgendaCenter/ViewFile/Agenda/_08032026-900?packet=true",
+    "pages": 46,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored",
+   "959 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "Blaine",
+  "slug": "blaine",
+  "population": 70222,
+  "deadline": "2027-04-26",
+  "status": "ok",
+  "start_url": "https://www.blainemn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 161,
+  "pdfs_analyzed": 67,
+  "pdfs_estimated": 67,
+  "pages_analyzed": 209,
+  "pct_tagged": 38.8,
+  "pct_lang": 40.3,
+  "pct_title": 65.7,
+  "pct_scanned": 10.4,
+  "pdfs_failing_basic": 41,
+  "pages_failing_basic": 110,
+  "est_pages_to_remediate": 110,
+  "pct_modified_2024_plus": 35.8,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "5-1",
+   "7.1-3",
+   "7.1-10",
+   "6.2-1"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.blainemn.gov/DocumentCenter/View/538/Flammable-and-Combustible-Liquid-PDF",
+    "pages": 9,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Flammable and Combustible Liquids.doc"
+   },
+   {
+    "url": "https://www.blainemn.gov/DocumentCenter/View/17566/Blaine-Wetland-Sanctuary-Explore-Your-FENtastic-Wetland-pdf",
+    "pages": 7,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.blainemn.gov/DocumentCenter/View/553/Smoke-Control-Systems-PDF",
+    "pages": 7,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Smoke Control Systems.doc"
+   },
+   {
+    "url": "https://www.blainemn.gov/DocumentCenter/View/550/Hot-Work-Area-Requirements-PDF",
+    "pages": 4,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Hot Work Area Requirements.doc"
+   },
+   {
+    "url": "https://www.blainemn.gov/DocumentCenter/View/561/Fire-Safety-Evacuation-Planning---R-1-PDF",
+    "pages": 4,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Fire Safety Evacuation Planning R-1.DOC"
+   },
+   {
+    "url": "https://www.blainemn.gov/DocumentCenter/View/534/New-Construction-and-Plan-Submittal-Requirements-PDF",
+    "pages": 3,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - New Construction and Plan Submittal Requirements.doc"
+   },
+   {
+    "url": "https://www.blainemn.gov/DocumentCenter/View/536/Compressed-Gases-PDF",
+    "pages": 3,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Compressed Gases.DOC"
+   },
+   {
+    "url": "https://www.blainemn.gov/DocumentCenter/View/540/Magnesium-PDF",
+    "pages": 3,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Magnesium.doc"
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored"
+  ]
+ },
+ {
+  "city": "Lakeville",
+  "slug": "lakeville",
+  "population": 69490,
+  "deadline": "2027-04-26",
+  "status": "ok",
+  "start_url": "https://www.lakevillemn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 507,
+  "pdfs_analyzed": 288,
+  "pdfs_estimated": 365,
+  "pages_analyzed": 1963,
+  "pct_tagged": 61.5,
+  "pct_lang": 52.8,
+  "pct_title": 72.6,
+  "pct_scanned": 13.2,
+  "pdfs_failing_basic": 146,
+  "pages_failing_basic": 1058,
+  "est_pages_to_remediate": 1341,
+  "pct_modified_2024_plus": 53.5,
+  "vera_tested": 20,
+  "vera_passed": 1,
+  "top_vera_rules": [
+   "7.1-3",
+   "7.1-10",
+   "5-1",
+   "6.2-1"
+  ],
+  "main_issue": "lang",
+  "examples": [
+   {
+    "url": "https://www.lakevillemn.gov/DocumentCenter/View/10060/Taskforce-10-5-21-Packet",
+    "pages": 243,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.lakevillemn.gov/DocumentCenter/View/13950/2025-budget-and-tax-levy-PDF",
+    "pages": 115,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "2025 City of Lakeville Budget"
+   },
+   {
+    "url": "https://www.lakevillemn.gov/DocumentCenter/View/13066/Taskforce-Meeting-Agenda-Packet-8-14-23",
+    "pages": 70,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "Envision Lakeville Taskforce Agenda 8-14-23"
+   },
+   {
+    "url": "https://www.lakevillemn.gov/DocumentCenter/View/18646/Cedar-Avenue-Land-Use--Market-Study-Analysis-Study-PDF",
+    "pages": 67,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.lakevillemn.gov/DocumentCenter/View/10017/Taskforce-9-21-21-Packet",
+    "pages": 64,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "Envision Lakeville 'Cultivate a Sense of Community' Taskforce meeting agenda 9-21-21"
+   },
+   {
+    "url": "https://www.lakevillemn.gov/DocumentCenter/View/4604/Technical-Appendices-PDF",
+    "pages": 48,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.lakevillemn.gov/DocumentCenter/View/260/Dewatering-Information-PDF",
+    "pages": 46,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft PowerPoint - Dewatering.ppt"
+   },
+   {
+    "url": "https://www.lakevillemn.gov/DocumentCenter/View/4607/Supplemental-Online-Survey-Results-PDF",
+    "pages": 26,
+    "tagged": false,
+    "lang": "EN-US",
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored",
+   "507 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "St. Cloud",
+  "slug": "st-cloud",
+  "population": 68881,
+  "deadline": "2027-04-26",
+  "status": "ok",
+  "start_url": "https://www.ci.stcloud.mn.us/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 187,
+  "pdf_links_found": 624,
+  "pdfs_analyzed": 287,
+  "pdfs_estimated": 448,
+  "pages_analyzed": 3659,
+  "pct_tagged": 57.8,
+  "pct_lang": 35.9,
+  "pct_title": 29.3,
+  "pct_scanned": 3.1,
+  "pdfs_failing_basic": 187,
+  "pages_failing_basic": 2716,
+  "est_pages_to_remediate": 4240,
+  "pct_modified_2024_plus": 33.8,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "5-1",
+   "7.2-34",
+   "7.1-9"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.ci.stcloud.mn.us/DocumentCenter/View/24128/Year-End-2022",
+    "pages": 368,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.ci.stcloud.mn.us/DocumentCenter/View/19539/Year-End-2019",
+    "pages": 117,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.ci.stcloud.mn.us/DocumentCenter/View/21108/Year-End-2020",
+    "pages": 116,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.ci.stcloud.mn.us/DocumentCenter/View/14668",
+    "pages": 92,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.ci.stcloud.mn.us/DocumentCenter/View/23716/September-2022",
+    "pages": 61,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://ci.stcloud.mn.us/DocumentCenter/View/33057/September-2026",
+    "pages": 61,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://ci.stcloud.mn.us/DocumentCenter/View/33187/October-2026",
+    "pages": 61,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.ci.stcloud.mn.us/DocumentCenter/View/29923/October-2025",
+    "pages": 60,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored",
+   "HTTP 403 challenge/block at https://www.ci.stcloud.mn.us/106/Code-of-Ordinances",
+   "624 PDF links found; random sample of 400 analyzed",
+   "Correction: the 403 came from library.municode.com after an off-site redirect, not from the city site; HTML crawl stopped early at that point. Not re-run because of the 10 s Crawl-delay."
+  ]
+ },
+ {
+  "city": "Eagan",
+  "slug": "eagan",
+  "population": 68855,
+  "deadline": "2027-04-26",
+  "status": "ok",
+  "start_url": "https://cityofeagan.com/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 400,
+  "pages_crawled": 300,
+  "pdf_links_found": 440,
+  "pdfs_analyzed": 0,
+  "pdfs_estimated": 0,
+  "pages_analyzed": 0,
+  "pct_tagged": null,
+  "pct_lang": null,
+  "pct_title": null,
+  "pct_scanned": null,
+  "pdfs_failing_basic": 0,
+  "pages_failing_basic": 0,
+  "est_pages_to_remediate": 0,
+  "pct_modified_2024_plus": null,
+  "vera_tested": 0,
+  "vera_passed": 0,
+  "top_vera_rules": [],
+  "main_issue": null,
+  "examples": [],
+  "notes": [
+   "440 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "Moorhead",
+  "slug": "moorhead",
+  "population": 44505,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.moorheadmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 306,
+  "pdfs_analyzed": 278,
+  "pdfs_estimated": 278,
+  "pages_analyzed": 3158,
+  "pct_tagged": 70.5,
+  "pct_lang": 57.6,
+  "pct_title": 34.5,
+  "pct_scanned": 4.7,
+  "pdfs_failing_basic": 124,
+  "pages_failing_basic": 1360,
+  "est_pages_to_remediate": 1360,
+  "pct_modified_2024_plus": 65.5,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "5-1",
+   "7.1-10",
+   "7.1-3",
+   "7.1-9"
+  ],
+  "main_issue": "lang",
+  "examples": [
+   {
+    "url": "https://media-001-us.cdn.govstack.com/moorheadmn-003-us/media/vefb3xf5/2024-annual-comprehensive-financial-report.pdf",
+    "pages": 151,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "PDF_results.aspx"
+   },
+   {
+    "url": "https://media-001-us.cdn.govstack.com/moorheadmn-003-us/media/rejin1sr/mhd_saferoutestoschool_finaldocument__01202025.pdf",
+    "pages": 127,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://media-001-us.cdn.govstack.com/moorheadmn-003-us/media/wm3b2ay2/river-corridor-phase-i-river-report-4-9-13-final.pdf",
+    "pages": 103,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Phase I Report_Final.docx"
+   },
+   {
+    "url": "https://media-001-us.cdn.govstack.com/moorheadmn-003-us/media/fjfjmytj/finalus10-75report_2020-05-29.pdf",
+    "pages": 76,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": "US 10 / US 75 Corridor Study Moorhead, MN"
+   },
+   {
+    "url": "https://media-001-us.cdn.govstack.com/moorheadmn-003-us/media/0plj4zgu/2026-detail-budget.pdf",
+    "pages": 64,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "2026 Department Summaries.xlsx"
+   },
+   {
+    "url": "https://media-001-us.cdn.govstack.com/moorheadmn-003-us/media/flfk31ts/2025-detail-budget.pdf",
+    "pages": 63,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "2025 Department Summaries.xlsx"
+   },
+   {
+    "url": "https://media-001-us.cdn.govstack.com/moorheadmn-003-us/media/zpvlxp1o/repairing_your_flooded_home.pdf?id=254",
+    "pages": 56,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Repairing_Your_Flooded_Home.pdf"
+   },
+   {
+    "url": "https://media-001-us.cdn.govstack.com/moorheadmn-003-us/media/2dwcxvct/downtown-moorhead-master-plan-nov-2020.pdf",
+    "pages": 55,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": []
+ },
+ {
+  "city": "Owatonna",
+  "slug": "owatonna",
+  "population": 26420,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.owatonna.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 608,
+  "pdfs_analyzed": 283,
+  "pdfs_estimated": 430,
+  "pages_analyzed": 2691,
+  "pct_tagged": 58.3,
+  "pct_lang": 43.8,
+  "pct_title": 31.1,
+  "pct_scanned": 11.0,
+  "pdfs_failing_basic": 162,
+  "pages_failing_basic": 2130,
+  "est_pages_to_remediate": 3236,
+  "pct_modified_2024_plus": 62.9,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "5-1",
+   "7.1-10",
+   "6.2-1",
+   "7.1-3"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.owatonna.gov/DocumentCenter/View/13122",
+    "pages": 245,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.owatonna.gov/DocumentCenter/View/13112",
+    "pages": 226,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.owatonna.gov/DocumentCenter/View/13119",
+    "pages": 215,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.owatonna.gov/DocumentCenter/View/13116",
+    "pages": 214,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.owatonna.gov/DocumentCenter/View/13113",
+    "pages": 212,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.owatonna.gov/DocumentCenter/View/13104",
+    "pages": 144,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "0100.10 - 2024 Signed Final Reoprt and Financial Statements (City of Owatonna SAUD 2024 [1"
+   },
+   {
+    "url": "https://www.owatonna.gov/DocumentCenter/View/12910",
+    "pages": 116,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft PowerPoint - 2027 Department Budget Slides 08 17 2026"
+   },
+   {
+    "url": "https://owatonna.gov/DocumentCenter/View/11956",
+    "pages": 81,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored",
+   "608 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "Winona",
+  "slug": "winona",
+  "population": 25948,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.winonamn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 277,
+  "pdfs_analyzed": 167,
+  "pdfs_estimated": 167,
+  "pages_analyzed": 2066,
+  "pct_tagged": 38.3,
+  "pct_lang": 36.5,
+  "pct_title": 33.5,
+  "pct_scanned": 15.0,
+  "pdfs_failing_basic": 114,
+  "pages_failing_basic": 1891,
+  "est_pages_to_remediate": 1891,
+  "pct_modified_2024_plus": 44.9,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "6.2-1",
+   "7.1-11",
+   "7.1-3",
+   "7.1-10"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.winonamn.gov/DocumentCenter/View/5595",
+    "pages": 702,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": "MnDOT Standard Specifications for Construction, 2020 Edition"
+   },
+   {
+    "url": "https://www.winonamn.gov/DocumentCenter/View/5596",
+    "pages": 372,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": "MnDOT Standard Specifications for Construction, 2020 Edition"
+   },
+   {
+    "url": "https://www.winonamn.gov/DocumentCenter/View/102/2016-Housing-Study-PDF",
+    "pages": 173,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - 1821-01 Winona MN_Final Report"
+   },
+   {
+    "url": "https://www.winonamn.gov/DocumentCenter/View/96/03-2020-Winona-Downtown-Strategic-Plan-PDF",
+    "pages": 76,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.winonamn.gov/DocumentCenter/View/5463",
+    "pages": 35,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.winonamn.gov/DocumentCenter/View/4132",
+    "pages": 30,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.winonamn.gov/DocumentCenter/View/4132/Language-Assistance-Program",
+    "pages": 30,
+    "tagged": false,
+    "lang": "en-US",
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.winonamn.gov/DocumentCenter/View/3847/CIP-Book-2026-2030",
+    "pages": 26,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored"
+  ]
+ },
+ {
+  "city": "Faribault",
+  "slug": "faribault",
+  "population": 24453,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.faribaultmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 2476,
+  "pdfs_analyzed": 286,
+  "pdfs_estimated": 1770,
+  "pages_analyzed": 719,
+  "pct_tagged": 11.5,
+  "pct_lang": 10.1,
+  "pct_title": 91.6,
+  "pct_scanned": 0.0,
+  "pdfs_failing_basic": 257,
+  "pages_failing_basic": 469,
+  "est_pages_to_remediate": 2903,
+  "pct_modified_2024_plus": 4.5,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "7.1-3",
+   "7.2-34",
+   "7.21.4.1-1"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.faribaultmn.gov/DocumentCenter/View/7265/2022-Budget-Book",
+    "pages": 135,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.faribaultmn.gov/DocumentCenter/View/6594/DowntownMaster-Implementation",
+    "pages": 20,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.faribaultmn.gov/DocumentCenter/View/13326/Lead--Cooper-Facts-Sheet",
+    "pages": 8,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "Lead in Drinking  Water Information Sheet"
+   },
+   {
+    "url": "https://www.faribaultmn.gov/DocumentCenter/View/3071",
+    "pages": 7,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.faribaultmn.gov/DocumentCenter/View/7191/Liz-Wall-Strohfus-Legacy",
+    "pages": 6,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.faribaultmn.gov/DocumentCenter/View/13241",
+    "pages": 5,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.faribaultmn.gov/DocumentCenter/View/7752",
+    "pages": 4,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.faribaultmn.gov/DocumentCenter/View/3743/US-Census-Bureau-QuickFacts_-Faribault-city-Minnesota-7-1-2017",
+    "pages": 3,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored",
+   "2476 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "Hastings",
+  "slug": "hastings",
+  "population": 22154,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.hastingsmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 1,
+  "pages_crawled": 300,
+  "pdf_links_found": 39,
+  "pdfs_analyzed": 38,
+  "pdfs_estimated": 38,
+  "pages_analyzed": 320,
+  "pct_tagged": 76.3,
+  "pct_lang": 73.7,
+  "pct_title": 42.1,
+  "pct_scanned": 2.6,
+  "pdfs_failing_basic": 11,
+  "pages_failing_basic": 105,
+  "est_pages_to_remediate": 105,
+  "pct_modified_2024_plus": 78.9,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "5-1",
+   "7.3-1",
+   "7.1-3",
+   "7.1-9"
+  ],
+  "main_issue": "title",
+  "examples": [
+   {
+    "url": "https://www.hastingsmn.gov/media/coenttuc/council-presentation-august-2023.pdf",
+    "pages": 28,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.hastingsmn.gov/media/501co43s/water-treatment-plants-siting-study-update.pdf",
+    "pages": 17,
+    "tagged": false,
+    "lang": "en",
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.hastingsmn.gov/media/pnweo5l4/pfas-updates-february-2023.pdf",
+    "pages": 16,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.hastingsmn.gov/media/ukii54pd/highway-61-power-point-slides-april-18-2022.pdf",
+    "pages": 12,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.hastingsmn.gov/media/aufj425s/highway-61-power-point-slides-april-21-2025.pdf",
+    "pages": 11,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.hastingsmn.gov/media/5ddbcbmf/ride-along-application-packet.pdf",
+    "pages": 10,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - 1-Approved Ride-along Policy.doc"
+   },
+   {
+    "url": "https://www.hastingsmn.gov/media/ah4jm01i/march-5-2025-update.pdf",
+    "pages": 6,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.hastingsmn.gov/media/52ofzyix/highway-61-council-memo-june-5th.pdf",
+    "pages": 2,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": []
+ },
+ {
+  "city": "Willmar",
+  "slug": "willmar",
+  "population": 21015,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.willmarmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 3327,
+  "pdfs_analyzed": 385,
+  "pdfs_estimated": 3202,
+  "pages_analyzed": 9205,
+  "pct_tagged": 58.4,
+  "pct_lang": 49.6,
+  "pct_title": 23.9,
+  "pct_scanned": 15.3,
+  "pdfs_failing_basic": 230,
+  "pages_failing_basic": 7432,
+  "est_pages_to_remediate": 61811,
+  "pct_modified_2024_plus": 18.7,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "5-1",
+   "7.1-3",
+   "6.2-1"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.willmarmn.gov/09-06-2016 Council Proceedings2.pdf?t=201708241456580",
+    "pages": 280,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.willmarmn.gov/02-06-2023 Council Packet-2.pdf?t=202302031723570",
+    "pages": 277,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.willmarmn.gov/Departments/Finance/Budget/2011 Budget for Web.pdf?t=201608131412500",
+    "pages": 257,
+    "tagged": false,
+    "lang": null,
+    "scanned": true,
+    "title": ""
+   },
+   {
+    "url": "https://www.willmarmn.gov/Government/Mayor & City Council/City Council Meetings/2014/Attachments 4-14-2014.pdf?t=201608301154350",
+    "pages": 241,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.willmarmn.gov/20200518 Council Agenda.pdf?t=202005151516440",
+    "pages": 227,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.willmarmn.gov/7162024 PACKET.pdf?t=202407161046530",
+    "pages": 218,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.willmarmn.gov/02172026 Agenda Packet.pdf?t=202602131419090",
+    "pages": 200,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.willmarmn.gov/10-03-2016 Council Packet.pdf?t=201708241523270",
+    "pages": 189,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "3327 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "Northfield",
+  "slug": "northfield",
+  "population": 20790,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.northfieldmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 83,
+  "pdf_links_found": 218,
+  "pdfs_analyzed": 205,
+  "pdfs_estimated": 205,
+  "pages_analyzed": 3062,
+  "pct_tagged": 34.6,
+  "pct_lang": 53.2,
+  "pct_title": 18.0,
+  "pct_scanned": 30.2,
+  "pdfs_failing_basic": 149,
+  "pages_failing_basic": 2038,
+  "est_pages_to_remediate": 2038,
+  "pct_modified_2024_plus": 61.0,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "5-1",
+   "7.1-10",
+   "7.1-9",
+   "7.1-3"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.northfieldmn.gov/DocumentCenter/View/607",
+    "pages": 252,
+    "tagged": false,
+    "lang": null,
+    "scanned": true,
+    "title": "Microsoft Word - CSSP NorthfieldDundas Oct 15 2007 FINAL.doc"
+   },
+   {
+    "url": "https://www.northfieldmn.gov/DocumentCenter/View/3457",
+    "pages": 150,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.northfieldmn.gov/DocumentCenter/View/615",
+    "pages": 148,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - NRI Final Report.doc"
+   },
+   {
+    "url": "https://www.northfieldmn.gov/DocumentCenter/View/608",
+    "pages": 141,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - CompWaterPlan.doc"
+   },
+   {
+    "url": "https://www.northfieldmn.gov/DocumentCenter/View/750",
+    "pages": 114,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Draft Study Report _9-16-09_.doc"
+   },
+   {
+    "url": "https://www.northfieldmn.gov/DocumentCenter/View/609",
+    "pages": 110,
+    "tagged": true,
+    "lang": null,
+    "scanned": true,
+    "title": ""
+   },
+   {
+    "url": "https://www.northfieldmn.gov/DocumentCenter/View/610",
+    "pages": 90,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "4160.16FrameworkPlan(2).indd"
+   },
+   {
+    "url": "https://www.northfieldmn.gov/DocumentCenter/View/617",
+    "pages": 78,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - 090827_NorthfieldFinalSRTSPlan_TS.doc"
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored",
+   "HTTP 403 challenge/block at https://www.northfieldmn.gov/117/City-Code-City-Charter",
+   "Correction: the 403 came from library.municode.com after an off-site redirect, not from the city site; HTML crawl stopped early at that point. Not re-run because of the 10 s Crawl-delay."
+  ]
+ },
+ {
+  "city": "Red Wing",
+  "slug": "red-wing",
+  "population": 16547,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.redwingmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 289,
+  "pdfs_analyzed": 186,
+  "pdfs_estimated": 186,
+  "pages_analyzed": 2355,
+  "pct_tagged": 63.4,
+  "pct_lang": 64.0,
+  "pct_title": 52.2,
+  "pct_scanned": 5.4,
+  "pdfs_failing_basic": 70,
+  "pages_failing_basic": 444,
+  "est_pages_to_remediate": 444,
+  "pct_modified_2024_plus": 40.3,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "5-1",
+   "7.1-3",
+   "7.18.1-2",
+   "7.21.4.2-2"
+  ],
+  "main_issue": "lang",
+  "examples": [
+   {
+    "url": "https://www.redwingmn.gov/DocumentCenter/View/2663/2017-Water-Supply-Plan-PDF",
+    "pages": 111,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.redwingmn.gov/DocumentCenter/View/6335/Red-Wing-Housing--Redevelopment-Authority-2021-Strategic-Plan-PDF",
+    "pages": 57,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.redwingmn.gov/DocumentCenter/View/608/Purchasing-Manual",
+    "pages": 47,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - PURCHASING MANUAL - Revised - 5-22-09"
+   },
+   {
+    "url": "https://www.redwingmn.gov/DocumentCenter/View/6059/-He-Mni-Can-Barn-Bluff-Columns-of-Dialogue-Entrance-Panels-Descriptions-PDF",
+    "pages": 42,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.redwingmn.gov/DocumentCenter/View/714/Historic-Walking-Tour-PDF",
+    "pages": 20,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Footsteps reader spreds 09:Footsteps reader spreds 09"
+   },
+   {
+    "url": "https://www.redwingmn.gov/DocumentCenter/View/5018/Rental-License-Ordinance-No-166-PDF",
+    "pages": 19,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.redwingmn.gov/DocumentCenter/View/7783/Commission-Structure--Arts-Fund-in-City-Code-PDF",
+    "pages": 12,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.redwingmn.gov/DocumentCenter/View/2502/Red-Wing-2040-Arts-and-Culture-PDF",
+    "pages": 10,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored"
+  ]
+ },
+ {
+  "city": "Hutchinson",
+  "slug": "hutchinson",
+  "population": 14599,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://hutchinsonmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 182,
+  "pdf_links_found": 262,
+  "pdfs_analyzed": 259,
+  "pdfs_estimated": 259,
+  "pages_analyzed": 3138,
+  "pct_tagged": 59.1,
+  "pct_lang": 50.6,
+  "pct_title": 53.3,
+  "pct_scanned": 7.3,
+  "pdfs_failing_basic": 131,
+  "pages_failing_basic": 1691,
+  "est_pages_to_remediate": 1691,
+  "pct_modified_2024_plus": 37.1,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "7.3-1",
+   "7.21.4.1-1",
+   "7.1-8"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://hutchinsonmn.gov/wp-content/uploads/2025/12/2026-BUDGET-HUTCHINSON-MN.pdf",
+    "pages": 195,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "2026 GENERAL FUND BUDGET - FINAL.xlsx"
+   },
+   {
+    "url": "https://hutchinsonmn.gov/wp-content/uploads/2024/12/2025-BUDGET-HUTCHINSON-MN.pdf",
+    "pages": 193,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "2024 GENERAL FUND BUDGET - FINAL.xlsx"
+   },
+   {
+    "url": "https://hutchinsonmn.gov/wp-content/uploads/2017/08/2013compplan.pdf",
+    "pages": 137,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Hutchinson Comp Plan_12_02_13.pdf"
+   },
+   {
+    "url": "https://hutchinsonmn.gov/wp-content/uploads/2017/08/2015-06-15-Airport-Master-Plan-Final_reprint-1.pdf",
+    "pages": 134,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "2015-06-15 Airport Master Plan Final.pdf"
+   },
+   {
+    "url": "https://hutchinsonmn.gov/wp-content/uploads/2023/10/The-NCS-Report-Hutchinson-MN-2023.pdf",
+    "pages": 122,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://hutchinsonmn.gov/wp-content/uploads/2017/08/2012transportationplan.pdf",
+    "pages": 115,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "Save as report title..."
+   },
+   {
+    "url": "https://hutchinsonmn.gov/wp-content/uploads/2018/05/Transportation-Plan_03-25-13.pdf",
+    "pages": 115,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "Save as report title..."
+   },
+   {
+    "url": "https://hutchinsonmn.gov/wp-content/uploads/2017/08/mcLeodcountytrailspPlan.pdf",
+    "pages": 112,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": []
+ },
+ {
+  "city": "Bemidji",
+  "slug": "bemidji",
+  "population": 14574,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.ci.bemidji.mn.us/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 709,
+  "pdfs_analyzed": 282,
+  "pdfs_estimated": 500,
+  "pages_analyzed": 2304,
+  "pct_tagged": 58.9,
+  "pct_lang": 55.7,
+  "pct_title": 70.6,
+  "pct_scanned": 9.6,
+  "pdfs_failing_basic": 130,
+  "pages_failing_basic": 1511,
+  "est_pages_to_remediate": 2679,
+  "pct_modified_2024_plus": 55.0,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "5-1",
+   "6.2-1",
+   "7.1-3"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.ci.bemidji.mn.us/vertical/sites/%7BDC40720D-A823-4643-91CD-6456402D11F6%7D/uploads/2024-06-10_PB_Packet.pdf",
+    "pages": 249,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.ci.bemidji.mn.us/uploads/dm/22918/04072025_CC_Packet_REV.pdf",
+    "pages": 170,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.ci.bemidji.mn.us/vertical/sites/%7BDC40720D-A823-4643-91CD-6456402D11F6%7D/uploads/2023_Audit_Report_-_Bemidji.pdf",
+    "pages": 134,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - {AC194D0A-4370-49AF-8E23-DF743F766CC7}"
+   },
+   {
+    "url": "https://www.ci.bemidji.mn.us/vertical/sites/%7BDC40720D-A823-4643-91CD-6456402D11F6%7D/uploads/AuditReport2020.pdf",
+    "pages": 130,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - {AC194D0A-4370-49AF-8E23-DF743F766CC7}"
+   },
+   {
+    "url": "https://www.ci.bemidji.mn.us/uploads/dm/38510/2024_AUDIT_REPORT",
+    "pages": 114,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "- RTP Audit (City of Bemidji  [12/31/2024] (In Process))"
+   },
+   {
+    "url": "https://www.ci.bemidji.mn.us/uploads/dm/84541/2025_Audit_Report",
+    "pages": 104,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - {CC823D07-CB8D-45C7-89FB-A95B547615B9}"
+   },
+   {
+    "url": "https://www.ci.bemidji.mn.us/vertical/sites/%7BDC40720D-A823-4643-91CD-6456402D11F6%7D/uploads/2025-01-13_PB_Packet.pdf",
+    "pages": 57,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.ci.bemidji.mn.us/vertical/sites/%7BDC40720D-A823-4643-91CD-6456402D11F6%7D/uploads/2024-04-08_PB_Packet.pdf",
+    "pages": 50,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored",
+   "709 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "Alexandria",
+  "slug": "alexandria",
+  "population": 14335,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.alexandriamn.city/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 843,
+  "pdfs_analyzed": 395,
+  "pdfs_estimated": 832,
+  "pages_analyzed": 2439,
+  "pct_tagged": 55.4,
+  "pct_lang": 48.9,
+  "pct_title": 51.1,
+  "pct_scanned": 35.2,
+  "pdfs_failing_basic": 205,
+  "pages_failing_basic": 1275,
+  "est_pages_to_remediate": 2686,
+  "pct_modified_2024_plus": 26.1,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "5-1",
+   "7.1-3",
+   "6.2-1"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://eadn-wc02-16183871.nxedge.io/cdn/wp-content/uploads/2020/01/2030-Transportation-Plan-1.pdf",
+    "pages": 176,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - December 2010 Final Draft Report - 2030 Alexandria Area Transportation Pl"
+   },
+   {
+    "url": "https://eadn-wc02-16183871.nxedge.io/cdn/wp-content/uploads/2025/06/2024-FINAL-Annual-Financial-Report.pdf",
+    "pages": 147,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": "- 2024 FINAL Annual Financial Report (CITY OF ALEXANDRIA 2024A [12/31/2024] (In Process))"
+   },
+   {
+    "url": "https://eadn-wc02-16183871.nxedge.io/cdn/wp-content/uploads/2018/01/MCM_4_5__-_Construction_Site_Stormwater_Runoff_Control__Post-Construction_Stormwater_Management.pdf",
+    "pages": 107,
+    "tagged": false,
+    "lang": null,
+    "scanned": true,
+    "title": ""
+   },
+   {
+    "url": "https://eadn-wc02-16183871.nxedge.io/cdn/wp-content/uploads/2018/01/MCM_3_-_Illicit_Discharge_Detection_and_Elimination1.pdf",
+    "pages": 71,
+    "tagged": false,
+    "lang": null,
+    "scanned": true,
+    "title": ""
+   },
+   {
+    "url": "https://eadn-wc02-16183871.nxedge.io/cdn/wp-content/uploads/2018/03/Alexandria-Transition-Plan-1-17-18.pdf",
+    "pages": 64,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://eadn-wc02-16183871.nxedge.io/cdn/wp-content/uploads/2020/01/Bicycle-Pedestrian-Enhancements-Study.pdf",
+    "pages": 39,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Bicycle - Pedestrian Enhancements Study.doc"
+   },
+   {
+    "url": "https://eadn-wc02-16183871.nxedge.io/cdn/wp-content/uploads/2019/03/Ord-790.pdf",
+    "pages": 35,
+    "tagged": false,
+    "lang": null,
+    "scanned": true,
+    "title": "SKM_C45819031310390"
+   },
+   {
+    "url": "https://eadn-wc02-16183871.nxedge.io/cdn/wp-content/uploads/2021/03/Data-Practice-Policies-Procedures-1-11-21.pdf",
+    "pages": 28,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   }
+  ],
+  "notes": [
+   "843 PDF links found; random sample of 400 analyzed"
+  ]
+ },
+ {
+  "city": "New Ulm",
+  "slug": "new-ulm",
+  "population": 14120,
+  "deadline": "2028-04-26",
+  "status": "ok",
+  "start_url": "https://www.newulmmn.gov/",
+  "crawled_at": "2026-11-19",
+  "robots_skipped": 0,
+  "pages_crawled": 300,
+  "pdf_links_found": 564,
+  "pdfs_analyzed": 299,
+  "pdfs_estimated": 422,
+  "pages_analyzed": 1805,
+  "pct_tagged": 28.1,
+  "pct_lang": 25.1,
+  "pct_title": 19.7,
+  "pct_scanned": 2.0,
+  "pdfs_failing_basic": 224,
+  "pages_failing_basic": 840,
+  "est_pages_to_remediate": 1186,
+  "pct_modified_2024_plus": 18.1,
+  "vera_tested": 20,
+  "vera_passed": 0,
+  "top_vera_rules": [
+   "7.1-10",
+   "7.1-8",
+   "7.21.4.1-1",
+   "6.2-1"
+  ],
+  "main_issue": "untagged",
+  "examples": [
+   {
+    "url": "https://www.newulmmn.gov/DocumentCenter/View/173/Safe-Routes-to-School-Plan-PDF",
+    "pages": 103,
+    "tagged": true,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.newulmmn.gov/DocumentCenter/View/3287/New-Ulm-Standard-Specifications-PDF",
+    "pages": 95,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.newulmmn.gov/DocumentCenter/View/179/Storm-Water-Manual-PDF",
+    "pages": 42,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.newulmmn.gov/DocumentCenter/View/1743",
+    "pages": 32,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Layout 1"
+   },
+   {
+    "url": "https://www.newulmmn.gov/DocumentCenter/View/162/Ordinance-No-19-030-Fifth-Series-PDF",
+    "pages": 28,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Microsoft Word - Ord. 19-030 (pending).docx"
+   },
+   {
+    "url": "https://www.newulmmn.gov/DocumentCenter/View/172/New-Ulm-Standard-Plates-PDF",
+    "pages": 27,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "Tree"
+   },
+   {
+    "url": "https://www.newulmmn.gov/DocumentCenter/View/180/Storm-Water-Ordinance-PDF",
+    "pages": 21,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": ""
+   },
+   {
+    "url": "https://www.newulmmn.gov/DocumentCenter/View/3713/306---Vehicle-Pursuits-PDF",
+    "pages": 13,
+    "tagged": false,
+    "lang": null,
+    "scanned": false,
+    "title": "vehicle-pursuits.pdf"
+   }
+  ],
+  "notes": [
+   "robots Crawl-delay 10s honored",
+   "564 PDF links found; random sample of 400 analyzed"
+  ]
+ }
+]

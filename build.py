@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 import hashlib
 def ver(f): return hashlib.sha1((ROOT / f).read_bytes()).hexdigest()[:8]
-BASE = "https://signalfeed.github.io/"
+BASE = "https://signalfeed.dev/"
 UPWORK = "https://www.upwork.com/freelancers/~019a97d6c06c1b0e74"
 EMAIL = "aaron.signalfeed@gmail.com"
 GUIDES = [  # slug, short title, kind
@@ -20,10 +20,12 @@ GUIDES = [  # slug, short title, kind
     ("pdf-remediation-before-after.html", "PDF remediation before and after", "Samples"),
     ("remediation-partners.html", "White-label remediation for agencies", "Partners"),
     ("online-store-accessibility-checklist.html", "Online store accessibility checklist", "Checklist"),
+    ("mn-title-ii-pdf-readiness.html", "Minnesota Title II PDF readiness", "Data"),
 ]
 LOGO = '''<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg>'''
 
-def head(title, desc, slug, extra=""):
+def head(title, desc, slug, extra="", og=None):
+    og = og or slug.replace(".html", "")
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,18 +34,18 @@ def head(title, desc, slug, extra=""):
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{BASE}{'' if slug == 'index.html' else slug}">
-<meta property="og:site_name" content="SignalFeed">
+<meta property="og:site_name" content="SignalFeed.dev">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:type" content="{'website' if slug == 'index.html' else 'article'}">
 <meta property="og:url" content="{BASE}{'' if slug == 'index.html' else slug}">
-<meta property="og:image" content="{BASE}assets/og/{slug.replace('.html','')}.jpg">
+<meta property="og:image" content="{BASE}assets/og/{og}.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{html.escape(title)}: SignalFeed card over a printing press">
+<meta property="og:image:alt" content="{html.escape(title)}: SignalFeed.dev card over a printing press">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{html.escape(title)}">
 <meta name="twitter:description" content="{html.escape(desc)}">
-<meta name="twitter:image" content="{BASE}assets/og/{slug.replace('.html','')}.jpg">
+<meta name="twitter:image" content="{BASE}assets/og/{og}.jpg">
 <meta name="theme-color" content="#05070d">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -52,18 +54,18 @@ def head(title, desc, slug, extra=""):
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="./" aria-label="SignalFeed home">{LOGO}<span>SignalFeed</span></a>
+<a class="brand" href="./" aria-label="SignalFeed.dev home">{LOGO}<span>SignalFeed.dev</span></a>
 <nav class="nav" aria-label="Main">
 <a class="hide-sm" href="./#services">Services</a>
 <a class="hide-sm" href="./#checker">Free checker</a>
 <a class="hide-sm" href="./#guides">Guides</a>
 <a class="hide-sm" href="jobs/">Job data</a>
-<a class="btn btn-primary" href="mailto:{EMAIL}?subject=Free%202-page%20sample">Get a free sample</a>
+<a class="btn btn-primary" href="mailto:{EMAIL}?subject=Free%202-page%20sample">Free sample</a>
 </nav></div></header>
 '''
 
 FOOT = f'''<footer class="site-footer"><div class="wrap">
-<div><a class="brand" href="./">{LOGO}<span>SignalFeed</span></a><p>Document accessibility and clean data. Careful human review, honest reports.</p></div>
+<div><a class="brand" href="./">{LOGO}<span>SignalFeed.dev</span></a><p>Document accessibility and clean data. Careful human review, honest reports.</p></div>
 <nav aria-label="Footer">
 <a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a><a href="jobs/">Job data</a>
 <a href="{UPWORK}">Hire on Upwork</a><a href="mailto:{EMAIL}">Email</a><span>Hero footage: Everett Bumstead via Pexels</span>
@@ -76,15 +78,15 @@ FOOT = f'''<footer class="site-footer"><div class="wrap">
 '''
 
 def article(a):
-    kind = next((k for s, _, k in GUIDES if s == a["slug"]), "Guide")
+    kind = a.get("kind") or next((k for s, _, k in GUIDES if s == a["slug"]), "Guide")
     others = "".join(f'<li><a href="{s}">{html.escape(t)}</a></li>' for s, t, _ in GUIDES if s != a["slug"])
-    return head(a["title"], a["description"], a["slug"]) + f'''<main id="main">
+    return head(a["title"], a["description"], a["slug"], og=a.get("og")) + f'''<main id="main">
 <div class="article-head cine">
 <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="https://images.unsplash.com/photo-1461958508236-9a742665a0d5?w=1600&q=70&auto=format"><source src="https://videos.pexels.com/video-files/29906414/12837346_960_540_24fps.mp4" type="video/mp4"></video>
 <canvas id="field" aria-hidden="true"></canvas>
 <button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4c0 .6.7 1 1.2.6l8-5.2a.7.7 0 0 0 0-1.2l-8-5.2c-.5-.4-1.2 0-1.2.6z"/></svg></button>
 <div class="wrap">
-<p class="crumbs"><a href="./">SignalFeed</a> / <a href="./#guides">Guides</a> / {kind}</p>
+<p class="crumbs"><a href="./">SignalFeed.dev</a> / <a href="./#guides">Guides</a> / {kind}</p>
 <h1>{a["h1"]}</h1>
 <p class="article-meta">{kind} · Last reviewed November 2026 · Sources linked inline</p>
 </div></div>
@@ -104,8 +106,8 @@ def index():
     checker = (ROOT / "src/checker-script.html").read_text()
     cards = "".join(f'<a class="card reveal" href="{s}"><span class="tag">{k}</span><h3>{html.escape(t)}</h3><span class="more">Read the guide →</span></a>' for s, t, k in GUIDES)
     ribbon = '<div class="ribbon" aria-hidden="true"><svg viewBox="0 0 1600 200" preserveAspectRatio="none"><path fill="none" stroke="#8fb0ff" stroke-opacity=".35" stroke-width="1.2"/><path fill="none" stroke="#6ff0d2" stroke-opacity=".3" stroke-width="1.2"/><path fill="none" stroke="#8fb0ff" stroke-opacity=".2" stroke-width="1"/></svg></div>'
-    return head("SignalFeed: Accessible PDFs, WCAG Audits and Clean Data",
-                "SignalFeed rebuilds public documents as accessible, tagged PDFs and web pages, audits websites against WCAG 2.2 AA, and cleans messy data. Free in-browser PDF checker and plain-English guides.",
+    return head("SignalFeed.dev: Accessible PDFs, WCAG Audits and Clean Data",
+                "SignalFeed.dev rebuilds public documents as accessible, tagged PDFs and web pages, audits websites against WCAG 2.2 AA, and cleans messy data. Free in-browser PDF checker and plain-English guides.",
                 "index.html") + f'''<main id="main">
 <section class="hero-x" aria-labelledby="hero-title">
 <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true"
@@ -116,7 +118,7 @@ def index():
 <button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4c0 .6.7 1 1.2.6l8-5.2a.7.7 0 0 0 0-1.2l-8-5.2c-.5-.4-1.2 0-1.2.6z"/></svg></button>
 <div class="scan" aria-hidden="true"></div>
 <div class="hud" aria-hidden="true"><i></i>
-<span class="tl mono"><span class="dot"></span>SignalFeed // Document systems</span>
+<span class="tl mono"><span class="dot"></span>SignalFeed.dev // Document systems</span>
 <span class="tr mono">Standard · WCAG 2.2 AA</span>
 <span class="bl mono">Checker · local only · 0 uploads</span>
 <span class="br mono" id="utc">UTC --:--:--</span>
@@ -238,8 +240,13 @@ def index():
 {checker.replace("class='bad'", "class='bad'").replace("<table>", "<table class='result-table'>")}
 ''' + FOOT
 
+import readiness
 for f in sorted((ROOT / "src").glob("*.json")):
+    if f.name == "mn-readiness.json":
+        continue
     a = json.loads(f.read_text())
     (ROOT / a["slug"]).write_text(article(a))
 (ROOT / "index.html").write_text(index())
+for a in readiness.pages(ROOT / "src/mn-readiness.json", EMAIL):
+    (ROOT / a["slug"]).write_text(article(a))
 print("built", len(list((ROOT / "src").glob("*.json"))), "articles + index")
