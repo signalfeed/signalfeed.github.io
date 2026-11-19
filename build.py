@@ -161,7 +161,7 @@ def index():
 <div class="row" style="--i:4">Table headers <em>3 / 3</em></div>
 <div class="row" style="--i:5">Alt text <em>1 / 1</em></div>
 <div class="row" style="--i:6">Reading order <em class="r">manual ✓</em></div>
-<div class="score">Report ready · 0 open issues</div>
+<div class="score">Report ready · manual checks listed</div>
 </div>
 </div>
 </div></div><div class="base"></div></div>
