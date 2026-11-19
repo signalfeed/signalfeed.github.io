@@ -18,6 +18,7 @@ GUIDES = [  # slug, short title, kind
     ("verapdf-pdf-ua-errors.html", "veraPDF PDF/UA errors, explained", "How-to"),
     ("title-ii-accessibility-training.html", "ADA Title II training for staff", "Training"),
     ("pdf-remediation-before-after.html", "PDF remediation before and after", "Samples"),
+    ("remediation-partners.html", "White-label remediation for agencies", "Partners"),
     ("online-store-accessibility-checklist.html", "Online store accessibility checklist", "Checklist"),
 ]
 LOGO = '''<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg>'''
