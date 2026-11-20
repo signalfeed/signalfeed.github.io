@@ -24,6 +24,10 @@ GUIDES = [  # slug, short title, kind
     ("mn-title-ii-pdf-readiness.html", "Minnesota Title II PDF readiness", "Data"),
     ("book-formatting-sample.html", "Ebook and paperback formatting sample", "Samples"),
 ]
+for _s, _t in (("title-ii-pdf-backlog-counties.html", "Title II PDF Backlog Index: US counties"),
+               ("title-ii-pdf-backlog-universities.html", "Title II PDF Backlog Index: public universities")):
+    if (ROOT / "src" / _s.replace(".html", ".json")).exists():  # appear only once the edition is published
+        GUIDES.insert(next(i for i, g in enumerate(GUIDES) if g[0] == "title-ii-pdf-backlog-index.html") + 1, (_s, _t, "Data"))
 LOGO = '''<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg>'''
 
 def head(title, desc, slug, extra="", og=None):
