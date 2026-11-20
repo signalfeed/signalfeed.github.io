@@ -1,0 +1,41 @@
+state,cities_measured,pdfs_analyzed,pct_untagged,est_pages_needing_remediation
+Michigan,13,625,47.2,213346
+California,25,1188,41.8,189166
+Texas,25,1113,47.7,185293
+New York,13,649,51.0,172763
+New Mexico,2,119,59.6,116671
+Massachusetts,11,445,49.2,87759
+Washington,11,596,35.2,87502
+North Carolina,8,392,29.1,71163
+Florida,31,1466,27.2,68477
+Q816,7,389,42.4,53382
+Pennsylvania,6,349,63.0,51464
+Wyoming,2,113,20.3,50413
+Tennessee,6,290,37.6,42204
+Alabama,3,146,63.7,34518
+South Carolina,3,107,47.6,30721
+Rhode Island,4,195,51.3,28872
+Illinois,5,239,38.5,26561
+Connecticut,9,340,34.4,24652
+Utah,5,248,36.7,24454
+Nebraska,1,59,23.7,21562
+Oklahoma,4,187,38.5,18462
+Indiana,3,147,53.8,17191
+Minnesota,4,236,36.0,16037
+Kansas,3,142,45.8,14100
+Georgia,4,179,35.8,13930
+Ohio,6,255,30.2,13914
+Mississippi,2,81,48.2,11667
+Colorado,8,361,17.4,11257
+Missouri,4,130,29.2,7124
+Wisconsin,3,140,32.9,5843
+Idaho,2,80,30.0,4828
+Kentucky,1,55,25.5,4288
+New Jersey,3,141,46.1,3021
+Iowa,5,223,24.6,1769
+Louisiana,4,114,30.7,1557
+Maryland,2,76,36.9,1268
+Arkansas,1,57,52.6,993
+South Dakota,1,59,28.8,990
+Virginia,1,24,25.0,292
+Montana,1,24,29.2,236

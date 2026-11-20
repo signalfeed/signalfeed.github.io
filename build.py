@@ -20,6 +20,7 @@ GUIDES = [  # slug, short title, kind
     ("pdf-remediation-before-after.html", "PDF remediation before and after", "Samples"),
     ("remediation-partners.html", "White-label remediation for agencies", "Partners"),
     ("online-store-accessibility-checklist.html", "Online store accessibility checklist", "Checklist"),
+    ("title-ii-pdf-backlog-index.html", "Title II PDF Backlog Index: 657 US cities", "Data"),
     ("mn-title-ii-pdf-readiness.html", "Minnesota Title II PDF readiness", "Data"),
     ("book-formatting-sample.html", "Ebook and paperback formatting sample", "Samples"),
 ]

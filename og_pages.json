@@ -82,5 +82,12 @@
   "title": "Book formatting sample",
   "sub": "A validated EPUB and a 5x8 print interior.",
   "t": 10
+ },
+ {
+  "slug": "title-ii-pdf-backlog-index",
+  "eyebrow": "Data \u00b7 ADA Title II \u00b7 April 26, 2027",
+  "title": "Title II PDF Backlog Index",
+  "sub": "11,839 PDFs from 253 US cities: 39.5% untagged.",
+  "t": 10
  }
 ]
