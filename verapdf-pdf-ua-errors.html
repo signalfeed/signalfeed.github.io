@@ -59,7 +59,7 @@
 <p><strong>Fix:</strong> correct the role map so each custom heading tag maps to <code>/H1</code>, <code>/H2</code> and so on, or export from a tool that writes standard heading tags (Microsoft Word with "Document structure tags for accessibility" turned on). We patch the RoleMap entry directly and save incrementally, then re-validate.</p>
 <h2>7.18.1: form fields without a description</h2>
 <p><strong>Symptom:</strong> fillable fields fail clause 7.18.1.</p>
-<p><strong>Cause:</strong> PDF/UA requires each form field to have an accessible name, stored as the field's tooltip (the <code>/TU</code> entry). Many exporters leave it empty, so a screen reader announces only "edit text".</p>
+<p><strong>Cause:</strong> PDF/UA requires each form field to have an accessible name, usually the field's tooltip (the <code>/TU</code> entry), or alternative text on its Form tag. Many exporters leave it empty, so a screen reader announces only "edit text".</p>
 <p><strong>Fix:</strong> give every field a tooltip that says what to enter ("Applicant's full name"). In Acrobat that is the field's Properties, General tab, Tooltip. In HTML-to-PDF workflows, a <code>title</code> attribute on each input can be carried into the tooltip.</p>
 <h2>7.21.4.1: fonts that aren't embedded</h2>
 <p><strong>Symptom:</strong> a PDF that passed starts failing clause 7.21.4.1 after you edit form fields.</p>
@@ -67,10 +67,11 @@
 <p><strong>Fix:</strong> turn on the exporter's option to embed standard fonts, and change field properties without regenerating appearances where possible. Re-run veraPDF after every edit, not only at the end.</p>
 <h2>Other common PDF/UA-1 failures</h2>
 <ul>
-<li><strong>7.1 (document):</strong> missing PDF/UA identifier in the metadata, no document title, or the viewer set to show the file name instead of the title (DisplayDocTitle).</li>
+<li><strong>5 (identification):</strong> missing PDF/UA identifier in the metadata.</li>
+<li><strong>7.1 (document):</strong> no document title, the viewer set to show the file name instead of the title (DisplayDocTitle), or content that is neither tagged nor marked as an artifact.</li>
 <li><strong>7.2 (text):</strong> no document language, or content outside the tag tree that isn't marked as an artifact.</li>
 <li><strong>7.3 (graphics):</strong> Figure tags without alternate text.</li>
-<li><strong>7.5 (tables):</strong> table header cells that aren't tagged TH, or have no scope.</li>
+<li><strong>7.5 (tables):</strong> TH cells with no Scope attribute when the table doesn't use Headers and IDs. Whether the right cells are tagged TH needs a person to check.</li>
 </ul>
 <h2>What a pass does and doesn't prove</h2>
 <p>veraPDF checks structure that a machine can test. It cannot judge whether alt text is accurate, whether the reading order makes sense, or whether link text is meaningful. The Matterhorn Protocol lists the PDF/UA failure conditions, and many of them need human review. Use veraPDF as the gate, then check reading order and alt text by hand. For a quick first look without installing anything, try our <a href="index.html#checker">in-browser PDF check</a>.</p>

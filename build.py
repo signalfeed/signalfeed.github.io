@@ -125,7 +125,7 @@ def index():
 <div class="scan" aria-hidden="true"></div>
 <div class="hud" aria-hidden="true"><i></i>
 <span class="tl mono"><span class="dot"></span>SignalFeed.dev // Document systems</span>
-<span class="tr mono">Standard · WCAG 2.2 AA</span>
+<span class="tr mono">Standards · WCAG 2.1 AA (Title II / HHS 504) · 2.2 AA (audits)</span>
 <span class="bl mono">Checker · local only · 0 uploads</span>
 <span class="br mono" id="utc">UTC --:--:--</span>
 </div>
@@ -176,7 +176,7 @@ def index():
 </div>
 <div>
 <p class="eyebrow">How it works</p>
-<h2 id="story-title" style="font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:8px 0 26px">From unreadable to verified.</h2>
+<h2 id="story-title" style="font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:8px 0 26px">From unreadable to checked and reported.</h2>
 <ol class="captions">
 <li class="on" data-step="0"><span class="k">01 · Intake</span><strong>Your document, opened up.</strong>We read the source PDF or Word file and map every element on every page.</li>
 <li data-step="1"><span class="k">02 · Structure</span><strong>Every element tagged.</strong>Headings, paragraphs, lists, tables with header cells, figures with real descriptions, in the right reading order.</li>
@@ -192,7 +192,7 @@ def index():
 <div class="section-head reveal"><p class="eyebrow">Services</p><h2 id="svc-title">From backlog to accessible, without the guesswork.</h2><p>Fixed quotes, a free sample first, and a report that says exactly what was checked and what wasn&#39;t.</p></div>
 <div class="grid">
 <div class="card reveal"><span class="num">01</span><h3>Accessible PDFs</h3><p>Documents rebuilt with real headings, reading order, table headers, alt text, title and language, as a tagged PDF plus an accessible web version.</p><p class="price">From $45 for 10 pages</p></div>
-<div class="card reveal"><span class="num">02</span><h3>Website WCAG audits</h3><p>Automated axe-core scans plus the manual checks scanners miss: keyboard, focus, zoom and reflow, forms, screen reader. One prioritized fix list.</p><p class="price">From $60 for 5 key pages</p></div>
+<div class="card reveal"><span class="num">02</span><h3>Website WCAG audits</h3><p>Automated axe-core scans plus the manual checks scanners miss: keyboard, focus, zoom and reflow, forms, VoiceOver screen reader checks (no JAWS or NVDA). One prioritized fix list.</p><p class="price">From $60 for 5 key pages</p></div>
 <div class="card reveal"><span class="num">03</span><h3>Templates and clean data</h3><p>Word templates that export better PDFs by default, and messy spreadsheets deduplicated and standardized with a full change log.</p><p class="price">From $30</p></div>
 </div>
 </div>
