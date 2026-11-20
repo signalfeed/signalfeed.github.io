@@ -82,7 +82,7 @@ FOOT = f'''<footer class="site-footer"><div class="wrap">
 def article(a):
     kind = a.get("kind") or next((k for s, _, k in GUIDES if s == a["slug"]), "Guide")
     others = "".join(f'<li><a href="{s}">{html.escape(t)}</a></li>' for s, t, _ in GUIDES if s != a["slug"])
-    return head(a["title"], a["description"], a["slug"], og=a.get("og")) + f'''<main id="main">
+    return head(a["title"], a["description"], a["slug"], extra=a.get("head_extra", ""), og=a.get("og")) + f'''<main id="main">
 <div class="article-head cine">
 <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="https://images.unsplash.com/photo-1461958508236-9a742665a0d5?w=1600&q=70&auto=format"><source src="https://videos.pexels.com/video-files/29906414/12837346_960_540_24fps.mp4" type="video/mp4"></video>
 <canvas id="field" aria-hidden="true"></canvas>
