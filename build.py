@@ -22,6 +22,7 @@ GUIDES = [  # slug, short title, kind
     ("online-store-accessibility-checklist.html", "Online store accessibility checklist", "Checklist"),
     ("title-ii-pdf-backlog-index.html", "Title II PDF Backlog Index: 657 US cities", "Data"),
     ("pdf-remediation-cost.html", "How much PDF remediation costs", "Data"),
+    ("k12-district-platforms.html", "K-12 district website and board platforms", "Data"),
     ("pdf-backlog-sizing.html", "PDF backlog sizing for remediation bids", "Data"),
     ("mn-title-ii-pdf-readiness.html", "Minnesota Title II PDF readiness", "Data"),
     ("book-formatting-sample.html", "Ebook and paperback formatting sample", "Samples"),
