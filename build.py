@@ -10,6 +10,7 @@ UPWORK = "https://www.upwork.com/freelancers/~019a97d6c06c1b0e74"
 EMAIL = "aaron.signalfeed@gmail.com"
 GUIDES = [  # slug, short title, kind
     ("title-ii-pdf-guide.html", "ADA Title II and your PDFs", "Regulation"),
+    ("state-agencies-title-ii-pdfs.html", "State agencies and the 2027 Title II deadline", "Regulation"),
     ("special-districts-title-ii-pdfs.html", "Special districts and the 2028 Title II deadline", "Regulation"),
     ("section-504-patient-pdfs.html", "HHS Section 504 and patient PDFs", "Regulation"),
     ("accessible-word-to-pdf.html", "Word to accessible PDF, step by step", "How-to"),
