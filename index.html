@@ -197,7 +197,7 @@ async function check(file) {
   const bytes = new Uint8Array(await file.arrayBuffer());
   const lang = findLang(bytes);
   let doc;
-  try { doc = await pdfjsLib.getDocument({data: bytes.slice()}).promise; }
+  try { doc = await pdfjsLib.getDocument({data: bytes.slice(), isEvalSupported: false}).promise; }
   catch (e) { $("status").textContent = "This file could not be opened as a PDF (" + e.name + ")."; return; }
   const meta = await doc.getMetadata().catch(() => ({}));
   const mark = await doc.getMarkInfo().catch(() => null);
