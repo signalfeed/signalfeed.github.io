@@ -13,6 +13,7 @@ GUIDES = [  # slug, short title, kind
     ("state-agencies-title-ii-pdfs.html", "State agencies and the 2027 Title II deadline", "Regulation"),
     ("special-districts-title-ii-pdfs.html", "Special districts and the 2028 Title II deadline", "Regulation"),
     ("section-504-patient-pdfs.html", "HHS Section 504 and patient PDFs", "Regulation"),
+    ("pdf-inventory-title-ii.html", "How to inventory your PDFs before Title II", "How-to"),
     ("accessible-word-to-pdf.html", "Word to accessible PDF, step by step", "How-to"),
     ("accessible-meeting-agendas.html", "Accessible meeting agendas and minutes", "How-to"),
     ("accessible-budget-tables.html", "Accessible budget tables", "How-to"),
