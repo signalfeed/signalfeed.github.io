@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PDF Backlog Sizing for Remediation Bids | SignalFeed.dev</title>
-<meta name="description" content="Price a city or county PDF remediation bid from data: PDF count, estimated page range, untagged and scanned share, page-count mix and a per-document list for one entity. $149, delivered in 3 business days.">
+<title>PDF Backlog Sizing: Inventory One Public Entity&#x27;s PDFs | SignalFeed.dev</title>
+<meta name="description" content="A per-document inventory of one city, county, district or agency website&#x27;s PDFs: count, estimated page range, untagged and scanned share, dates and a per-document list. For Title II budgeting, remediation RFPs and bids. $149, 3 business days.">
 <link rel="canonical" href="https://signalfeed.dev/pdf-backlog-sizing.html">
 <meta property="og:site_name" content="SignalFeed.dev">
-<meta property="og:title" content="PDF Backlog Sizing for Remediation Bids | SignalFeed.dev">
-<meta property="og:description" content="Price a city or county PDF remediation bid from data: PDF count, estimated page range, untagged and scanned share, page-count mix and a per-document list for one entity. $149, delivered in 3 business days.">
+<meta property="og:title" content="PDF Backlog Sizing: Inventory One Public Entity&#x27;s PDFs | SignalFeed.dev">
+<meta property="og:description" content="A per-document inventory of one city, county, district or agency website&#x27;s PDFs: count, estimated page range, untagged and scanned share, dates and a per-document list. For Title II budgeting, remediation RFPs and bids. $149, 3 business days.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://signalfeed.dev/pdf-backlog-sizing.html">
 <meta property="og:image" content="https://signalfeed.dev/assets/og/pdf-backlog-sizing.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="PDF Backlog Sizing for Remediation Bids | SignalFeed.dev: SignalFeed.dev card over a printing press">
+<meta property="og:image:alt" content="PDF Backlog Sizing: Inventory One Public Entity&#x27;s PDFs | SignalFeed.dev: SignalFeed.dev card over a printing press">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PDF Backlog Sizing for Remediation Bids | SignalFeed.dev">
-<meta name="twitter:description" content="Price a city or county PDF remediation bid from data: PDF count, estimated page range, untagged and scanned share, page-count mix and a per-document list for one entity. $149, delivered in 3 business days.">
+<meta name="twitter:title" content="PDF Backlog Sizing: Inventory One Public Entity&#x27;s PDFs | SignalFeed.dev">
+<meta name="twitter:description" content="A per-document inventory of one city, county, district or agency website&#x27;s PDFs: count, estimated page range, untagged and scanned share, dates and a per-document list. For Title II budgeting, remediation RFPs and bids. $149, 3 business days.">
 <meta name="twitter:image" content="https://signalfeed.dev/assets/og/pdf-backlog-sizing.jpg">
 <meta name="theme-color" content="#05070d">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,14 +41,14 @@
 <button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4c0 .6.7 1 1.2.6l8-5.2a.7.7 0 0 0 0-1.2l-8-5.2c-.5-.4-1.2 0-1.2.6z"/></svg></button>
 <div class="wrap">
 <p class="crumbs"><a href="./">SignalFeed.dev</a> / <a href="./#guides">Guides</a> / Data</p>
-<h1>PDF backlog sizing for remediation bids</h1>
+<h1>PDF backlog sizing: an inventory of one entity's PDFs</h1>
 <p class="article-meta">Data · Last reviewed November 2026 · Sources linked inline</p>
 </div></div>
 <div class="wrap article">
 <article class="prose">
-<p>Pricing a document-remediation bid for a city or county usually starts with a guess: how many PDFs, how many pages, how much is scanned, how much is forms versus long reports. If the solicitation doesn't state volumes, or states them loosely, the bid carries that risk. This service measures one entity's public PDF backlog so you can price it from data.</p>
+<p>Two kinds of people need the same numbers. A <strong>city, county, school district or agency</strong> planning its Title II work has to budget for remediation, decide what to fix first and, often, write a remediation RFP that states volumes. A <strong>remediation firm</strong> pricing a bid needs to know how many PDFs and pages there are, how much is scanned and how much is forms versus long reports. This service measures one entity's public PDF backlog so either can work from data instead of a guess.</p>
 <h2>What you get</h2>
-<p>An Excel workbook for one US city or county, built from an automated crawl of its own website:</p>
+<p>An Excel workbook for one US city, county, school district or public agency, built from an automated crawl of its own website:</p>
 <ul>
 <li><strong>Summary:</strong> PDF links found, an estimated page range (low and high), the share of sampled PDFs with no tags, the share that are scanned images with no text layer (OCR first), a veraPDF PDF/UA-1 sample, and how much was modified in 2025 to 2026.</li>
 <li><strong>Page-count mix:</strong> how many files are short (under 10 pages), medium or long (200+), so you can scope the long ones separately.</li>
@@ -58,7 +58,7 @@
 </ul>
 <h2>How it works</h2>
 <ol>
-<li>Buy on Gumroad ($149) and enter the city or county, plus the RFP number or link if there is one.</li>
+<li>Buy on Gumroad ($149) and enter the entity and its website, plus the RFP number or link if there is one.</li>
 <li>We crawl the entity's website politely (robots.txt respected, one request per second) and analyze the PDFs with PyMuPDF and veraPDF.</li>
 <li>You get the workbook by email within 3 business days. If the site can't be crawled (blocked, or documents live only behind a search portal), you get a full refund.</li>
 </ol>
