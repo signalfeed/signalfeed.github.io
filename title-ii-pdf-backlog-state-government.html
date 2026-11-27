@@ -69,7 +69,7 @@
 <h2>Method</h2>
 <ul>
 <li>Targets: the .gov domains registered to states and territories in CISA's public .gov registry (1,494 domains), probed for a working site and merged where several domains lead to the same site (682 sites).</li>
-<li>Crawler: obeys robots.txt and crawl delays, makes at most one request per second per site, identifies itself honestly, never logs in, and stops at any bot challenge. It reads up to 150 pages and the site's sitemaps, then samples up to 60 PDFs per site.</li>
+<li>Crawler: obeys robots.txt, honors crawl delays (correction, Nov 27, 2026: until then it capped them at 10 seconds, so 53 of about 3,600 sites that asked for a longer delay got one request every 10 seconds; it now honors the full delay or skips the site), makes at most one request per second per site, identifies itself honestly, never logs in, and stops at any bot challenge. It reads up to 150 pages and the site's sitemaps, then samples up to 60 PDFs per site.</li>
 <li>Checks per PDF: tags (structure tree), document language, title, scanned/image-only pages, page count and modification date. A small sample per site also gets veraPDF PDF/UA-1 validation.</li>
 <li>Estimated pages are scaled from the sample to all PDF links found on the pages we could reach. Sites that keep documents on separate systems are undercounted.</li>
 <li>Data as of 2026-11-26. We don't collect personal information; contact emails are not stored.</li>

@@ -69,7 +69,7 @@
 <h2>Method</h2>
 <ul>
 <li>Targets: US incorporated places with 50,000+ residents that have an official website listed in Wikidata (657 cities).</li>
-<li>Crawler: obeys robots.txt and crawl delays, makes at most one request per second per site, identifies itself honestly, never logs in, and stops at any bot challenge. It reads up to 150 pages and the site's sitemaps, then samples up to 60 PDFs per city.</li>
+<li>Crawler: obeys robots.txt, honors crawl delays (correction, Nov 27, 2026: until then it capped them at 10 seconds, so 53 of about 3,600 sites that asked for a longer delay got one request every 10 seconds; it now honors the full delay or skips the site), makes at most one request per second per site, identifies itself honestly, never logs in, and stops at any bot challenge. It reads up to 150 pages and the site's sitemaps, then samples up to 60 PDFs per city.</li>
 <li>Checks per PDF: tags (structure tree), document language, title, scanned/image-only pages, page count and modification date. A small sample per city also gets veraPDF PDF/UA-1 validation.</li>
 <li>Estimated pages are scaled from the sample to all PDF links found on the pages we could reach. Cities that keep documents on separate systems are undercounted.</li>
 <li>Method update, 2026-11-26: the crawler now follows document-viewer links and detects bot-challenge pages, so more cities have a usable sample than in the November 19 edition; some cities' figures changed for that reason.</li>
