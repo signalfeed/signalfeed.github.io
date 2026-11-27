@@ -277,6 +277,9 @@ for _p in ROOT.glob("*.html"):
     _t = _p.read_text()
     for _m in _re.finditer(r'href="(|#|None|\{[^}]*\})"', _t):
         _bad.append(f"{_p.name}: href={_m.group(1)!r}")
+    for _u in _re.findall(r'href="([a-z0-9][a-z0-9\-/\.]*\.(?:html|csv|docx|pdf|xlsx))"', _t):
+        if not (ROOT / _u).exists():
+            _bad.append(f"{_p.name}: missing target {_u}")
 if _bad:
     raise SystemExit("QA guard: empty/placeholder links found:\n  " + "\n  ".join(_bad[:20]))
 print("QA guard: no empty links")
