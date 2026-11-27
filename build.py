@@ -85,7 +85,7 @@ FOOT = f'''<footer class="site-footer"><div class="wrap">
 <div><a class="brand" href="./">{LOGO}<span>SignalFeed.dev</span></a><p>Document accessibility and clean data. Careful human review, honest reports.</p></div>
 <nav aria-label="Footer">
 <a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a><a href="jobs/">Job data</a>
-<a href="{UPWORK}">Hire on Upwork</a><a href="mailto:{EMAIL}">Email</a><span>Hero footage: Everett Bumstead via Pexels</span>
+<a href="{UPWORK}">Hire on Upwork</a><a href="accessibility.html">Accessibility</a><a href="mailto:{EMAIL}">Email</a><span>Hero footage: Everett Bumstead via Pexels</span>
 </nav>
 <p style="flex-basis:100%;margin:0">General information, not legal advice. We don&#39;t issue compliance certificates; we report exactly what was checked.</p>
 </div></footer>
