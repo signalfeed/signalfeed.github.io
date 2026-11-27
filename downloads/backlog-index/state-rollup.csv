@@ -1,41 +1,42 @@
 state,cities_measured,pdfs_analyzed,pct_untagged,est_pages_needing_remediation
-Michigan,13,625,47.2,213346
-California,25,1188,41.8,189166
-Texas,25,1113,47.7,185293
-New York,13,649,51.0,172763
-New Mexico,2,119,59.6,116671
-Massachusetts,11,445,49.2,87759
-Washington,11,596,35.2,87502
-North Carolina,8,392,29.1,71163
-Florida,31,1466,27.2,68477
-Q816,7,389,42.4,53382
-Pennsylvania,6,349,63.0,51464
-Wyoming,2,113,20.3,50413
-Tennessee,6,290,37.6,42204
-Alabama,3,146,63.7,34518
-South Carolina,3,107,47.6,30721
-Rhode Island,4,195,51.3,28872
-Illinois,5,239,38.5,26561
-Connecticut,9,340,34.4,24652
-Utah,5,248,36.7,24454
-Nebraska,1,59,23.7,21562
-Oklahoma,4,187,38.5,18462
-Indiana,3,147,53.8,17191
-Minnesota,4,236,36.0,16037
-Kansas,3,142,45.8,14100
-Georgia,4,179,35.8,13930
-Ohio,6,255,30.2,13914
-Mississippi,2,81,48.2,11667
-Colorado,8,361,17.4,11257
-Missouri,4,130,29.2,7124
-Wisconsin,3,140,32.9,5843
-Idaho,2,80,30.0,4828
-Kentucky,1,55,25.5,4288
-New Jersey,3,141,46.1,3021
-Iowa,5,223,24.6,1769
-Louisiana,4,114,30.7,1557
-Maryland,2,76,36.9,1268
-Arkansas,1,57,52.6,993
-South Dakota,1,59,28.8,990
-Virginia,1,24,25.0,292
-Montana,1,24,29.2,236
+California,33,1435,39.6,268088
+Michigan,15,737,46.1,262136
+Texas,31,1367,49.3,194913
+New Mexico,2,118,49.1,149382
+Massachusetts,14,564,51.6,121162
+Washington,14,682,36.2,112189
+North Carolina,9,420,32.8,85794
+Florida,36,1662,27.5,69994
+New York,15,722,47.8,61517
+Tennessee,8,364,41.2,53068
+Pennsylvania,6,350,58.8,49285
+Q816,7,387,42.1,41952
+Wyoming,2,117,21.4,38295
+Alabama,4,183,55.8,31097
+Utah,6,288,37.2,29658
+Connecticut,10,383,35.2,29273
+Minnesota,8,353,35.1,23358
+Rhode Island,4,205,46.8,23334
+Illinois,5,255,40.0,19888
+Georgia,6,239,38.1,19262
+Oklahoma,4,198,36.9,18944
+Ohio,7,294,40.8,17549
+Kansas,3,148,43.2,15939
+Indiana,3,146,54.1,15727
+New Jersey,4,165,62.4,12998
+South Carolina,3,119,47.0,12267
+Colorado,9,374,17.6,12237
+Mississippi,2,103,46.6,8598
+Nebraska,1,60,8.3,8347
+Missouri,4,129,34.9,6691
+Maryland,3,119,52.9,6386
+Wisconsin,3,145,42.1,4563
+Idaho,3,117,32.5,4231
+Kentucky,1,58,29.3,3662
+Iowa,6,261,23.7,1999
+Louisiana,5,169,35.5,1905
+Arkansas,2,80,45.0,1525
+South Dakota,1,59,27.1,980
+Montana,1,31,58.1,364
+Virginia,1,30,23.3,235
+North Dakota,1,26,42.3,79
