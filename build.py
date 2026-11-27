@@ -29,6 +29,7 @@ GUIDES = [  # slug, short title, kind
     ("pdf-remediation-cost.html", "How much PDF remediation costs", "Data"),
     ("pdf-remediation-cost-estimator.html", "PDF remediation cost estimator", "Tool"),
     ("pdf-remediation-quote-check.html", "Checking a PDF remediation quote", "How-to"),
+    ("tutoring-invoice-tracker-excel.html", "Tutoring sessions and invoices in Excel", "How-to"),
     ("local-government-website-platforms.html", "Website platforms of US cities and counties", "Data"),
     ("k12-district-platforms.html", "K-12 district website and board platforms", "Data"),
     ("pdf-backlog-sizing.html", "PDF backlog sizing for remediation bids", "Data"),
