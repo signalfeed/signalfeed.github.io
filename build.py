@@ -270,3 +270,13 @@ for f in sorted((ROOT / "src").glob("*.json")):
 for a in readiness.pages(ROOT / "src/mn-readiness.json", EMAIL):
     (ROOT / a["slug"]).write_text(article(a))
 print("built", len(list((ROOT / "src").glob("*.json"))), "articles + index")
+# QA guard: refuse to finish if any page has an empty or placeholder link (caught a live bug on 2026-11-27).
+import re as _re
+_bad = []
+for _p in ROOT.glob("*.html"):
+    _t = _p.read_text()
+    for _m in _re.finditer(r'href="(|#|None|\{[^}]*\})"', _t):
+        _bad.append(f"{_p.name}: href={_m.group(1)!r}")
+if _bad:
+    raise SystemExit("QA guard: empty/placeholder links found:\n  " + "\n  ".join(_bad[:20]))
+print("QA guard: no empty links")
