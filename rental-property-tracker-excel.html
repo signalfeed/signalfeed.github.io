@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track Rent and Expenses for a Rental Property in Excel | SignalFeed.dev</title>
+<meta name="description" content="How to track rent payments, late rent and expenses for a rental property in Excel, with the exact formulas (SUMIFS, INDEX/MATCH; Mac and Windows).">
+<link rel="canonical" href="https://signalfeed.dev/rental-property-tracker-excel.html">
+<meta property="og:site_name" content="SignalFeed.dev">
+<meta property="og:title" content="Track Rent and Expenses for a Rental Property in Excel | SignalFeed.dev">
+<meta property="og:description" content="How to track rent payments, late rent and expenses for a rental property in Excel, with the exact formulas (SUMIFS, INDEX/MATCH; Mac and Windows).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://signalfeed.dev/rental-property-tracker-excel.html">
+<meta property="og:image" content="https://signalfeed.dev/assets/og/rental-property-tracker-excel.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Track Rent and Expenses for a Rental Property in Excel | SignalFeed.dev: SignalFeed.dev card over a printing press">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Track Rent and Expenses for a Rental Property in Excel | SignalFeed.dev">
+<meta name="twitter:description" content="How to track rent payments, late rent and expenses for a rental property in Excel, with the exact formulas (SUMIFS, INDEX/MATCH; Mac and Windows).">
+<meta name="twitter:image" content="https://signalfeed.dev/assets/og/rental-property-tracker-excel.jpg">
+<meta name="theme-color" content="#05070d">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=892b270b">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="./" aria-label="SignalFeed.dev home"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg><span>SignalFeed.dev</span></a>
+<nav class="nav" aria-label="Main">
+<a class="hide-sm" href="./#services">Services</a>
+<a class="hide-sm" href="./#checker">Free checker</a>
+<a class="hide-sm" href="./#guides">Guides</a>
+<a class="hide-sm" href="jobs/">Job data</a>
+<a class="btn btn-primary" href="mailto:aaron.signalfeed@gmail.com?subject=Free%202-page%20sample">Free sample</a>
+</nav></div></header>
+<main id="main">
+<div class="article-head cine">
+<video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="https://images.unsplash.com/photo-1461958508236-9a742665a0d5?w=1600&q=70&auto=format"><source src="https://videos.pexels.com/video-files/29906414/12837346_960_540_24fps.mp4" type="video/mp4"></video>
+<canvas id="field" aria-hidden="true"></canvas>
+<button class="vid-toggle" id="vidToggle" type="button" aria-label="Pause background video"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4c0 .6.7 1 1.2.6l8-5.2a.7.7 0 0 0 0-1.2l-8-5.2c-.5-.4-1.2 0-1.2.6z"/></svg></button>
+<div class="wrap">
+<p class="crumbs"><a href="./">SignalFeed.dev</a> / <a href="./#guides">Guides</a> / How-to</p>
+<h1>How to track rent and expenses for a rental property in Excel</h1>
+<p class="article-meta">How-to · Last reviewed November 2026 · Sources linked inline</p>
+</div></div>
+<div class="wrap article">
+<article class="prose">
+<p>If you rent out a unit or two, you need three answers at any moment: who has paid this month, what did each property cost me, and what did it earn this year? Four small tables in Excel answer all three. Here's how to set them up, with the formulas.</p>
+<h2>1. Four tables</h2>
+<p>Make sheets named <strong>Properties</strong>, <strong>Units</strong>, <strong>Payments</strong> and <strong>Expenses</strong>, type the headers, and turn each into a table (<em>Insert &gt; Table</em>) named the same as its sheet, so new rows pick up the formulas.</p>
+<ul>
+<li><strong>Properties:</strong> PropertyID, Address</li>
+<li><strong>Units:</strong> UnitID, PropertyID, Tenant, MonthlyRent, DueDay, LeaseStart, LeaseEnd, Deposit</li>
+<li><strong>Payments:</strong> Date, UnitID, PropertyID, ForMonth, Amount, Method</li>
+<li><strong>Expenses:</strong> Date, PropertyID, Category, Vendor, Amount</li>
+</ul>
+<p>In Payments, ForMonth is the month the rent covers (type the 1st of that month), which keeps a late payment counted against the right month.</p>
+<h2>2. Fill in the property automatically</h2>
+<p>In Payments, column C (PropertyID) looks itself up from the unit: <code>=IFERROR(INDEX(Units!$B:$B,MATCH(B2,Units!$A:$A,0)),"")</code></p>
+<h2>3. Who has paid this month</h2>
+<p>Put any date in the month you're checking in a cell, say <code>B1</code>. For a unit in <code>A4</code> with its rent in <code>C4</code>, rent paid for that month is:</p>
+<p><code>=SUMIFS(Payments!$E:$E,Payments!$B:$B,A4,Payments!$D:$D,"&gt;="&amp;DATE(YEAR($B$1),MONTH($B$1),1),Payments!$D:$D,"&lt;"&amp;DATE(YEAR($B$1),MONTH($B$1)+1,1))</code></p>
+<p>Balance is <code>=C4-D4</code>, and a status column can read <code>=IF(E4&lt;=0,"Paid",IF(D4&gt;0,"Partial","Unpaid"))</code>.</p>
+<h2>4. Each property's year</h2>
+<p>With the year in <code>B2</code> and a property ID in <code>A5</code>:</p>
+<ul>
+<li>Rent collected: <code>=SUMIFS(Payments!$E:$E,Payments!$C:$C,A5,Payments!$A:$A,"&gt;="&amp;DATE($B$2,1,1),Payments!$A:$A,"&lt;"&amp;DATE($B$2+1,1,1))</code></li>
+<li>Expenses: the same with <code>Expenses!$E:$E</code>, <code>Expenses!$B:$B</code> and <code>Expenses!$A:$A</code></li>
+<li>Net: rent minus expenses</li>
+</ul>
+<h2>5. Dropdowns</h2>
+<p>Excel won't use a table column as a dropdown source, so list your expense categories and payment methods on a small hidden sheet, name each range (<em>Formulas &gt; Define Name</em>), and point <em>Data &gt; Data Validation &gt; List</em> at <code>=YourRangeName</code>.</p>
+<h2>Want it ready-made?</h2>
+<p>The finished workbook, with these formulas, a monthly rent check, a yearly dashboard per property, expense totals by category, dropdowns and a how-to sheet, is <a href="https://signalfeed.gumroad.com/l/landlord-tracker-excel">Rental Property Income &amp; Expense Tracker for Excel</a>, $15. Its columns match the layout above.</p>
+<p>This is a spreadsheet how-to, not tax, legal or accounting advice. Ask a tax professional how to report rental income and expenses.</p>
+</article>
+<aside class="aside" aria-label="Related">
+<div class="card"><h2>Free tool</h2><p>Check any PDF for basic structural warning signs. It runs in your browser; nothing is uploaded.</p><a class="btn btn-ghost" href="./#checker">Open the checker</a></div>
+<div class="card"><h2>More guides</h2><ul><li><a href="title-ii-pdf-guide.html">ADA Title II and your PDFs</a></li><li><a href="public-universities-title-ii-pdfs.html">Public universities and the 2027 Title II deadline</a></li><li><a href="state-agencies-title-ii-pdfs.html">State agencies and the 2027 Title II deadline</a></li><li><a href="special-districts-title-ii-pdfs.html">Special districts and the 2028 Title II deadline</a></li><li><a href="section-504-patient-pdfs.html">HHS Section 504 and patient PDFs</a></li><li><a href="pdf-inventory-title-ii.html">How to inventory your PDFs before Title II</a></li><li><a href="accessible-word-to-pdf.html">Word to accessible PDF, step by step</a></li><li><a href="accessible-meeting-agendas.html">Accessible meeting agendas and minutes</a></li><li><a href="accessible-budget-tables.html">Accessible budget tables</a></li><li><a href="scanned-minutes-accessible.html">Making scanned minutes accessible</a></li><li><a href="verapdf-pdf-ua-errors.html">veraPDF PDF/UA errors, explained</a></li><li><a href="title-ii-accessibility-training.html">ADA Title II training for staff</a></li><li><a href="pdf-remediation-before-after.html">PDF remediation before and after</a></li><li><a href="remediation-partners.html">White-label remediation for agencies</a></li><li><a href="online-store-accessibility-checklist.html">Online store accessibility checklist</a></li><li><a href="title-ii-pdf-findings.html">Title II PDF findings across five kinds of public entities</a></li><li><a href="title-ii-pdf-backlog-index.html">Title II PDF Backlog Index: 657 US cities</a></li><li><a href="title-ii-pdf-backlog-special-districts.html">Title II PDF Backlog Index: special district websites</a></li><li><a href="title-ii-pdf-backlog-state-government.html">Title II PDF Backlog Index: state government websites</a></li><li><a href="title-ii-pdf-backlog-universities.html">Title II PDF Backlog Index: public universities</a></li><li><a href="title-ii-pdf-backlog-counties.html">Title II PDF Backlog Index: US counties</a></li><li><a href="pdf-remediation-cost.html">How much PDF remediation costs</a></li><li><a href="pdf-remediation-cost-estimator.html">PDF remediation cost estimator</a></li><li><a href="pdf-remediation-quote-check.html">Checking a PDF remediation quote</a></li><li><a href="tutoring-invoice-tracker-excel.html">Tutoring sessions and invoices in Excel</a></li><li><a href="local-government-website-platforms.html">Website platforms of US cities and counties</a></li><li><a href="k12-district-platforms.html">K-12 district website and board platforms</a></li><li><a href="pdf-backlog-sizing.html">PDF backlog sizing for remediation bids</a></li><li><a href="mn-title-ii-pdf-readiness.html">Minnesota Title II PDF readiness</a></li><li><a href="book-formatting-sample.html">Ebook and paperback formatting sample</a></li></ul></div>
+</aside>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div><a class="brand" href="./"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0ff"/><stop offset="1" stop-color="#6ff0d2"/></linearGradient></defs><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="url(#lg)" stroke-width="2"/><path d="M7 20c3-6 5-6 8 0s5 6 10-8" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round"/></svg><span>SignalFeed.dev</span></a><p>Document accessibility and clean data. AI-assisted, checked by a person, honestly reported.</p></div>
+<nav aria-label="Footer">
+<a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a><a href="jobs/">Job data</a>
+<a href="https://www.upwork.com/freelancers/~019a97d6c06c1b0e74">Hire on Upwork</a><a href="accessibility.html">Accessibility</a><a href="mailto:aaron.signalfeed@gmail.com">Email</a><span>Hero footage: Everett Bumstead via Pexels</span>
+</nav>
+<p style="flex-basis:100%;margin:0">General information, not legal advice. We don&#39;t issue compliance certificates; we report exactly what was checked.</p>
+</div></footer>
+<script src="assets/fx.js?v=37c7bca7" defer></script>
+</body>
+</html>
