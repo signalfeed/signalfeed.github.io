@@ -1,6 +1,5 @@
 state,sites_measured,pdfs_analyzed,pct_untagged,est_pages_needing_remediation
 California,129,6681,37.6,443998
-Nevada,1,57,26.3,122087
 Utah,76,4013,46.2,87991
 Oregon,40,2260,35.0,59164
 Arkansas,3,123,78.9,56202
@@ -11,31 +10,32 @@ Connecticut,7,401,28.7,21693
 Arizona,10,549,58.3,17528
 New Jersey,7,414,50.0,16202
 North Carolina,5,287,54.0,12302
-North Dakota,1,54,29.6,11274
 Ohio,9,465,45.6,10001
 Minnesota,9,453,41.1,8914
 Pennsylvania,5,270,47.0,7883
 New York,21,956,36.9,7608
 Colorado,34,1662,17.8,7178
 Massachusetts,6,291,32.3,4319
-Rhode Island,1,60,60.0,4056
-Georgia,2,118,42.4,3825
 New Hampshire,8,427,35.4,3775
 Illinois,8,380,46.3,3349
 Idaho,6,263,41.4,2719
 New Mexico,4,167,43.1,2594
-Kansas,1,47,48.9,2033
-Wyoming,2,120,57.5,1817
-Indiana,1,31,29.0,1715
 Wisconsin,4,209,33.5,1100
 Michigan,4,148,27.0,1025
 Montana,4,184,48.9,858
 Tennessee,3,99,40.4,729
 South Carolina,3,165,35.7,605
 Louisiana,3,146,34.3,444
-Kentucky,2,91,74.7,267
-Missouri,2,87,80.4,251
-Iowa,1,39,71.8,229
-Oklahoma,2,72,37.5,218
-Virginia,2,89,30.3,212
-Nebraska,1,30,0.0,0
+Nevada,1,,,
+North Dakota,1,,,
+Rhode Island,1,,,
+Georgia,2,,,
+Kansas,1,,,
+Wyoming,2,,,
+Indiana,1,,,
+Kentucky,2,,,
+Missouri,2,,,
+Iowa,1,,,
+Oklahoma,2,,,
+Virginia,2,,,
+Nebraska,1,,,

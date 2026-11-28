@@ -5,7 +5,6 @@ Arizona,16,837,39.8,319614
 Maryland,4,225,34.7,194692
 Alabama,16,939,43.9,76589
 Nebraska,4,141,52.5,68500
-Guam,2,86,59.3,68023
 North Carolina,16,829,24.2,66237
 Kansas,16,785,39.9,58225
 Massachusetts,9,404,27.2,52031
@@ -15,22 +14,15 @@ Connecticut,4,208,34.1,46239
 Ohio,7,356,43.5,45958
 South Carolina,7,418,35.6,40958
 North Dakota,6,324,41.0,34871
-Kentucky,1,60,46.7,34318
 New Mexico,3,179,48.6,30885
 West Virginia,16,902,52.5,28183
 Iowa,10,439,23.9,27648
 Louisiana,3,180,71.1,25807
 Oregon,6,341,23.8,24589
 Pennsylvania,6,336,35.7,24528
-Alaska,2,92,41.3,21796
-Delaware,2,114,44.8,16875
-Northern Mariana Islands,2,119,52.1,15484
-Rhode Island,2,120,29.2,14315
-Hawaii,1,27,7.4,10083
 Virginia,5,239,36.0,9360
 Illinois,8,438,26.7,8564
 Arkansas,4,185,49.7,7413
-Wyoming,1,59,39.0,7381
 Montana,5,228,18.4,6641
 Wisconsin,6,358,15.6,4775
 Oklahoma,3,179,12.3,4276
@@ -39,13 +31,21 @@ Vermont,3,142,14.8,3476
 Georgia,5,267,22.5,3145
 Minnesota,4,177,33.9,1886
 District of Columbia,3,147,36.7,1788
-Tennessee,1,60,81.7,1724
 South Dakota,4,191,47.7,1703
-Michigan,2,119,40.3,1399
-Utah,1,60,31.7,1317
-American Samoa,1,60,35.0,759
-New York,1,60,75.0,640
-Idaho,1,60,23.3,476
-Washington,1,48,14.6,416
-Maine,1,24,79.2,67
-Nevada,1,28,42.9,65
+Guam,2,,,
+Kentucky,1,,,
+Alaska,2,,,
+Delaware,2,,,
+Northern Mariana Islands,2,,,
+Rhode Island,2,,,
+Hawaii,1,,,
+Wyoming,1,,,
+Tennessee,1,,,
+Michigan,2,,,
+Utah,1,,,
+American Samoa,1,,,
+New York,1,,,
+Idaho,1,,,
+Washington,1,,,
+Maine,1,,,
+Nevada,1,,,

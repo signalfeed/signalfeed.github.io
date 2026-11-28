@@ -2,7 +2,6 @@ state,cities_measured,pdfs_analyzed,pct_untagged,est_pages_needing_remediation
 California,33,1435,39.6,268088
 Michigan,15,737,46.1,262136
 Texas,31,1367,49.3,194913
-New Mexico,2,118,49.1,149382
 Massachusetts,14,564,51.6,121162
 Washington,14,682,36.2,112189
 North Carolina,9,420,32.8,85794
@@ -11,7 +10,6 @@ New York,15,722,47.8,61517
 Tennessee,8,364,41.2,53068
 Pennsylvania,6,350,58.8,49285
 Arizona,7,387,42.1,41952
-Wyoming,2,117,21.4,38295
 Alabama,4,183,55.8,31097
 Utah,6,288,37.2,29658
 Connecticut,10,383,35.2,29273
@@ -26,18 +24,20 @@ Indiana,3,146,54.1,15727
 New Jersey,4,165,62.4,12998
 South Carolina,3,119,47.0,12267
 Colorado,9,374,17.6,12237
-Mississippi,2,103,46.6,8598
-Nebraska,1,60,8.3,8347
 Missouri,4,129,34.9,6691
 Maryland,3,119,52.9,6386
 Wisconsin,3,145,42.1,4563
 Idaho,3,117,32.5,4231
-Kentucky,1,58,29.3,3662
 Iowa,6,261,23.7,1999
 Louisiana,5,169,35.5,1905
-Arkansas,2,80,45.0,1525
-Puerto Rico,1,59,44.1,1263
-South Dakota,1,59,27.1,980
-Montana,1,31,58.1,364
-Virginia,1,30,23.3,235
-North Dakota,1,26,42.3,79
+New Mexico,2,,,
+Wyoming,2,,,
+Mississippi,2,,,
+Nebraska,1,,,
+Kentucky,1,,,
+Arkansas,2,,,
+Puerto Rico,1,,,
+South Dakota,1,,,
+Montana,1,,,
+Virginia,1,,,
+North Dakota,1,,,

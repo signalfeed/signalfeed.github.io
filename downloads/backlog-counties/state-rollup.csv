@@ -20,16 +20,13 @@ California,9,359,35.6,50005
 West Virginia,6,347,66.3,47745
 Indiana,9,426,70.6,46031
 Nevada,5,223,44.4,45890
-Hawaii,1,58,44.8,45365
 Kansas,5,229,34.1,42839
 Maryland,9,370,34.3,37865
 Alabama,14,661,46.3,30175
 Oklahoma,6,294,48.6,26306
-Montana,2,118,26.2,19818
 New Hampshire,4,199,64.8,18130
 Virginia,13,543,29.5,17097
 New Mexico,4,137,39.4,12107
-Delaware,2,82,22.0,11458
 Wisconsin,9,349,29.5,10903
 Arkansas,5,236,69.1,10875
 Mississippi,6,218,46.3,10292
@@ -39,6 +36,9 @@ Colorado,5,265,34.4,5760
 Idaho,5,256,34.0,5375
 Iowa,5,228,54.8,4475
 Maine,4,239,34.3,4316
-South Dakota,1,59,13.6,1811
-Vermont,1,60,65.0,1255
-Nebraska,1,57,21.1,921
+Hawaii,1,,,
+Montana,2,,,
+Delaware,2,,,
+South Dakota,1,,,
+Vermont,1,,,
+Nebraska,1,,,
