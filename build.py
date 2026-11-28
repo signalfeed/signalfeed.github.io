@@ -85,7 +85,7 @@ def head(title, desc, slug, extra="", og=None):
 '''
 
 FOOT = f'''<footer class="site-footer"><div class="wrap">
-<div><a class="brand" href="./">{LOGO}<span>SignalFeed.dev</span></a><p>Document accessibility and clean data. Careful human review, honest reports.</p></div>
+<div><a class="brand" href="./">{LOGO}<span>SignalFeed.dev</span></a><p>Document accessibility and clean data. AI-assisted, checked by a person, honestly reported.</p></div>
 <nav aria-label="Footer">
 <a href="./#services">Services</a><a href="./#checker">Free PDF checker</a><a href="./#guides">Guides</a><a href="jobs/">Job data</a>
 <a href="{UPWORK}">Hire on Upwork</a><a href="accessibility.html">Accessibility</a><a href="mailto:{EMAIL}">Email</a><span>Hero footage: Everett Bumstead via Pexels</span>
