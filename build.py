@@ -1,5 +1,5 @@
 """Build the SignalFeed site from src/*.json articles + the landing page. Run: python3 build.py"""
-import json, html
+import json, html, re
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -98,6 +98,29 @@ FOOT = f'''<footer class="site-footer"><div class="wrap">
 </html>
 '''
 
+
+# State cross-links: each per-state data page links to the same state's pages in the other editions.
+EDITIONS = [("counties-", "Counties of 50,000+"), ("state-government-", "State government websites"),
+            ("special-districts-", "Special districts"), ("universities-", "Public universities"), ("", "Cities of 50,000+")]
+HUBS = {"index", "counties", "universities", "state-government", "special-districts"}
+SLUGS = set()
+def state_key(slug):
+    m = re.match(r"title-ii-pdf-backlog-(.+)\.html$", slug or "")
+    if not m: return None, None
+    rest = m.group(1)
+    for pre, _ in EDITIONS:
+        if pre and rest.startswith(pre): return pre, rest[len(pre):]
+    return ("", rest) if rest not in HUBS else (None, None)
+def state_card(a):
+    pre, key = state_key(a["slug"])
+    if key is None: return ""
+    name = a["h1"].split(":")[0]
+    links = [(f"title-ii-pdf-backlog-{p}{key}.html", label) for p, label in EDITIONS if p != pre]
+    links = [(sl, label) for sl, label in links if sl in SLUGS]
+    if not links: return ""
+    items = "".join(f'<li><a href="{sl}">{html.escape(name)}: {label}</a></li>' for sl, label in links)
+    return f'<div class="card"><h2>More on {html.escape(name)}</h2><ul>{items}</ul></div>'
+
 def article(a):
     kind = a.get("kind") or next((k for s, _, k in GUIDES if s == a["slug"]), "Guide")
     others = "".join(f'<li><a href="{s}">{html.escape(t)}</a></li>' for s, t, _ in GUIDES if s != a["slug"])
@@ -117,6 +140,7 @@ def article(a):
 </article>
 <aside class="aside" aria-label="Related">
 <div class="card"><h2>Free tool</h2><p>Check any PDF for basic structural warning signs. It runs in your browser; nothing is uploaded.</p><a class="btn btn-ghost" href="./#checker">Open the checker</a></div>
+{state_card(a)}
 <div class="card"><h2>More guides</h2><ul>{others}</ul></div>
 </aside>
 </div>
@@ -262,6 +286,11 @@ def index():
 ''' + FOOT
 
 import readiness
+for f in (ROOT / "src").glob("*.json"):
+    try:
+        _a = json.loads(f.read_text())
+        if isinstance(_a, dict) and _a.get("slug"): SLUGS.add(_a["slug"])
+    except Exception: pass
 for f in sorted((ROOT / "src").glob("*.json")):
     if f.name == "mn-readiness.json":
         continue
