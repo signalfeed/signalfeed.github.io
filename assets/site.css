@@ -16,6 +16,10 @@ a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness:
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 img, svg { max-width: 100%; }
+img { height: auto; }
+figure { margin: 24px 0; }
+figure img { display: block; border: 1px solid var(--line, #d0d7e2); border-radius: 8px; }
+figcaption { font-size: 0.9em; opacity: 0.8; margin-top: 8px; }
 .skip { position: absolute; left: -9999px; top: 8px; background: var(--bg); color: var(--ink); padding: 8px 14px; border-radius: 8px; z-index: 10; }
 .skip:focus { left: 16px; }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
